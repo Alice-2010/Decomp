@@ -1,0 +1,12 @@
+object: ./orig/SALP4Q/sys/main.dol
+hash: fba1ebd505bebf4c6e8b89eb2dca306310b53822
+name: main
+symbols: ./config/SALP4Q/symbols.txt
+splits: ./config/SALP4Q/splits.txt
+quick_analysis: false
+detect_objects: true
+detect_strings: true
+write_asm: true
+symbols_known: false
+fill_gaps: true
+export_all: true

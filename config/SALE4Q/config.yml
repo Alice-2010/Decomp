@@ -1,0 +1,12 @@
+object: ./orig/SALE4Q/sys/main.dol
+hash: 920ab5fa781d6e863ff2eeff800eab2ab69c254c
+name: main
+symbols: ./config/SALE4Q/symbols.txt
+splits: ./config/SALE4Q/splits.txt
+quick_analysis: false
+detect_objects: true
+detect_strings: true
+write_asm: true
+symbols_known: false
+fill_gaps: true
+export_all: true
