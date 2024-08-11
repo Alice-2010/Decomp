@@ -1,4 +1,13 @@
 ## Creating Issues
+When creating issues, please follow the provided templates
+
+### Bugs
+- Symbol Address
+    - The hex address (with or without the `0x` prefix), or symbol name if a Wii system symbol
+- Game Binary's Assembly (optional)
+    - The assembly from the game's own `main.dol` file at the specified symbol
+- Decompiled Assembly (optional)
+    - The assembly from the decompiled (the source code of this repo) `main.dol` file at the specified symbol 
 
 ## Decompiling the code
 Configure and build the project using the following commands
