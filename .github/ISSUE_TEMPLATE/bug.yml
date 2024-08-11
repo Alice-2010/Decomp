@@ -17,11 +17,11 @@ body:
     id: binary_asm
     attributes:
       label: Game Binary's Assembly
-    validation:
+    validations:
       required: false
   - type: textarea
     id: decomp_asm
     attributes:
       label: Decompiled Assembly
-    validation:
+    validations:
       required: false
