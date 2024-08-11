@@ -168,7 +168,7 @@ cflags_base = [
     "-fp hardware",
     "-Cpp_exceptions off",
     # "-W all",
-    "-O4,p",
+    "-O2,p",
     "-inline auto",
     '-pragma "cats off"',
     '-pragma "warn_notinlined off"',
