@@ -127,6 +127,7 @@ config.debug = args.debug
 config.generate_map = args.map
 config.non_matching = args.non_matching
 config.sjiswrap_path = args.sjiswrap
+config.progress_all = False
 if not is_windows():
     config.wrapper = args.wrapper
 if args.no_asm:
