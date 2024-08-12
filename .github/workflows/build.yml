@@ -39,12 +39,11 @@ jobs:
 
     # Upload progress if we're on the master branch
     - name: Upload progress
-    # Completely disable upload for now - alice needs added to a decomp progress API
-      if: github.ref == 'refs/heads/master' && false
+      if: github.ref == 'refs/heads/master'
       continue-on-error: true
       env:
         # Replace with your project slug
-        PROGRESS_SLUG: example_slug
+        PROGRESS_SLUG: aliceinwonderland
         PROGRESS_API_KEY: ${{ secrets.PROGRESS_API_KEY }}
       run: |
         python tools/upload_progress.py -b https://progress.decomp.club/ \
