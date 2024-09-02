@@ -35,7 +35,6 @@ jobs:
     - name: Build
       run: |
         python configure.py --version ${{ matrix.version }} --map
-            --binutils /binutils --compilers /compilers
         ninja all_source build/${{ matrix.version }}/progress.json \
             build/${{ matrix.version }}/report.json
 
