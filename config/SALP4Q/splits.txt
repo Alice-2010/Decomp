@@ -13,9 +13,12 @@ Sections:
 	.sdata2     type:rodata align:16
 	.sbss2      type:bss align:32
 
-Runtime.PPCEABI.H/__init_cpp_exceptions.cpp:
+Runtime/__init_cpp_exceptions.cpp:
 	.text       start:0x80395304 end:0x80395374
 	.ctors      start:0x804D3540 end:0x804D3544 rename:.ctors$10
 	.dtors      start:0x804D41E0 end:0x804D41E4 rename:.dtors$10
 	.dtors      start:0x804D41E4 end:0x804D41E8 rename:.dtors$15
 	.sdata      start:0x805F3828 end:0x805F3830
+
+Runtime/Gecko_ExceptionPPC.cpp:
+	.text       start:0x80395374 end:0x80395480

@@ -173,7 +173,7 @@ cflags_base = [
     "-fp hardware",
     "-Cpp_exceptions off",
     # "-W all",
-    "-O2,p",
+    "-O4,p",
     "-inline auto",
     '-pragma "cats off"',
     '-pragma "warn_notinlined off"',
@@ -204,36 +204,18 @@ cflags_runtime = [
     "-inline auto",
 ]
 
-# REL flags
-# cflags_rel = [
-#     *cflags_base,
-#     "-sdata 0",
-#     "-sdata2 0",
-# ]
-
-config.linker_version = "Wii/1.3"
+config.linker_version = "Wii/1.5"
 
 
 # Helper function for Dolphin libraries
-# def DolphinLib(lib_name: str, objects: List[Object]) -> Dict[str, Any]:
-#     return {
-#         "lib": lib_name,
-#         "mw_version": "GC/1.2.5n",
-#         "cflags": cflags_base,
-#         "host": False,
-#         "objects": objects,
-#     }
-
-
-# Helper function for REL script objects
-# def Rel(lib_name: str, objects: List[Object]) -> Dict[str, Any]:
-#     return {
-#         "lib": lib_name,
-#         "mw_version": "GC/1.3.2",
-#         "cflags": cflags_rel,
-#         "host": True,
-#         "objects": objects,
-#     }
+def DolphinLib(lib_name: str, objects: List[Object]) -> Dict[str, Any]:
+    return {
+        "lib": lib_name,
+        "mw_version": config.linker_version,
+        "cflags": cflags_base,
+        "host": False,
+        "objects": objects,
+    }
 
 
 Matching = True                   # Object matches and should be linked
@@ -244,15 +226,15 @@ config.warn_missing_config = True
 config.warn_missing_source = False
 config.libs = [
     {
-        "lib": "Runtime.PPCEABI.H",
+        "lib": "Runtime",
         "mw_version": config.linker_version,
         "cflags": cflags_runtime,
         "host": False,
         "objects": [
-            Object(NonMatching, "Runtime.PPCEABI.H/global_destructor_chain.c"),
-            Object(NonMatching, "Runtime.PPCEABI.H/__init_cpp_exceptions.cpp"),
+            Object(NonMatching, "Runtime/__init_cpp_exceptions.cpp"),
+            Object(NonMatching, "Runtime/Gecko_ExceptionPPC.cpp")
         ],
-    },
+    }
 ]
 
 if args.mode == "configure":

@@ -22,6 +22,7 @@ This will also generate `.s` (assembly) files inside the `build/[GAME ID]/asm` f
 - Place the function contents into a new scratch in [decomp.me](https://decomp.me)
 - Write C++ code that creates matching assembly code
     - Use the following string as the build flags
+    - Compiler `4.3 build 188 (Wii MW 1.5)`
     - `-O2,p -lang=c++ -RTTI off -enum int -fp hard -enc SJIS -fp_contract on -str reuse -inline auto -use_lmw_stmw on`
 - When placing the function or variable into this repository, mark in a comment the address of the symbol
     - For example `// symbol 0x80395304`
