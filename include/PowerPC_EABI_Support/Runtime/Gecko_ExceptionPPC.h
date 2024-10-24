@@ -2,7 +2,7 @@
     #define RUNTIME_GECKO_EXCEPTIONPPC_H
 
     #include "types.h"
-    #include "Runtime/__ppc_eabi_linker.h"
+    #include "PowerPC_EABI_Support/Runtime/__ppc_eabi_linker.h"
     #define MAXFRAGMENTS 1
 
     typedef struct ExceptionTableIndex {

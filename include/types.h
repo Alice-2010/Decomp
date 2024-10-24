@@ -15,19 +15,19 @@
     typedef unsigned long int u32;
     typedef unsigned long long int u64;
 
-    typedef volatile u8 vu8;
-    typedef volatile u16 vu16;
-    typedef volatile u32 vu32;
-    typedef volatile u64 vu64;
-    typedef volatile s8 vs8;
-    typedef volatile s16 vs16;
-    typedef volatile s32 vs32;
-    typedef volatile s64 vs64;
+    typedef volatile unsigned char vu8;
+    typedef volatile unsigned short vu16;
+    typedef volatile unsigned long int vu32;
+    typedef volatile unsigned long long int vu64;
+    typedef volatile signed char vs8;
+    typedef volatile signed short vs16;
+    typedef volatile signed long int vs32;
+    typedef volatile signed long long int vs64;
 
     typedef float f32;
     typedef double f64;
-    typedef volatile f32 vf32;
-    typedef volatile f64 vf64;
+    typedef volatile float vf32;
+    typedef volatile double vf64;
 
     #ifdef NULL
         #undef NULL
