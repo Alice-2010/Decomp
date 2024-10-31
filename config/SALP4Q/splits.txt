@@ -13,6 +13,45 @@ Sections:
 	.sdata2     type:rodata align:16
 	.sbss2      type:bss align:32
 
+Revolution/OS/__start.c:
+	.init       start:0x80004000 end:0x80006618
+
+Alice/Objects/Groups/CKGrpAliceHero.cpp:
+	.text       start:0x8000DBF0 end:0x8000E264
+
+Alice/Objects/Hooks/CKHkAliceHero.cpp:
+	.text       start:0x8001D894 end:0x8001E9E8
+
+Alice/Objects/Components/CKAliceHeroConfig.cpp:
+	.text       start:0x800539D4 end:0x80055528
+
+Alice/Objects/Logic/CKAliceGameSpawnPoint.cpp:
+	.text       start:0x800EEFBC end:0x800EF814
+
+Alice/Objects/Geometries/CSkinGeometry.cpp:
+	.text       start:0x801DB1A8 end:0x801DB6D8
+
+Alice/Objects/Graphics/CLightManager.cpp:
+	.text       start:0x801E3D88 end:0x801E76B4
+
+Alice/Objects/Nodes/CSpawnNode.cpp:
+	.text       start:0x80211C1C end:0x80212060
+
+Alice/Objects/Services/CKSrvTrigger.cpp:
+	.text       start:0x8022CE90 end:0x8022D744
+
+Alice/Objects/Camera/CKCameraFixTrack.cpp:
+	.text       start:0x80238574 end:0x802388B4
+
+Alice/Objects/Cinematics/CKStartDoor.cpp:
+	.text       start:0x80266000 end:0x802662AC
+
+Alice/Objects/Dictionaries/CKSoundDictionary.cpp:
+	.text       start:0x802B9360 end:0x802B9A70
+
+Alice/Objects/Managers/CKSoundManager.cpp:
+	.text       start:0x802BA0DC end:0x802BAEA0
+
 PowerPC_EABI_Support/Runtime/global_destructor_chain.c:
 	.text       start:0x80368C58 end:0x80394124
 
@@ -25,39 +64,3 @@ PowerPC_EABI_Support/Runtime/__init_cpp_exceptions.cpp:
 
 PowerPC_EABI_Support/Runtime/Gecko_ExceptionPPC.cpp:
 	.text       start:0x80395374 end:0x80395480
-
-Alice/Objects/0Managers/CKSoundManager.cpp:
-    .text       start:0x802BA0DC  end:0x802BAEA0
-
-Alice/Objects/1Services/CKSrvTrigger.cpp:
-    .text       start:0x8022CE90  end:0x8022D744
-
-Alice/Objects/2Hooks/CKHkAliceHero.cpp:
-    .text       start:0x8001D894  end:0x8001E9E8
-
-Alice/Objects/4Groups/CKGrpAliceHero.cpp:
-    .text       start:0x8000DBF0  end:0x8000E264
-
-Alice/Objects/6Components/CKAliceHeroConfig.cpp:
-    .text       start:0x800539D4  end:0x80055528
-
-Alice/Objects/7Camera/CKCameraFixTrack.cpp:
-    .text       start:0x80238574  end:0x802388B4
-
-Alice/Objects/8Cinematics/CKStartDoor.cpp:
-    .text       start:0x80266000  end:0x802662AC
-
-Alice/Objects/9Dictionaries/CKSoundDictionary.cpp:
-    .text       start:0x802B9360  end:0x802B9A70
-
-Alice/Objects/10Geometries/CSkinGeometry.cpp:
-    .text       start:0x801DB1A8  end:0x801DB6D8
-
-Alice/Objects/11Nodes/CSpawnNode.cpp:
-    .text       start:0x80211C1C  end:0x80212060
-
-Alice/Objects/12Logic/CKAliceGameSpawnPoint.cpp:
-    .text       start:0x800EEFBC  end:0x800EF814
-
-Alice/Objects/13Graphics/CLightManager.cpp:
-    .text       start:0x801E3D88  end:0x801E76B4

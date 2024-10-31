@@ -184,7 +184,7 @@ cflags_base = [
     "-fp hardware",
     "-Cpp_exceptions off",
     # "-W all",
-    "-O4,p",
+    "-O4,s",
     "-inline auto",
     '-pragma "cats off"',
     '-pragma "warn_notinlined off"',
@@ -244,7 +244,7 @@ config.warn_missing_config = True
 config.warn_missing_source = False
 config.libs = [
     {
-        "lib": "PowerPC_EABI_Support",
+        "lib": "PowerPC_EABI_Support/Runtime",
         "mw_version": config.linker_version,
         "cflags": cflags_runtime,
         "host": False,
@@ -254,6 +254,22 @@ config.libs = [
             Object(MatchingFor(), "PowerPC_EABI_Support/Runtime/Gecko_ExceptionPPC.cpp"),
             Object(MatchingFor(), "PowerPC_EABI_Support/Runtime/global_destructor_chain.c")
         ],
+    },
+    {
+        "lib": "PowerPC_EABI_Support/MSL",
+        "mw_version": config.linker_version,
+        "cflags": cflags_runtime,
+        "host": False,
+        "progress_category": "sdk",  # str | List[str]
+        "objects": [],
+    },
+    {
+        "lib": "PowerPC_EABI_Support/MetroTRK",
+        "mw_version": config.linker_version,
+        "cflags": cflags_runtime,
+        "host": False,
+        "progress_category": "sdk",  # str | List[str]
+        "objects": [],
     },
     {
         "lib": "Revolution",
@@ -268,10 +284,23 @@ config.libs = [
     {
         "lib": "Alice",
         "mw_version": config.linker_version,
-        "cflags": cflags_runtime,
+        "cflags": cflags_base,
         "host": False,
         "progress_category": "game",  # str | List[str]
-        "objects": [],
+        "objects": [
+            Object(MatchingFor(), "Alice/Objects/Managers/CKSoundManager.cpp"),
+            Object(MatchingFor(), "Alice/Objects/Services/CKSrvTrigger.cpp"),
+            Object(MatchingFor(), "Alice/Objects/Hooks/CKHkAliceHero.cpp"),
+            Object(MatchingFor(), "Alice/Objects/Groups/CKGrpAliceHero.cpp"),
+            Object(MatchingFor(), "Alice/Objects/Components/CKAliceHeroConfig.cpp"),
+            Object(MatchingFor(), "Alice/Objects/Camera/CKCameraFixTrack.cpp"),
+            Object(MatchingFor(), "Alice/Objects/Cinematics/CKStartDoor.cpp"),
+            Object(MatchingFor(), "Alice/Objects/Dictionaries/CKSoundDictionary.cpp"),
+            Object(MatchingFor(), "Alice/Objects/Geometries/CSkinGeometry.cpp"),
+            Object(MatchingFor(), "Alice/Objects/Nodes/CSpawnNode.cpp"),
+            Object(MatchingFor(), "Alice/Objects/Logic/CKAliceGameSpawnPoint.cpp"),
+            Object(MatchingFor(), "Alice/Objects/Graphics/CLightManager.cpp")
+        ],
     }
 ]
 

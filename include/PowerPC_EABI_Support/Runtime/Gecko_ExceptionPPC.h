@@ -3,7 +3,7 @@
 
     #include "types.h"
     #include "PowerPC_EABI_Support/Runtime/__ppc_eabi_linker.h"
-    #define MAXFRAGMENTS 1
+    #define MAXFRAGMENTS 0x1F
 
     typedef struct ExceptionTableIndex {
         u32 functionoffset;
@@ -25,11 +25,11 @@
     typedef struct ProcessInfo {
         __eti_init_info* exception_info;
         char* TOC;
-        s32 active;
+        u32 active;
     } ProcessInfo;
 
-    s32 __register_fragment(struct __eti_init_info*, char*);
-    void __unregister_fragment(s32);
+    u32 __register_fragment(struct __eti_init_info*, char*);
+    void __unregister_fragment(u32);
     s32 ExPPC_FindExceptionFragment(char*, FragmentInfo*);
 
 #endif

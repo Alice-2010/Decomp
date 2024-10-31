@@ -3,12 +3,11 @@
 
 extern ProcessInfo fragment_info[MAXFRAGMENTS];
 
-s32 __register_fragment(struct __eti_init_info* info, char* TOC)
+#pragma schedule once
+u32 __register_fragment(struct __eti_init_info* info, char* TOC)
 {
     ProcessInfo* f = fragment_info;
-    s32 i;
-
-    for (i = 0; i < MAXFRAGMENTS; i++, f++) {
+    for (u32 i = 0; i < MAXFRAGMENTS+1; i++, f++) {
         if (f->active == 0) {
             f->exception_info = info;
             f->TOC = TOC;
@@ -16,14 +15,14 @@ s32 __register_fragment(struct __eti_init_info* info, char* TOC)
             return i;
         }
     }
-
     return -1;
 }
+#pragma schedule twice
 
-void __unregister_fragment(s32 fragmentID)
+void __unregister_fragment(u32 fragmentID)
 {
     ProcessInfo* f;
-    if (fragmentID >= 0 && fragmentID < MAXFRAGMENTS) {
+    if (fragmentID >= 0 && fragmentID <= MAXFRAGMENTS) {
         f = &fragment_info[fragmentID];
         f->exception_info = 0;
         f->TOC = 0;
@@ -37,7 +36,7 @@ s32 ExPPC_FindExceptionFragment(char* returnaddr, FragmentInfo* frag)
     s32 i;
     __eti_init_info* eti_info;
 
-    for (i = 0, f = fragment_info; i < MAXFRAGMENTS; ++i, ++f) {
+    for (i = 0, f = fragment_info; i < MAXFRAGMENTS+1; ++i, ++f) {
         if (f->active) {
             eti_info = f->exception_info;
             while (1) {
@@ -58,6 +57,5 @@ s32 ExPPC_FindExceptionFragment(char* returnaddr, FragmentInfo* frag)
             }
         }
     }
-
     return 0;
 }

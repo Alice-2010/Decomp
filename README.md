@@ -109,4 +109,4 @@ Select an object from the left sidebar to begin diffing. Changes to the project 
 ## References
 - [Decomp Toolkit](https://github.com/encounter/dtk-template) (repo template)
 - [Dolphin 2001 SDK](https://github.com/doldecomp/dolsdk2001)
-- [MSL Runtime](https://github.com/projectPiki/pikmin2/blob/main/src/Dolphin/Runtime) (From Pikmin 2 Decomp)
+    - Alice uses Revolution SDK of a currently unknown version or release, however, dolsdk can be used as a basis
