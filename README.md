@@ -105,3 +105,8 @@ Download the latest release from [encounter/objdiff](https://github.com/encounte
 Select an object from the left sidebar to begin diffing. Changes to the project will rebuild automatically: changes to source files, headers, `configure.py`, `splits.txt` or `symbols.txt`.
 
 ![](assets/objdiff.png)
+
+## References
+- [Decomp Toolkit](https://github.com/encounter/dtk-template) (repo template)
+- [Dolphin 2001 SDK](https://github.com/doldecomp/dolsdk2001)
+    - Alice uses Revolution SDK of a currently unknown version or release, however, dolsdk can be used as a basis

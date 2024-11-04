@@ -19,6 +19,7 @@ from typing import Any, Dict, List
 
 from tools.project import (
     Object,
+    ProgressCategory,
     ProjectConfig,
     calculate_progress,
     generate_build,
@@ -113,6 +114,12 @@ parser.add_argument(
     action="store_true",
     help="builds equivalent (but non-matching) or modded objects",
 )
+parser.add_argument(
+    "--no-progress",
+    dest="progress",
+    action="store_false",
+    help="disable progress calculation",
+)
 args = parser.parse_args()
 
 config = ProjectConfig()
@@ -125,10 +132,10 @@ config.dtk_path = args.dtk
 config.objdiff_path = args.objdiff
 config.binutils_path = args.binutils
 config.compilers_path = args.compilers
-config.debug = args.debug
 config.generate_map = args.map
 config.non_matching = args.non_matching
 config.sjiswrap_path = args.sjiswrap
+config.progress = args.progress
 if not is_windows():
     config.wrapper = args.wrapper
 # Don't build asm unless we're --non-matching
@@ -138,8 +145,8 @@ if not config.non_matching:
 # Tool versions
 config.binutils_tag = "2.42-1"
 config.compilers_tag = "20240706"
-config.dtk_tag = "v0.9.4"
-config.objdiff_tag = "v2.0.0-beta.4"
+config.dtk_tag = "v1.1.2"
+config.objdiff_tag = "v2.3.2"
 config.sjiswrap_tag = "v1.1.1"
 config.wibo_tag = "0.6.11"
 
@@ -157,9 +164,13 @@ config.asflags = [
 config.ldflags = [
     "-fp hardware",
     "-nodefaults",
-    # "-warn off",
-    "-listclosure", # Uncomment for Wii linkers
 ]
+if args.debug:
+    config.ldflags.append("-gdwarf-2")  # Or -gdwarf-2 for Wii linkers
+if args.map:
+    config.ldflags.append("-mapunused")
+    config.ldflags.append("-listclosure") # For Wii linkers
+
 # Use for any additional files that should cause a re-configure when modified
 config.reconfig_deps = []
 
@@ -173,7 +184,7 @@ cflags_base = [
     "-fp hardware",
     "-Cpp_exceptions off",
     # "-W all",
-    "-O2,p",
+    "-O4,s",
     "-inline auto",
     '-pragma "cats off"',
     '-pragma "warn_notinlined off"',
@@ -189,7 +200,7 @@ cflags_base = [
 ]
 
 # Debug flags
-if config.debug:
+if args.debug:
     cflags_base.extend(["-sym on", "-DDEBUG=1"])
 else:
     cflags_base.append("-DNDEBUG=1")
@@ -204,56 +215,102 @@ cflags_runtime = [
     "-inline auto",
 ]
 
-# REL flags
-# cflags_rel = [
-#     *cflags_base,
-#     "-sdata 0",
-#     "-sdata2 0",
-# ]
-
-config.linker_version = "Wii/1.3"
+config.linker_version = "Wii/1.5"
 
 
 # Helper function for Dolphin libraries
-# def DolphinLib(lib_name: str, objects: List[Object]) -> Dict[str, Any]:
-#     return {
-#         "lib": lib_name,
-#         "mw_version": "GC/1.2.5n",
-#         "cflags": cflags_base,
-#         "host": False,
-#         "objects": objects,
-#     }
-
-
-# Helper function for REL script objects
-# def Rel(lib_name: str, objects: List[Object]) -> Dict[str, Any]:
-#     return {
-#         "lib": lib_name,
-#         "mw_version": "GC/1.3.2",
-#         "cflags": cflags_rel,
-#         "host": True,
-#         "objects": objects,
-#     }
+def DolphinLib(lib_name: str, objects: List[Object]) -> Dict[str, Any]:
+    return {
+        "lib": lib_name,
+        "mw_version": config.linker_version,
+        "cflags": cflags_base,
+        "host": False,
+        "progress_category": "sdk",
+        "objects": objects,
+    }
 
 
 Matching = True                   # Object matches and should be linked
 NonMatching = False               # Object does not match and should not be linked
 Equivalent = config.non_matching  # Object should be linked when configured with --non-matching
 
+
+# Object is only matching for specific versions
+def MatchingFor(*versions):
+    return config.version in versions
+
+
 config.warn_missing_config = True
 config.warn_missing_source = False
 config.libs = [
     {
-        "lib": "Runtime.PPCEABI.H",
+        "lib": "PowerPC_EABI_Support/Runtime",
         "mw_version": config.linker_version,
         "cflags": cflags_runtime,
         "host": False,
+        "progress_category": "sdk",  # str | List[str]
         "objects": [
-            Object(NonMatching, "Runtime.PPCEABI.H/global_destructor_chain.c"),
-            Object(NonMatching, "Runtime.PPCEABI.H/__init_cpp_exceptions.cpp"),
+            Object(MatchingFor(), "PowerPC_EABI_Support/Runtime/__init_cpp_exceptions.cpp"),
+            Object(MatchingFor(), "PowerPC_EABI_Support/Runtime/Gecko_ExceptionPPC.cpp"),
+            Object(MatchingFor(), "PowerPC_EABI_Support/Runtime/global_destructor_chain.c")
         ],
     },
+    {
+        "lib": "PowerPC_EABI_Support/MSL",
+        "mw_version": config.linker_version,
+        "cflags": cflags_runtime,
+        "host": False,
+        "progress_category": "sdk",  # str | List[str]
+        "objects": [],
+    },
+    {
+        "lib": "PowerPC_EABI_Support/MetroTRK",
+        "mw_version": config.linker_version,
+        "cflags": cflags_runtime,
+        "host": False,
+        "progress_category": "sdk",  # str | List[str]
+        "objects": [],
+    },
+    {
+        "lib": "Revolution",
+        "mw_version": config.linker_version,
+        "cflags": cflags_runtime,
+        "host": False,
+        "progress_category": "sdk",  # str | List[str]
+        "objects": [
+            Object(MatchingFor(), "Revolution/OS/__start.c")
+        ],
+    },
+    {
+        "lib": "Alice",
+        "mw_version": config.linker_version,
+        "cflags": cflags_base,
+        "host": False,
+        "progress_category": "game",  # str | List[str]
+        "objects": [
+            Object(MatchingFor(), "Alice/Objects/Managers/CKSoundManager.cpp"),
+            Object(MatchingFor(), "Alice/Objects/Services/CKSrvTrigger.cpp"),
+            Object(MatchingFor(), "Alice/Objects/Hooks/CKHkAliceHero.cpp"),
+            Object(MatchingFor(), "Alice/Objects/Groups/CKGrpAliceHero.cpp"),
+            Object(MatchingFor(), "Alice/Objects/Components/CKAliceHeroConfig.cpp"),
+            Object(MatchingFor(), "Alice/Objects/Camera/CKCameraFixTrack.cpp"),
+            Object(MatchingFor(), "Alice/Objects/Cinematics/CKStartDoor.cpp"),
+            Object(MatchingFor(), "Alice/Objects/Dictionaries/CKSoundDictionary.cpp"),
+            Object(MatchingFor(), "Alice/Objects/Geometries/CSkinGeometry.cpp"),
+            Object(MatchingFor(), "Alice/Objects/Nodes/CSpawnNode.cpp"),
+            Object(MatchingFor(), "Alice/Objects/Logic/CKAliceGameSpawnPoint.cpp"),
+            Object(MatchingFor(), "Alice/Objects/Graphics/CLightManager.cpp")
+        ],
+    }
 ]
+
+# Optional extra categories for progress tracking
+# Adjust as desired for your project
+config.progress_categories = [
+    ProgressCategory("game", "Game Code"),
+    ProgressCategory("sdk", "SDK Code"),
+]
+config.progress_each_module = args.verbose
 
 if args.mode == "configure":
     # Write build.ninja and objdiff.json
