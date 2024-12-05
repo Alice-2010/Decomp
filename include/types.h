@@ -9,6 +9,7 @@
     typedef signed short s16;
     typedef signed long int s32;
     typedef signed long long int s64;
+
     typedef unsigned char u8;
     typedef unsigned short u16;
     typedef unsigned int uint;

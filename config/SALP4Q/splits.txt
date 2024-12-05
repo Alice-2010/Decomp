@@ -16,6 +16,20 @@ Sections:
 Revolution/OS/__start.c:
 	.init       start:0x80004000 end:0x80006618
 
+Alice/Interfaces/IKSerializable.cpp:
+	.text       start:0x8000E2AC end:0x80018CA4
+
+Alice/Objects/Logic/CKAliceGameSpawnPoint.cpp:
+	.text       start:0x800EEFBC end:0x800EF814
+	.data       start:0x804F3F50 end:0x804F3FD8
+
+Alice/Objects/Logic/CKGameSpawnPoint.cpp:
+	.text       start:0x801A7904 end:0x801A7FD0
+	.data       start:0x804FFE20 end:0x804FFEA8
+
+Alice/Interfaces/IKGameObject.cpp:
+	.text       start:0x801ABBD0 end:0x801B0418
+
 PowerPC_EABI_Support/Runtime/global_destructor_chain.c:
 	.text       start:0x80368C58 end:0x80394124
 

@@ -25,6 +25,6 @@
     #define	null 0
 
     #define RELEASE(x) { delete x; x = null; }
-    #define RELEASEARRAY(x)	{ delete[] (ubyte*)x;	x = null; }
+    #define RELEASEARRAY(x)	{ delete[] (u8*)x;	x = null; }
 
 #endif

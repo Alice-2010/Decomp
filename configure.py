@@ -156,6 +156,7 @@ config.config_path = Path("config") / config.version / "config.yml"
 config.check_sha_path = Path("config") / config.version / "build.sha1"
 config.asflags = [
     "-mgekko",
+    "-proc gekko",
     "--strip-local-absolute",
     "-I include",
     f"-I build/{config.version}/include",
@@ -164,6 +165,7 @@ config.asflags = [
 config.ldflags = [
     "-fp hardware",
     "-nodefaults",
+    "-proc gekko"
 ]
 if args.debug:
     config.ldflags.append("-gdwarf-2")  # Or -gdwarf-2 for Wii linkers
@@ -188,7 +190,7 @@ cflags_base = [
     "-fp hardware",
     "-Cpp_exceptions off",
     # "-W all",
-    "-O4,s",
+    "-opt level=4,schedule,speed,peep",
     "-inline auto",
     '-pragma "cats off"',
     '-pragma "warn_notinlined off"',
@@ -219,7 +221,7 @@ cflags_runtime = [
     "-inline auto",
 ]
 
-config.linker_version = "Wii/1.5"
+config.linker_version = "Wii/1.1"
 
 
 # Helper function for Dolphin libraries
@@ -247,51 +249,42 @@ def MatchingFor(*versions):
 config.warn_missing_config = True
 config.warn_missing_source = False
 config.libs = [
-    {
-        "lib": "PowerPC_EABI_Support/Runtime",
-        "mw_version": config.linker_version,
-        "cflags": cflags_runtime,
-        "host": False,
-        "progress_category": "sdk",  # str | List[str]
-        "objects": [
+    DolphinLib(
+        lib_name="PowerPC_EABI_Support/Runtime",
+        objects=[
             Object(MatchingFor(), "PowerPC_EABI_Support/Runtime/__init_cpp_exceptions.cpp"),
             Object(MatchingFor(), "PowerPC_EABI_Support/Runtime/Gecko_ExceptionPPC.cpp"),
             Object(MatchingFor(), "PowerPC_EABI_Support/Runtime/global_destructor_chain.c")
-        ],
-    },
-    {
-        "lib": "PowerPC_EABI_Support/MSL",
-        "mw_version": config.linker_version,
-        "cflags": cflags_runtime,
-        "host": False,
-        "progress_category": "sdk",  # str | List[str]
-        "objects": [],
-    },
-    {
-        "lib": "PowerPC_EABI_Support/MetroTRK",
-        "mw_version": config.linker_version,
-        "cflags": cflags_runtime,
-        "host": False,
-        "progress_category": "sdk",  # str | List[str]
-        "objects": [],
-    },
-    {
-        "lib": "Revolution",
-        "mw_version": config.linker_version,
-        "cflags": cflags_runtime,
-        "host": False,
-        "progress_category": "sdk",  # str | List[str]
-        "objects": [
+        ]
+    ),
+    DolphinLib(
+        lib_name="PowerPC_EABI_Support/MSL",
+        objects=[]
+    ),
+    DolphinLib(
+        lib_name="PowerPC_EABI_Support/MetroTRK",
+        objects=[]
+    ),
+    DolphinLib(
+        lib_name="Revolution",
+        objects=[
             Object(MatchingFor(), "Revolution/OS/__start.c")
-        ],
-    },
+        ]
+    ),
     {
         "lib": "Alice",
         "mw_version": config.linker_version,
         "cflags": cflags_base,
         "host": False,
         "progress_category": "game",  # str | List[str]
-        "objects": []
+        "objects": [
+            # Interfaces - without class IDs
+            Object(MatchingFor(), "Alice/Interfaces/IKSerializable.cpp"),
+            Object(MatchingFor(), "Alice/Interfaces/IKGameObject.cpp"),
+            # Classes
+            Object(MatchingFor(), "Alice/Objects/Logic/CKGameSpawnPoint.cpp"),
+            Object(MatchingFor(), "Alice/Objects/Logic/CKAliceGameSpawnPoint.cpp")
+        ],
     }
 ]
 
