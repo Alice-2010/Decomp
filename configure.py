@@ -145,9 +145,9 @@ if not config.non_matching:
 # Tool versions
 config.binutils_tag = "2.42-1"
 config.compilers_tag = "20240706"
-config.dtk_tag = "v1.1.2"
-config.objdiff_tag = "v2.3.2"
-config.sjiswrap_tag = "v1.1.1"
+config.dtk_tag = "v1.3.0"
+config.objdiff_tag = "v2.4.0"
+config.sjiswrap_tag = "v1.2.0"
 config.wibo_tag = "0.6.11"
 
 
@@ -173,6 +173,10 @@ if args.map:
 
 # Use for any additional files that should cause a re-configure when modified
 config.reconfig_deps = []
+
+# Optional numeric ID for decomp.me preset
+# Can be overridden in libraries or objects
+config.scratch_preset_id = None
 
 # Base flags, common to most GC/Wii games.
 # Generally leave untouched, with overrides added below.
@@ -287,20 +291,7 @@ config.libs = [
         "cflags": cflags_base,
         "host": False,
         "progress_category": "game",  # str | List[str]
-        "objects": [
-            Object(MatchingFor(), "Alice/Objects/Managers/CKSoundManager.cpp"),
-            Object(MatchingFor(), "Alice/Objects/Services/CKSrvTrigger.cpp"),
-            Object(MatchingFor(), "Alice/Objects/Hooks/CKHkAliceHero.cpp"),
-            Object(MatchingFor(), "Alice/Objects/Groups/CKGrpAliceHero.cpp"),
-            Object(MatchingFor(), "Alice/Objects/Components/CKAliceHeroConfig.cpp"),
-            Object(MatchingFor(), "Alice/Objects/Camera/CKCameraFixTrack.cpp"),
-            Object(MatchingFor(), "Alice/Objects/Cinematics/CKStartDoor.cpp"),
-            Object(MatchingFor(), "Alice/Objects/Dictionaries/CKSoundDictionary.cpp"),
-            Object(MatchingFor(), "Alice/Objects/Geometries/CSkinGeometry.cpp"),
-            Object(MatchingFor(), "Alice/Objects/Nodes/CSpawnNode.cpp"),
-            Object(MatchingFor(), "Alice/Objects/Logic/CKAliceGameSpawnPoint.cpp"),
-            Object(MatchingFor(), "Alice/Objects/Graphics/CLightManager.cpp")
-        ],
+        "objects": []
     }
 ]
 

@@ -16,42 +16,6 @@ Sections:
 Revolution/OS/__start.c:
 	.init       start:0x80004000 end:0x80006618
 
-Alice/Objects/Groups/CKGrpAliceHero.cpp:
-	.text       start:0x8000DBF0 end:0x8000E264
-
-Alice/Objects/Hooks/CKHkAliceHero.cpp:
-	.text       start:0x8001D894 end:0x8001E9E8
-
-Alice/Objects/Components/CKAliceHeroConfig.cpp:
-	.text       start:0x800539D4 end:0x80055528
-
-Alice/Objects/Logic/CKAliceGameSpawnPoint.cpp:
-	.text       start:0x800EEFBC end:0x800EF814
-
-Alice/Objects/Geometries/CSkinGeometry.cpp:
-	.text       start:0x801DB1A8 end:0x801DB6D8
-
-Alice/Objects/Graphics/CLightManager.cpp:
-	.text       start:0x801E3D88 end:0x801E76B4
-
-Alice/Objects/Nodes/CSpawnNode.cpp:
-	.text       start:0x80211C1C end:0x80212060
-
-Alice/Objects/Services/CKSrvTrigger.cpp:
-	.text       start:0x8022CE90 end:0x8022D744
-
-Alice/Objects/Camera/CKCameraFixTrack.cpp:
-	.text       start:0x80238574 end:0x802388B4
-
-Alice/Objects/Cinematics/CKStartDoor.cpp:
-	.text       start:0x80266000 end:0x802662AC
-
-Alice/Objects/Dictionaries/CKSoundDictionary.cpp:
-	.text       start:0x802B9360 end:0x802B9A70
-
-Alice/Objects/Managers/CKSoundManager.cpp:
-	.text       start:0x802BA0DC end:0x802BAEA0
-
 PowerPC_EABI_Support/Runtime/global_destructor_chain.c:
 	.text       start:0x80368C58 end:0x80394124
 

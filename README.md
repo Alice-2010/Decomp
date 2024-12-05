@@ -108,5 +108,6 @@ Select an object from the left sidebar to begin diffing. Changes to the project 
 
 ## References
 - [Decomp Toolkit](https://github.com/encounter/dtk-template) (repo template)
+    - [Latest commit used in this Decomp](https://github.com/encounter/dtk-template/commit/54bf50ee31ef7242c74f398529279c62394c68c6#diff-4d5f3192809ec1b9add6b33007e0c50031ad9a0a2f3f55a481b506468824db2cR148)
 - [Dolphin 2001 SDK](https://github.com/doldecomp/dolsdk2001)
     - Alice uses Revolution SDK of a currently unknown version or release, however, dolsdk can be used as a basis
