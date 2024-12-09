@@ -156,6 +156,7 @@ config.config_path = Path("config") / config.version / "config.yml"
 config.check_sha_path = Path("config") / config.version / "build.sha1"
 config.asflags = [
     "-mgekko",
+    "-proc gekko",
     "--strip-local-absolute",
     "-I include",
     f"-I build/{config.version}/include",
@@ -164,6 +165,7 @@ config.asflags = [
 config.ldflags = [
     "-fp hardware",
     "-nodefaults",
+    "-proc gekko"
 ]
 if args.debug:
     config.ldflags.append("-gdwarf-2")  # Or -gdwarf-2 for Wii linkers
@@ -220,7 +222,7 @@ cflags_runtime = [
     "-inline auto",
 ]
 
-config.linker_version = "Wii/1.5"
+config.linker_version = "Wii/1.1"
 
 
 # Helper function for Dolphin libraries
@@ -276,7 +278,11 @@ config.libs = [
         "cflags": cflags_base,
         "host": False,
         "progress_category": "game",  # str | List[str]
-        "objects": []
+        "objects": [
+            # Interfaces - without class IDs
+            # Classes
+            Object(MatchingFor(), "Alice/Objects/Logic/CKAliceGameSpawnPoint.cpp")
+        ],
     }
 ]
 
