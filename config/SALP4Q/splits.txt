@@ -24,7 +24,8 @@ PowerPC_EABI_Support/Runtime/__init_cpp_exceptions.cpp:
 	.ctors      start:0x804D3540 end:0x804D3544 rename:.ctors$10
 	.dtors      start:0x804D41E0 end:0x804D41E4 rename:.dtors$10
 	.dtors      start:0x804D41E4 end:0x804D41E8 rename:.dtors$15
-	.sdata      start:0x805F3828 end:0x805F3830
+	.sdata      start:0x805F3828 end:0x805F382C
 
 PowerPC_EABI_Support/Runtime/Gecko_ExceptionPPC.cpp:
 	.text       start:0x80395374 end:0x80395480
+	.bss        start:0x805A1B48 end:0x805A1CC8
