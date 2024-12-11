@@ -75,5 +75,7 @@ if __name__ == "__main__":
             "entries": entries,
         },
     )
+    if not str(r.status_code).startswith("2"):
+        print(r.text)
     r.raise_for_status()
     print("Done!")
