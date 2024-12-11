@@ -1,9 +1,5 @@
 #include "Alice/Objects/Logic/CKAliceGameSpawnPoint.h"
 
-extern void fn_8000E10C(s32*);
-extern u32 fn_800B7A38();
-extern void fn_800EF574(u32);
-
 extern void fn_8039462C(s32, void*, void*, s32, s32);
 extern void fn_80010130(s32);
 extern void fn_800B6BD4();
@@ -11,8 +7,10 @@ extern void fn_8000FD70();
 extern void fn_8000F2DC();
 
 extern void fn_800B7248(s32);
-extern void fn_800101C8(s32);
-extern void fn_800EF0C8(s32);
+
+extern void fn_8000E10C(s32*);
+extern u32 fn_800B7A38();
+extern void fn_800EF574(u32);
 
 CKAliceGameSpawnPoint::CKAliceGameSpawnPoint() : CKGameSpawnPoint::CKGameSpawnPoint()
 {
@@ -21,11 +19,11 @@ CKAliceGameSpawnPoint::CKAliceGameSpawnPoint() : CKGameSpawnPoint::CKGameSpawnPo
     fn_80010130((s32)this + 0xC4);
 };
 
-CKGameSpawnPoint::CKGameSpawnPoint()
+BOOL CKAliceGameSpawnPoint::isSubclass(u32 classID)
 {
-    fn_800B7248((s32)this + 0x20);
-    fn_800101C8((s32)this + 0x2C);
-    fn_800EF0C8((s32)this + 0x34);
+    if (classID == 30988)
+        return TRUE;
+    return CKGameSpawnPoint::isSubclass(classID);
 };
 
 s32 CKAliceGameSpawnPoint::getClassGroup()

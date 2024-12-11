@@ -281,7 +281,8 @@ config.libs = [
         "objects": [
             # Interfaces - without class IDs
             # Classes
-            Object(MatchingFor(), "Alice/Objects/Logic/CKAliceGameSpawnPoint.cpp")
+            Object(MatchingFor(), "Alice/Objects/Logic/CKAliceGameSpawnPoint.cpp"),
+            Object(MatchingFor(), "Alice/Objects/Logic/CKGameSpawnPoint.cpp")
         ],
     }
 ]

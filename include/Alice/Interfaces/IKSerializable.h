@@ -4,5 +4,6 @@
 struct IKSerializable : IKBaseClass
 {
     IKSerializable();
+    virtual s32 serialize();
     virtual s32 deserialize(void);
 };

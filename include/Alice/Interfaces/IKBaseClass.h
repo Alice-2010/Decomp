@@ -3,4 +3,5 @@
 struct IKBaseClass
 {
     IKBaseClass();
+    virtual inline BOOL isSubclass(u32);
 };
