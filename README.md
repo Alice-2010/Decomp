@@ -1,5 +1,5 @@
 Alice in Wonderland (2010)  
-[![Build Status]][actions] ![SALP4Q] ![SALE4Q] [![Discord Badge]][discord]
+[![Build Status]][actions] ![SALP4Q_C] ![SALP4Q_D] ![SALE4Q_C] ![SALE4Q_D] [![Discord Badge]][discord]
 =============
 
 <!--
@@ -12,8 +12,10 @@ DOL progress URL:
 https://progress.decomp.club/data/[project]/[version]/dol/?mode=shield&measure=code
 URL encoded then appended to: https://img.shields.io/endpoint?label=DOL&url=
 -->
-[SALP4Q]: https://img.shields.io/endpoint?label=SALP4Q&url=https%3A%2F%2Fprogress.decomp.club%2Fdata%2Faliceinwonderland%2FSALP4Q%2Fdol%2F%3Fmode%3Dshield%26measure%3Dcode
-[SALE4Q]: https://img.shields.io/endpoint?label=SALE4Q&url=https%3A%2F%2Fprogress.decomp.club%2Fdata%2Faliceinwonderland%2FSALE4Q%2Fdol%2F%3Fmode%3Dshield%26measure%3Dcode
+[SALP4Q_C]: https://img.shields.io/endpoint?label=SALP4Q%20Code&url=https%3A%2F%2Fprogress.decomp.club%2Fdata%2Faliceinwonderland%2FSALP4Q%2Fall%2F%3Fmode%3Dshield%26measure%3Dcode
+[SALE4Q_C]: https://img.shields.io/endpoint?label=SALE4Q%20Code&url=https%3A%2F%2Fprogress.decomp.club%2Fdata%2Faliceinwonderland%2FSALE4Q%2Fall%2F%3Fmode%3Dshield%26measure%3Dcode
+[SALP4Q_D]: https://img.shields.io/endpoint?label=SALP4Q%20Data&url=https%3A%2F%2Fprogress.decomp.club%2Fdata%2Faliceinwonderland%2FSALP4Q%2Fall%2F%3Fmode%3Dshield%26measure%3Ddata
+[SALE4Q_D]: https://img.shields.io/endpoint?label=SALE4Q%20Data&url=https%3A%2F%2Fprogress.decomp.club%2Fdata%2Faliceinwonderland%2FSALE4Q%2Fall%2F%3Fmode%3Dshield%26measure%3Ddata
 <!--
 Replace with your Discord server's ID and invite URL.
 -->
