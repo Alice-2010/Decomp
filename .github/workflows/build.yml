@@ -39,17 +39,18 @@ jobs:
             build/${{ matrix.version }}/report.json
 
     # Upload progress if we're on the master branch
-    - name: Upload progress
-      if: github.ref == 'refs/heads/master'
-      continue-on-error: true
-      env:
-        # Replace with your project slug
-        PROGRESS_SLUG: aliceinwonderland
-        PROGRESS_API_KEY: ${{ secrets.PROGRESS_API_KEY }}
-      run: |
-        python tools/upload_progress.py -b https://progress.decomp.club/ \
-          -p $PROGRESS_SLUG -v ${{ matrix.version }} \
-          build/${{ matrix.version }}/progress.json
+    # NOTE: Using https://decomp.dev/Alice-2010/Decomp now - this pulls maps and progress report from this repo
+    # - name: Upload progress
+    #   if: github.ref == 'refs/heads/master' && false
+    #   continue-on-error: true
+    #   env:
+    #     # Replace with your project slug
+    #     PROGRESS_SLUG: aliceinwonderland
+    #     PROGRESS_API_KEY: ${{ secrets.PROGRESS_API_KEY }}
+    #   run: |
+    #     python tools/upload_progress.py -b https://progress.decomp.club/ \
+    #       -p $PROGRESS_SLUG -v ${{ matrix.version }} \
+    #       build/${{ matrix.version }}/progress.json
 
     # Upload map files
     - name: Upload map

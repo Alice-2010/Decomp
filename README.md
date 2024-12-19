@@ -11,11 +11,12 @@ Replace with your repository's URL.
 DOL progress URL:
 https://progress.decomp.club/data/[project]/[version]/dol/?mode=shield&measure=code
 URL encoded then appended to: https://img.shields.io/endpoint?label=DOL&url=
+https://decomp.dev/Alice-2010/Decomp.svg?mode=shield&measure=code&label=SALE4Q%20Code&category=SALE4Q
 -->
-[SALP4Q_C]: https://img.shields.io/endpoint?label=SALP4Q%20Code&url=https%3A%2F%2Fprogress.decomp.club%2Fdata%2Faliceinwonderland%2FSALP4Q%2Fall%2F%3Fmode%3Dshield%26measure%3Dcode
-[SALE4Q_C]: https://img.shields.io/endpoint?label=SALE4Q%20Code&url=https%3A%2F%2Fprogress.decomp.club%2Fdata%2Faliceinwonderland%2FSALE4Q%2Fall%2F%3Fmode%3Dshield%26measure%3Dcode
-[SALP4Q_D]: https://img.shields.io/endpoint?label=SALP4Q%20Data&url=https%3A%2F%2Fprogress.decomp.club%2Fdata%2Faliceinwonderland%2FSALP4Q%2Fall%2F%3Fmode%3Dshield%26measure%3Ddata
-[SALE4Q_D]: https://img.shields.io/endpoint?label=SALE4Q%20Data&url=https%3A%2F%2Fprogress.decomp.club%2Fdata%2Faliceinwonderland%2FSALE4Q%2Fall%2F%3Fmode%3Dshield%26measure%3Ddata
+[SALP4Q_C]: https://decomp.dev/Alice-2010/Decomp.svg?mode=shield&measure=code&label=SALP4Q%20Code&category=SALP4Q
+[SALE4Q_C]: https://decomp.dev/Alice-2010/Decomp.svg?mode=shield&measure=code&label=SALE4Q%20Code&category=SALE4Q
+[SALP4Q_D]: https://decomp.dev/Alice-2010/Decomp.svg?mode=shield&measure=data&label=SALP4Q%20Data&category=SALP4Q
+[SALE4Q_D]: https://decomp.dev/Alice-2010/Decomp.svg?mode=shield&measure=data&label=SALE4Q%20Data&category=SALE4Q
 <!--
 Replace with your Discord server's ID and invite URL.
 -->
@@ -30,6 +31,8 @@ Supported versions:
 
 - `SALE4Q`: NTSC (USA)
 - `SALP4Q`: PAL (Europe)
+
+Progress can be viewed on [decomp.dev](https://decomp.dev/Alice-2010/Decomp)
 
 Dependencies
 ============
