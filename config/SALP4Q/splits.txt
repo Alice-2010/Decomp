@@ -34,7 +34,8 @@ Libraries/zlib/zutil.c:
 	.rodata     start:0x804E2A58 end:0x804E2B00
 
 PowerPC_EABI_Support/Runtime/global_destructor_chain.c:
-	.text       start:0x80368C58 end:0x80394124
+	.text       start:0x803940C4 end:0x80394124
+	.sbss       start:0x805F5E18 end:0x805F5E1C
 
 PowerPC_EABI_Support/Runtime/__init_cpp_exceptions.cpp:
 	.text       start:0x80395304 end:0x80395374

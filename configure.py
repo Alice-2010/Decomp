@@ -255,7 +255,7 @@ config.libs = [
         objects=[
             Object(Matching, "PowerPC_EABI_Support/Runtime/__init_cpp_exceptions.cpp"),
             Object(Matching, "PowerPC_EABI_Support/Runtime/Gecko_ExceptionPPC.cpp"),
-            Object(MatchingFor(), "PowerPC_EABI_Support/Runtime/global_destructor_chain.c")
+            Object(Matching, "PowerPC_EABI_Support/Runtime/global_destructor_chain.c")
         ]
     ),
     DolphinLib(
