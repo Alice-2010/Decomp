@@ -26,6 +26,9 @@ Libraries/zlib/inftrees.c:
 Libraries/zlib/zutil.c:
 	.rodata     start:0x804E2A58 end:0x804E2B00
 
+Alice/Objects/Hooks/CKHkAliceHero.cpp:
+	.text       start:0x8000E2AC end:0x80018CA4
+
 PowerPC_EABI_Support/Runtime/global_destructor_chain.c:
 	.text       start:0x80368C58 end:0x80394124
 

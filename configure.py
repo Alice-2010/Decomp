@@ -222,7 +222,7 @@ cflags_runtime = [
     "-inline auto",
 ]
 
-config.linker_version = "Wii/1.5"
+config.linker_version = "Wii/1.0"
 
 
 # Helper function for Dolphin libraries
@@ -248,7 +248,7 @@ def MatchingFor(*versions):
 
 
 config.warn_missing_config = True
-config.warn_missing_source = False
+config.warn_missing_source = True
 config.libs = [
     DolphinLib(
         lib_name="PowerPC_EABI_Support/Runtime",
@@ -290,7 +290,12 @@ config.libs = [
         "cflags": cflags_base,
         "host": False,
         "progress_category": "game",  # str | List[str]
-        "objects": []
+        "objects": [
+            # Interfaces
+            Object(MatchingFor(), "Alice/Interfaces/IKBaseClass.cpp"),
+            # Hooks
+            Object(MatchingFor(), "Alice/Objects/Hooks/CKHkAliceHero.cpp")
+        ]
     }
 ]
 
@@ -316,7 +321,7 @@ def link_order_callback(module_id: int, objects: List[str]) -> List[str]:
 config.progress_categories = [
     ProgressCategory("game", "Game Code"),
     ProgressCategory("sdk", "SDK Code"),
-    ProgressCategory("lib", "Libraries"),
+    ProgressCategory("lib", "Libraries")
 ]
 config.progress_each_module = args.verbose
 
