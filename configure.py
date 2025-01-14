@@ -291,8 +291,6 @@ config.libs = [
         "host": False,
         "progress_category": "game",  # str | List[str]
         "objects": [
-            # Interfaces
-            Object(MatchingFor(), "Alice/Interfaces/IKBaseClass.cpp"),
             # Hooks
             Object(MatchingFor(), "Alice/Objects/Hooks/CKHkAliceHero.cpp")
         ]
