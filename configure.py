@@ -204,6 +204,7 @@ cflags_base = [
     f"-i build/{config.version}/include",
     f"-DBUILD_VERSION={version_num}",
     f"-DVERSION_{config.version}",
+    f"-DNO_ERRNO_H"
 ]
 
 # Debug flags
@@ -270,6 +271,14 @@ config.libs = [
         lib_name="Revolution",
         objects=[
             Object(MatchingFor(), "Revolution/OS/__start.c")
+        ]
+    ),
+    DolphinLib(
+        lib_name="libs/zlib",
+        objects=[
+            Object(MatchingFor(), "Libraries/zlib/inffast.c"),
+            Object(MatchingFor(), "Libraries/zlib/inftrees.c"),
+            Object(MatchingFor(), "Libraries/zlib/zutil.c"),
         ]
     ),
     {

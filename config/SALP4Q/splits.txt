@@ -29,3 +29,12 @@ PowerPC_EABI_Support/Runtime/__init_cpp_exceptions.cpp:
 PowerPC_EABI_Support/Runtime/Gecko_ExceptionPPC.cpp:
 	.text       start:0x80395374 end:0x80395480
 	.bss        start:0x805A1B48 end:0x805A1CC8
+
+Libraries/zlib/inffast.c:
+	.rodata     start:0x804E1D40 end:0x804E1EF0
+
+Libraries/zlib/inftrees.c:
+	.rodata     start:0x804E1EF0 end:0x804E1F20
+
+Libraries/zlib/zutil.c:
+	.rodata     start:0x804E2A58 end:0x804E2AD8
