@@ -16,6 +16,16 @@ Sections:
 Revolution/OS/__start.c:
 	.init       start:0x80004000 end:0x80006618
 
+Libraries/zlib/inffast.c:
+	.rodata     start:0x804E1448 end:0x804E1498
+
+Libraries/zlib/inftrees.c:
+	.text       start:0x8035E6F4 end:0x8035EE70
+	.rodata     start:0x804E1EF0 end:0x804E2020
+
+Libraries/zlib/zutil.c:
+	.rodata     start:0x804E2A58 end:0x804E2B00
+
 PowerPC_EABI_Support/Runtime/global_destructor_chain.c:
 	.text       start:0x80368C58 end:0x80394124
 
@@ -29,12 +39,3 @@ PowerPC_EABI_Support/Runtime/__init_cpp_exceptions.cpp:
 PowerPC_EABI_Support/Runtime/Gecko_ExceptionPPC.cpp:
 	.text       start:0x80395374 end:0x80395480
 	.bss        start:0x805A1B48 end:0x805A1CC8
-
-Libraries/zlib/inffast.c:
-	.rodata     start:0x804E1D40 end:0x804E1EF0
-
-Libraries/zlib/inftrees.c:
-	.rodata     start:0x804E1EF0 end:0x804E1F20
-
-Libraries/zlib/zutil.c:
-	.rodata     start:0x804E2A58 end:0x804E2AD8

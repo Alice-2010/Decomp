@@ -10,13 +10,13 @@
 #ifndef ZUTIL_H
 #define ZUTIL_H
 #define ZLIB_INTERNAL
-#include "zlib.h"
+#include "Libraries/zlib/zlib.h"
 #ifdef STDC
 #  ifndef _WIN32_WCE
-#    include <stddef.h>
+#    include "PowerPC_EABI_Support/MSL/MSL_C/stddef.h"
 #  endif
-#  include <string.h>
-#  include <stdlib.h>
+#  include "PowerPC_EABI_Support/MSL/MSL_C/string.h"
+#  include "PowerPC_EABI_Support/MSL/MSL_C/stdlib.h"
 #endif
 #ifdef NO_ERRNO_H
 #   ifdef _WIN32_WCE
@@ -30,7 +30,7 @@
     extern int errno;
 #else
 #  ifndef _WIN32_WCE
-#    include <errno.h>
+#    include "PowerPC_EABI_Support/MSL/MSL_C/errno.h"
 #  endif
 #endif
 #ifndef local
@@ -76,7 +76,7 @@ extern const char * const z_errmsg[10]; /* indexed by 2-zlib_error */
        void _Cdecl farfree( void *block );
        void *_Cdecl farmalloc( unsigned long nbytes );
 #    else
-#      include <alloc.h>
+#      include "PowerPC_EABI_Support/MSL/MSL_C/MSL_Common/alloc.h"
 #    endif
 #  else /* MSC or DJGPP */
 #    include <malloc.h>
@@ -204,7 +204,7 @@ extern const char * const z_errmsg[10]; /* indexed by 2-zlib_error */
 #endif
 /* Diagnostic functions */
 #ifdef DEBUG
-#  include <stdio.h>
+#  include "PowerPC_EABI_Support/MSL/MSL_C/stdio.h"
    extern int z_verbose;
    extern void z_error    OF((char *m));
 #  define Assert(cond,msg) {if(!(cond)) z_error(msg);}

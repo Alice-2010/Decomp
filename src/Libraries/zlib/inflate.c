@@ -78,10 +78,10 @@
  *
  * The history for versions after 1.2.0 are in ChangeLog in zlib distribution.
  */
-#include "zutil.h"
-#include "inftrees.h"
-#include "inflate.h"
-#include "inffast.h"
+#include "Libraries/zlib/zutil.h"
+#include "Libraries/zlib/inftrees.h"
+#include "Libraries/zlib/inflate.h"
+#include "Libraries/zlib/inffast.h"
 #ifdef MAKEFIXED
 #  ifndef BUILDFIXED
 #    define BUILDFIXED
@@ -221,7 +221,7 @@ struct inflate_state FAR *state;
         virgin = 0;
     }
 #else /* !BUILDFIXED */
-#   include "inffixed.h"
+    #include "Libraries/zlib/inffixed.h"
 #endif /* BUILDFIXED */
     state->lencode = lenfix;
     state->lenbits = 9;
@@ -229,7 +229,7 @@ struct inflate_state FAR *state;
     state->distbits = 5;
 }
 #ifdef MAKEFIXED
-#include <stdio.h>
+    #include "PowerPC_EABI_Support/MSL/MSL_C/stdio.h"
 /*
    Write out the inffixed.h that is #include'd above.  Defining MAKEFIXED also
    defines BUILDFIXED, so the tables are built on the fly.  makefixed() writes

@@ -2,10 +2,10 @@
  * Copyright (C) 1995-2004 Mark Adler
  * For conditions of distribution and use, see copyright notice in zlib.h
  */
-#include "zutil.h"
-#include "inftrees.h"
-#include "inflate.h"
-#include "inffast.h"
+#include "Libraries/zlib/zutil.h"
+#include "Libraries/zlib/inftrees.h"
+#include "Libraries/zlib/inflate.h"
+#include "Libraries/zlib/inffast.h"
 #ifndef ASMINF
 /* Allow machine dependent optimization for post-increment or pre-increment.
    Based on testing to date,
