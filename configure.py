@@ -200,10 +200,10 @@ cflags_base = [
     "-fp_contract on",
     "-str reuse",
     "-enc SJIS",
-    "-i include",
+    "-i src",
     f"-i build/{config.version}/include",
     f"-DBUILD_VERSION={version_num}",
-    f"-DVERSION_{config.version}",
+    f"-DVERSION_{config.version}"
 ]
 
 # Debug flags
@@ -273,6 +273,18 @@ config.libs = [
         ]
     ),
     {
+        "lib": "libs/zlib",
+        "mw_version": config.linker_version,
+        "cflags": cflags_base,
+        "host": False,
+        "progress_category": "lib",
+        "objects": [
+            Object(MatchingFor(), "Libraries/zlib/inffast.c"),
+            Object(MatchingFor(), "Libraries/zlib/inftrees.c"),
+            Object(MatchingFor(), "Libraries/zlib/zutil.c"),
+        ]
+    },
+    {
         "lib": "Alice",
         "mw_version": config.linker_version,
         "cflags": cflags_base,
@@ -304,6 +316,7 @@ def link_order_callback(module_id: int, objects: List[str]) -> List[str]:
 config.progress_categories = [
     ProgressCategory("game", "Game Code"),
     ProgressCategory("sdk", "SDK Code"),
+    ProgressCategory("lib", "Libraries"),
 ]
 config.progress_each_module = args.verbose
 

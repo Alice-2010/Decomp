@@ -16,6 +16,16 @@ Sections:
 Revolution/OS/__start.c:
 	.init       start:0x80004000 end:0x80006618
 
+Libraries/zlib/inffast.c:
+	.rodata     start:0x804E1448 end:0x804E1498
+
+Libraries/zlib/inftrees.c:
+	.text       start:0x8035E6F4 end:0x8035EE70
+	.rodata     start:0x804E1EF0 end:0x804E2020
+
+Libraries/zlib/zutil.c:
+	.rodata     start:0x804E2A58 end:0x804E2B00
+
 PowerPC_EABI_Support/Runtime/global_destructor_chain.c:
 	.text       start:0x80368C58 end:0x80394124
 
