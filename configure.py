@@ -196,11 +196,12 @@ cflags_base = [
     '-pragma "warn_notinlined off"',
     "-maxerrors 1",
     "-nosyspath",
-    "-RTTI off",
+    "-RTTI on",
     "-fp_contract on",
     "-str reuse",
     "-enc SJIS",
     "-i src",
+    "-wchar_t on",
     f"-i build/{config.version}/include",
     f"-DBUILD_VERSION={version_num}",
     f"-DVERSION_{config.version}"
@@ -291,6 +292,8 @@ config.libs = [
         "host": False,
         "progress_category": "game",  # str | List[str]
         "objects": [
+            # Engine
+            Object(MatchingFor(), "Engine/Classes/CMaterial.cpp"),
             # 2- Hooks
             Object(MatchingFor(), "Game/Objects/Hooks/CKHkAliceHero.cpp"),
             # 4 - Groups

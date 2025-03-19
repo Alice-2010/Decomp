@@ -12,3 +12,4 @@ orig/*/**/*.dol
 /*.txt
 ctx.c
 !requirements*.txt
+*$py.class

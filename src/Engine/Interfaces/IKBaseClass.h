@@ -15,5 +15,8 @@
             virtual s32 getClassID() = 0; // nullptr
             virtual s32 sendEvent() { return 1; };
             virtual s32 unk2() { return 0; };
+
+        private:
+            void* __vtable;
     };
 #endif

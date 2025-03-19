@@ -20,6 +20,11 @@
             // getClassID() func in this vtable is for IKBaseClass
             // sendEvent() func in this vtable is for IKBaseClass
             // unk2() func in this vtable is for IKBaseClass
+            virtual s32 serialize() { return 1; };
+            virtual void deserialize() { return; };
+
+        private:
+            void* __vtable;
     };
 
 #endif
