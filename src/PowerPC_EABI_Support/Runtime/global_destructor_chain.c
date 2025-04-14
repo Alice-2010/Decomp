@@ -1,30 +1,20 @@
-#include "types.h"
 #include "PowerPC_EABI_Support/Runtime/global_destructor_chain.h"
 
-typedef void (*DtorFunction)(void* obj, s16 method);
+DtorLink* __global_destructor_chain;
 
-typedef struct DtorLink {
-    struct DtorLink* next; // at 0x0
-    DtorFunction dtor;     // at 0x4
-    void* object;          // at 0x8
-} DtorLink;
-
-DtorLink* __global_destructor_chain = NULL;
-
-void __register_global_object(void* object, DtorFunction dtor, DtorLink* link) {
+void* __register_global_object(void* object, DtorFunction dtor, DtorLink* link) {
     link->next = __global_destructor_chain;
     link->dtor = dtor;
     link->object = object;
     __global_destructor_chain = link;
+    return object;
 }
 
 void __destroy_global_chain(void) {
     DtorLink* link;
 
     while (link = __global_destructor_chain) {
-        // Pop destructor
         __global_destructor_chain = link->next;
-        // Destroy object (-1 to destroy all bases)
         link->dtor(link->object, -1);
     }
 }

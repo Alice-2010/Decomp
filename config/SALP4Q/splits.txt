@@ -14,7 +14,10 @@ Sections:
 	.sbss2      type:bss align:32
 
 Revolution/OS/__start.c:
-	.init       start:0x80004000 end:0x80006618
+	.init       start:0x80004000 end:0x80004364
+
+PowerPC_EABI_Support/Runtime/__mem.c:
+	.init       start:0x80004364 end:0x800046E4
 
 Libraries/zlib/inffast.c:
 	.rodata     start:0x804E1448 end:0x804E1498
@@ -33,8 +36,12 @@ Libraries/zlib/inftrees.c:
 Libraries/zlib/zutil.c:
 	.rodata     start:0x804E2A58 end:0x804E2B00
 
+PowerPC_EABI_Support/Runtime/__va_arg.c:
+	.text       start:0x80393FFC end:0x803940C4
+
 PowerPC_EABI_Support/Runtime/global_destructor_chain.c:
-	.text       start:0x80368C58 end:0x80394124
+	.text       start:0x803940C4 end:0x80394124
+	.sbss       start:0x805F5E18 end:0x805F5E1C
 
 PowerPC_EABI_Support/Runtime/__init_cpp_exceptions.cpp:
 	.text       start:0x80395304 end:0x80395374

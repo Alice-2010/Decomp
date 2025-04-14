@@ -250,28 +250,58 @@ def MatchingFor(*versions):
 config.warn_missing_config = True
 config.warn_missing_source = True
 config.libs = [
-    DolphinLib(
-        lib_name="PowerPC_EABI_Support/Runtime",
-        objects=[
+    {
+        "lib": "PowerPC_EABI_Support/Runtime",
+        "mw_version": config.linker_version,
+        "cflags": [
+            *cflags_base,
+            "-lang=c99"
+        ],
+        "host": False,
+        "progress_category": "sdk",
+        "objects": [
             Object(Matching, "PowerPC_EABI_Support/Runtime/__init_cpp_exceptions.cpp"),
             Object(Matching, "PowerPC_EABI_Support/Runtime/Gecko_ExceptionPPC.cpp"),
-            Object(MatchingFor(), "PowerPC_EABI_Support/Runtime/global_destructor_chain.c")
+            Object(Matching, "PowerPC_EABI_Support/Runtime/global_destructor_chain.c"),
+            Object(Matching, "PowerPC_EABI_Support/Runtime/__mem.c"),
+            Object(Matching, "PowerPC_EABI_Support/Runtime/__va_arg.c")
         ]
-    ),
-    DolphinLib(
-        lib_name="PowerPC_EABI_Support/MSL",
-        objects=[]
-    ),
-    DolphinLib(
-        lib_name="PowerPC_EABI_Support/MetroTRK",
-        objects=[]
-    ),
-    DolphinLib(
-        lib_name="Revolution",
-        objects=[
+    },
+    {
+        "lib": "PowerPC_EABI_Support/MSL",
+        "mw_version": config.linker_version,
+        "cflags": [
+            *cflags_base,
+            "-lang=c99"
+        ],
+        "host": False,
+        "progress_category": "sdk",
+        "objects": []
+    },
+    {
+        "lib": "PowerPC_EABI_Support/MetroTRK",
+        "mw_version": config.linker_version,
+        "cflags": [
+            *cflags_base,
+            "-lang=c99"
+        ],
+        "host": False,
+        "progress_category": "sdk",
+        "objects": []
+    },
+    {
+        "lib": "Revolution",
+        "mw_version": config.linker_version,
+        "cflags": [
+            *cflags_base,
+            "-lang=c99"
+        ],
+        "host": False,
+        "progress_category": "sdk",
+        "objects": [
             Object(MatchingFor(), "Revolution/OS/__start.c")
         ]
-    ),
+    },
     {
         "lib": "libs/zlib",
         "mw_version": config.linker_version,
