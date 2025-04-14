@@ -21,7 +21,7 @@
     } __va_list[1];
     typedef __va_list va_list;
 
-    void *__va_arg(va_list v_list, int type);
+    void *__va_arg(va_list v_list, s32 type);
 
     /* clang-format off */
     #define va_start(ap, fmt)   ((void)fmt, __builtin_va_info(&ap))

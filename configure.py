@@ -264,6 +264,7 @@ config.libs = [
             Object(Matching, "PowerPC_EABI_Support/Runtime/Gecko_ExceptionPPC.cpp"),
             Object(Matching, "PowerPC_EABI_Support/Runtime/global_destructor_chain.c"),
             Object(Matching, "PowerPC_EABI_Support/Runtime/__mem.c"),
+            Object(Matching, "PowerPC_EABI_Support/Runtime/__va_arg.c")
         ]
     },
     {
