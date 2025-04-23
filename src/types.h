@@ -2,6 +2,7 @@
     #define ALICE_TYPES_H
 
     #include "macros.h"
+    #include "PowerPC_EABI_Support/MSL/MSL_C/stddef.h"
 
     typedef int BOOL;
 
