@@ -1,5 +1,5 @@
 Alice in Wonderland (2010)  
-[![Build Status]][actions] ![SALP4Q_C] ![SALP4Q_D] ![SALE4Q_C] ![SALE4Q_D] [![Discord Badge]][discord]
+[![Build Status]][actions] [![Discord Badge]][discord] ![SALP4Q_C] ![SALP4Q_D] ![SALE4Q_C] ![SALE4Q_D]
 =============
 
 <!--
@@ -13,10 +13,10 @@ https://progress.decomp.club/data/[project]/[version]/dol/?mode=shield&measure=c
 URL encoded then appended to: https://img.shields.io/endpoint?label=DOL&url=
 https://decomp.dev/Alice-2010/Decomp.svg?mode=shield&measure=code&label=SALE4Q%20Code&category=SALE4Q
 -->
-[SALP4Q_C]: https://decomp.dev/Alice-2010/Decomp.svg?mode=shield&measure=code&label=SALP4Q%20Code&category=SALP4Q
-[SALE4Q_C]: https://decomp.dev/Alice-2010/Decomp.svg?mode=shield&measure=code&label=SALE4Q%20Code&category=SALE4Q
-[SALP4Q_D]: https://decomp.dev/Alice-2010/Decomp.svg?mode=shield&measure=data&label=SALP4Q%20Data&category=SALP4Q
-[SALE4Q_D]: https://decomp.dev/Alice-2010/Decomp.svg?mode=shield&measure=data&label=SALE4Q%20Data&category=SALE4Q
+[SALP4Q_C]: https://decomp.dev/Alice-2010/Decomp/SALP4Q.svg?mode=shield&measure=code&label=SALP4Q%20Code
+[SALE4Q_C]: https://decomp.dev/Alice-2010/Decomp/SALE4Q.svg?mode=shield&measure=code&label=SALE4Q%20Code
+[SALP4Q_D]: https://decomp.dev/Alice-2010/Decomp/SALP4Q.svg?mode=shield&measure=data&label=SALP4Q%20Data
+[SALE4Q_D]: https://decomp.dev/Alice-2010/Decomp/SALE4Q.svg?mode=shield&measure=data&label=SALE4Q%20Data
 <!--
 Replace with your Discord server's ID and invite URL.
 -->
