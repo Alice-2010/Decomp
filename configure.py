@@ -183,23 +183,26 @@ config.scratch_preset_id = None
 # Generally leave untouched, with overrides added below.
 cflags_base = [
     "-nodefaults",
+    "-nosyspath",
+    "-gccinc",
+
+    "-maxerrors 1",
+    "-nowraplines",
+
     "-proc gekko",
     "-align powerpc",
-    "-func_align 4",
     "-enum int",
     "-fp hardware",
-    "-Cpp_exceptions off",
-    # "-W all",
-    "-opt level=4,schedule,speed,peep",
-    "-inline all",
+
     '-pragma "cats off"',
+    '-pragma "warning off (10184)"',
     '-pragma "warn_notinlined off"',
-    "-maxerrors 1",
-    "-nosyspath",
-    "-RTTI off",
-    "-fp_contract on",
-    "-str reuse",
-    "-enc SJIS",
+    '-pragma "warn_filenamecaps on"',
+    '-pragma "warn_filenamecaps_system on"',
+
+    "-RTTI on",
+    "-Cpp_exceptions off",
+
     "-i src",
     f"-i build/{config.version}/include",
     f"-DBUILD_VERSION={version_num}",
@@ -212,29 +215,7 @@ if args.debug:
 else:
     cflags_base.append("-DNDEBUG=1")
 
-# Metrowerks library flags
-cflags_runtime = [
-    *cflags_base,
-    "-use_lmw_stmw on",
-    "-str reuse,pool,readonly",
-    "-gccinc",
-    "-common off",
-    "-inline auto",
-]
-
 config.linker_version = "Wii/1.0"
-
-
-# Helper function for Dolphin libraries
-def DolphinLib(lib_name: str, objects: List[Object]) -> Dict[str, Any]:
-    return {
-        "lib": lib_name,
-        "mw_version": config.linker_version,
-        "cflags": cflags_runtime,
-        "host": False,
-        "progress_category": "sdk",
-        "objects": objects,
-    }
 
 
 Matching = True                   # Object matches and should be linked
@@ -251,11 +232,14 @@ config.warn_missing_config = True
 config.warn_missing_source = True
 config.libs = [
     {
-        "lib": "PowerPC_EABI_Support/Runtime",
+        "lib": "PowerPC_EABI_Support",
         "mw_version": config.linker_version,
         "cflags": [
             *cflags_base,
-            "-lang=c99"
+            "-lang=c99",
+            "-O4,p",
+            "-inline auto",
+            "-func_align 4",
         ],
         "host": False,
         "progress_category": "sdk",
@@ -268,38 +252,19 @@ config.libs = [
         ]
     },
     {
-        "lib": "PowerPC_EABI_Support/MSL",
-        "mw_version": config.linker_version,
-        "cflags": [
-            *cflags_base,
-            "-lang=c99"
-        ],
-        "host": False,
-        "progress_category": "sdk",
-        "objects": []
-    },
-    {
-        "lib": "PowerPC_EABI_Support/MetroTRK",
-        "mw_version": config.linker_version,
-        "cflags": [
-            *cflags_base,
-            "-lang=c99"
-        ],
-        "host": False,
-        "progress_category": "sdk",
-        "objects": []
-    },
-    {
         "lib": "Revolution",
         "mw_version": config.linker_version,
         "cflags": [
             *cflags_base,
-            "-lang=c99"
+            "-func_align 16",
+            "-opt level=4,schedule,speed,peep",
+            "-lang=c99",
+            "-d NDEBUG"
         ],
         "host": False,
         "progress_category": "sdk",
         "objects": [
-            Object(MatchingFor(), "Revolution/OS/__start.c")
+            Object(Matching, "Revolution/OS/__start.c")
         ]
     },
     {
@@ -317,7 +282,13 @@ config.libs = [
     {
         "lib": "Alice",
         "mw_version": config.linker_version,
-        "cflags": cflags_base,
+        "cflags": [
+            *cflags_base,
+            "-func_align 4",
+            "-inline all",
+            "-fp_contract on",
+            "-opt level=4,schedule,speed,peep",
+        ],
         "host": False,
         "progress_category": "game",  # str | List[str]
         "objects": [

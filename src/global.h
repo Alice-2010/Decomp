@@ -18,9 +18,9 @@
     #define VERSION_PAL 1
 
     #if VERSION == VERSION_NTSC
-        #define VERSION_SELECT(NTSC, PAL) (NTSC)
+        #define VERSION_SELECT(NTSC, PAL)(NTSC)
     #elif VERSION == VERSION_PAL
-        #define VERSION_SELECT(NTSC, PAL) (PAL)
+        #define VERSION_SELECT(NTSC, PAL)(PAL)
     #endif
 
 #endif

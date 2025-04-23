@@ -14,7 +14,8 @@ Sections:
 	.sbss2      type:bss align:32
 
 Revolution/OS/__start.c:
-	.init       start:0x80004000 end:0x80004364
+	.init       start:0x80004000 end:0x800042F8
+	.sbss       start:0x805F59E0 end:0x805F59E8
 
 PowerPC_EABI_Support/Runtime/__mem.c:
 	.init       start:0x80004364 end:0x800046E4
