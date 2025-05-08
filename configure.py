@@ -202,6 +202,7 @@ cflags_base = [
 
     "-RTTI on",
     "-Cpp_exceptions off",
+    "-str readonly,noreuse",
 
     "-i src",
     f"-i build/{config.version}/include",
@@ -287,7 +288,7 @@ config.libs = [
             "-func_align 4",
             "-inline all",
             "-fp_contract on",
-            "-opt level=4,schedule,speed,peep",
+            "-opt level=4,schedule,speed,peep"
         ],
         "host": False,
         "progress_category": "game",  # str | List[str]

@@ -1,9 +1,10 @@
 #ifndef ENGINE_INTERFACES_IKHOOK_H
     #define ENGINE_INTERFACES_IKHOOK_H
 
+    #include "Engine/Classes/CSBaseNode.h"
     #include "Engine/Interfaces/IKLife.h"
 
-    class IKHook: public IKLife
+    class IKHook: public IKLife, public CSBaseNode<IKHook*>
     {
         public:
             IKHook(): IKLife::IKLife() {};

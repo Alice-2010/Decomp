@@ -20,15 +20,17 @@ Revolution/OS/__start.c:
 PowerPC_EABI_Support/Runtime/__mem.c:
 	.init       start:0x80004364 end:0x800046E4
 
-Libraries/zlib/inffast.c:
-	.rodata     start:0x804E1448 end:0x804E1498
-
 Game/Objects/Groups/CKGrpAliceHero.cpp:
 	.text       start:0x8000C1C0 end:0x8000CB1C
 
 Game/Objects/Hooks/CKHkAliceHero.cpp:
 	.text       start:0x8000E2AC end:0x80018CA4
+	.rodata     start:0x804D4200 end:0x804D42A8
 	.data       start:0x804E94B0 end:0x804E9AA0
+	.sdata      start:0x805F1480 end:0x805F14C8
+
+Libraries/zlib/inffast.c:
+	.rodata     start:0x804E1448 end:0x804E1498
 
 Libraries/zlib/inftrees.c:
 	.text       start:0x8035E6F4 end:0x8035EE70

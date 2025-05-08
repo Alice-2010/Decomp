@@ -11,8 +11,8 @@
             virtual BOOL isSubclass() { return FALSE; };
             virtual void reset() { return; };
             virtual void unk() { return; };
-            virtual s32 getClassGroup() = 0; // nullptr
-            virtual s32 getClassID() = 0; // nullptr
+            virtual s32 getClassGroup() = 0;
+            virtual s32 getClassID() = 0;
             virtual s32 sendEvent() { return 1; };
             virtual s32 unk2() { return 0; };
     };
