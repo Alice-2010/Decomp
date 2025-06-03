@@ -13,13 +13,6 @@ Sections:
 	.sdata2     type:rodata align:16
 	.sbss2      type:bss align:32
 
-Revolution/OS/__start.c:
-	.init       start:0x80004000 end:0x800042F8
-	.sbss       start:0x805F59E0 end:0x805F59E8
-
-PowerPC_EABI_Support/Runtime/__mem.c:
-	.init       start:0x80004364 end:0x800046E4
-
 Game/Objects/Groups/CKGrpAliceHero.cpp:
 	.text       start:0x8000C1C0 end:0x8000CB1C
 
@@ -42,6 +35,10 @@ Libraries/zlib/zutil.c:
 PowerPC_EABI_Support/Runtime/__va_arg.c:
 	.text       start:0x80393FFC end:0x803940C4
 
+Revolution/OS/__start.c:
+	.init       start:0x80004000 end:0x800042F8
+	.sbss       start:0x805F59E0 end:0x805F59E8
+
 PowerPC_EABI_Support/Runtime/global_destructor_chain.c:
 	.text       start:0x803940C4 end:0x80394124
 	.sbss       start:0x805F5E18 end:0x805F5E1C
@@ -56,3 +53,6 @@ PowerPC_EABI_Support/Runtime/__init_cpp_exceptions.cpp:
 PowerPC_EABI_Support/Runtime/Gecko_ExceptionPPC.cpp:
 	.text       start:0x80395374 end:0x80395480
 	.bss        start:0x805A1B48 end:0x805A1CC8
+
+PowerPC_EABI_Support/Runtime/__mem.c:
+	.init       start:0x80004364 end:0x800046E4

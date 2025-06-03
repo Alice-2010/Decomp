@@ -23,6 +23,11 @@ Replace with your Discord server's ID and invite URL.
 [Discord Badge]: https://img.shields.io/discord/1068979192886198322?color=%237289DA&logo=discord&logoColor=%23FFFFFF
 [discord]: https://discord.gg/CsKhC3HESA
 
+<!--
+decomp.dev progress badges
+See https://decomp.dev/api for an API overview.
+-->
+
 A work-in-progress decompilation of Alice in Wonderland (2010 Wii).
 
 This repository does **not** contain any game assets or assembly whatsoever. An existing copy of the game is required.
@@ -113,6 +118,6 @@ Select an object from the left sidebar to begin diffing. Changes to the project 
 
 ## References
 - [Decomp Toolkit](https://github.com/encounter/dtk-template) (repo template)
-    - [Latest commit used in this Decomp](https://github.com/encounter/dtk-template/commit/57f5777025583d966ea254a6ed011b76e20a18c0)
+    - [Latest commit used in this Decomp](https://github.com/encounter/dtk-template/commit/dbad3087b601d609d2dbff30c14a1fdb6a27a1ce)
 - [Dolphin 2001 SDK](https://github.com/doldecomp/dolsdk2001)
     - Alice uses Revolution SDK of a currently unknown version or release, however, dolsdk can be used as a basis

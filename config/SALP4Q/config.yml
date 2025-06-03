@@ -11,3 +11,4 @@ symbols_known: false
 fill_gaps: true
 export_all: true
 ldscript_template: ./config/SALP4Q/ldscript.lcf
+mw_comment_version: 14

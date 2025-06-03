@@ -10,3 +10,4 @@ write_asm: true
 symbols_known: false
 fill_gaps: true
 export_all: true
+mw_comment_version: 14
