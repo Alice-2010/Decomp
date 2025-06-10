@@ -1,8 +1,8 @@
 #ifndef ALICE_TYPES_H
     #define ALICE_TYPES_H
 
-    #include "macros.h"
-    #include "PowerPC_EABI_Support/MSL/MSL_C/stddef.h"
+    #include "macros.h" // IWYU pragma: export
+    #include "PowerPC_EABI_Support/MSL/MSL_C/stddef.h" // IWYU pragma: export
 
     typedef int BOOL;
 
