@@ -25,6 +25,9 @@ void __fini_cpp_exceptions(void)
     }
 }
 
+#pragma push
+#pragma force_active on
+
 #pragma section ".ctors$10"
 #pragma section ".dtors$10"
 #pragma section ".dtors$15"
@@ -32,3 +35,5 @@ void __fini_cpp_exceptions(void)
 DECL_SECTION(".ctors$10") void* __init_cpp_exceptions_reference = __init_cpp_exceptions;
 DECL_SECTION(".dtors$10") void* __destroy_global_chain_reference = __destroy_global_chain;
 DECL_SECTION(".dtors$15") void* __fini_cpp_exceptions_reference = __fini_cpp_exceptions;
+
+#pragma pop
