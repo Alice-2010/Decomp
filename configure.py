@@ -284,6 +284,7 @@ config.libs = [
             Object(MatchingFor("SALP4Q"), "Revolution/OS/OSArena.c"),
             Object(MatchingFor("SALP4Q"), "Revolution/OS/OSIPC.c"),
             Object(MatchingFor("SALP4Q"), "Revolution/OS/OSLink.c"),
+            Object(MatchingFor("SALP4Q"), "Revolution/OS/OSMemory.c"),
             Object(Matching, "Revolution/OS/__start.c")
         ]
     },

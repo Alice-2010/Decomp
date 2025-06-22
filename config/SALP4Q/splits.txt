@@ -40,6 +40,11 @@ Revolution/OS/OSArena.c:
 Revolution/OS/OSLink.c:
 	.text       start:0x80370850 end:0x80370868
 
+Revolution/OS/OSMemory.c:
+	.text       start:0x80370B50 end:0x803712EC
+	.data       start:0x80519BD0 end:0x80519BE0
+	.sbss       start:0x805F5988 end:0x805F598C
+
 Revolution/OS/OSIPC.c:
 	.text       start:0x80374AC0 end:0x80374AF8
 	.sdata      start:0x805F36E0 end:0x805F36E4
