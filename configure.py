@@ -247,7 +247,7 @@ config.warn_missing_config = True
 config.warn_missing_source = True
 config.libs = [
     {
-        "lib": "PowerPC_EABI_Support",
+        "lib": "Runtime",
         "mw_version": config.linker_version,
         "cflags": [
             *cflags_base,
@@ -264,7 +264,8 @@ config.libs = [
             Object(Matching, "PowerPC_EABI_Support/Runtime/global_destructor_chain.c"),
             Object(Matching, "PowerPC_EABI_Support/Runtime/__mem.c"),
             Object(Matching, "PowerPC_EABI_Support/Runtime/__va_arg.c"),
-            Object(MatchingFor("SALP4Q"), "PowerPC_EABI_Support/Runtime/runtime.c")
+            Object(MatchingFor("SALP4Q"), "PowerPC_EABI_Support/Runtime/runtime.c"),
+            Object(MatchingFor("SALP4Q"), "PowerPC_EABI_Support/Runtime/ptmf.c")
         ]
     },
     {

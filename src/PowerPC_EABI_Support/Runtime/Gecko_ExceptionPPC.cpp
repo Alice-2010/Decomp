@@ -1,4 +1,4 @@
-#include "global.h"
+#include "global.h" // IWYU pragma: export
 #include "PowerPC_EABI_Support/Runtime/Gecko_ExceptionPPC.h"
 
 static ProcessInfo fragmentinfo[MAXFRAGMENTS+1];

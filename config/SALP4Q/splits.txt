@@ -43,6 +43,9 @@ PowerPC_EABI_Support/Runtime/global_destructor_chain.c:
 	.text       start:0x803940C4 end:0x80394124
 	.sbss       start:0x805F5E18 end:0x805F5E1C
 
+PowerPC_EABI_Support/Runtime/ptmf.c:
+	.text       start:0x8039481C end:0x80394874
+
 PowerPC_EABI_Support/Runtime/runtime.c:
 	.text       start:0x80394B1C end:0x80395304
 	.rodata     start:0x804E3038 end:0x804E3050

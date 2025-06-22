@@ -1,7 +1,7 @@
 /* https://github.com/SwareJonge/mkdd/blob/main/libs/PowerPC_EABI_Support/src/Runtime/__va_arg.c */
 
 #include "types.h"
-#include "PowerPC_EABI_Support/MSL/MSL_C/stdarg.h"
+#include "PowerPC_EABI_Support/MSL/MSL_C/stdarg.h" // IWYU pragma: export
 
 #ifdef __cplusplus
     extern "C"

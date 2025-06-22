@@ -1,6 +1,6 @@
 #include "PowerPC_EABI_Support/Runtime/global_destructor_chain.h"
 #include "PowerPC_EABI_Support/Runtime/__init_cpp_exceptions.h"
-#include "PowerPC_EABI_Support/Runtime/__ppc_eabi_linker.h"
+#include "PowerPC_EABI_Support/Runtime/__ppc_eabi_linker.h" // IWYU pragma: export
 #include "PowerPC_EABI_Support/Runtime/Gecko_ExceptionPPC.h"
 
 static s32 fragmentID = -2;

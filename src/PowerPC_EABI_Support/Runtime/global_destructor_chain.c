@@ -13,7 +13,7 @@ void* __register_global_object(void* object, DtorFunction dtor, DtorLink* link) 
 void __destroy_global_chain(void) {
     DtorLink* link;
 
-    while (link = __global_destructor_chain) {
+    while ((link = __global_destructor_chain)) {
         __global_destructor_chain = link->next;
         link->dtor(link->object, -1);
     }
