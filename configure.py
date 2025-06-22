@@ -282,6 +282,7 @@ config.libs = [
         "progress_category": "sdk",
         "objects": [
             Object(MatchingFor("SALP4Q"), "Revolution/OS/OSArena.c"),
+            Object(MatchingFor("SALP4Q"), "Revolution/OS/OSIPC.c"),
             Object(Matching, "Revolution/OS/__start.c")
         ]
     },
