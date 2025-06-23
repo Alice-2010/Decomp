@@ -57,12 +57,16 @@ Revolution/OS/OSIPC.c:
 	.sdata      start:0x805F36E0 end:0x805F36E4
 	.sbss       start:0x805F59B8 end:0x805F59BC
 
-PowerPC_EABI_Support/Runtime/__va_arg.c:
-	.text       start:0x80393FFC end:0x803940C4
-
 Revolution/OS/__start.c:
 	.init       start:0x80004000 end:0x800042F8
 	.sbss       start:0x805F59E0 end:0x805F59E8
+
+Revolution/OS/__ppc_eabi_init.c:
+	.init       start:0x80004300 end:0x80004364
+	.text       start:0x80376CF0 end:0x80376DAC
+
+PowerPC_EABI_Support/Runtime/__va_arg.c:
+	.text       start:0x80393FFC end:0x803940C4
 
 PowerPC_EABI_Support/Runtime/global_destructor_chain.c:
 	.text       start:0x803940C4 end:0x80394124
