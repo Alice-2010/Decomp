@@ -284,6 +284,8 @@ config.libs = [
         "objects": [
             # BASE
             Object(MatchingFor("SALP4Q"), "Revolution/BASE/PPCArch.c"),
+            # NAND
+            Object(MatchingFor("SALP4Q"), "Revolution/NAND/NANDOpenClose.c"),
             # OS
             Object(MatchingFor("SALP4Q"), "Revolution/OS/OSArena.c"),
             Object(MatchingFor("SALP4Q"), "Revolution/OS/OSIPC.c"),
