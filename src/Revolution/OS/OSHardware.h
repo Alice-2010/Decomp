@@ -1,6 +1,6 @@
 #ifndef RVL_SDK_OS_HARDWARE_H
     #define RVL_SDK_OS_HARDWARE_H
-    #include "Revolution/OS/OSAddress.h"
+    #include "Revolution/OS/OSAddress.h" // IWYU pragma: export
     #include "revolution/OS/OSThread.h"
     #include "Revolution/OS/OSUtils.h"
     #include "Revolution/DVD/dvdidutils.h"
@@ -259,6 +259,6 @@
     OS_DEF_HW_REG(volatile u32, UNK_CD8001D0, 0xCD8001D0);
 
     #ifdef __cplusplus
-    }
+        }
     #endif
 #endif

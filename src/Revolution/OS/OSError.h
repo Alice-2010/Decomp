@@ -2,7 +2,7 @@
     #define RVL_SDK_OS_ERROR_H
 
     #include "types.h"
-    #include "PowerPC_EABI_Support/MSL/MSL_C/stdio.h"
+    #include "PowerPC_EABI_Support/MSL/MSL_C/stdio.h" // IWYU pragma: export
 
     #ifdef __cplusplus
         extern "C" {
@@ -41,7 +41,6 @@
         OS_ERR_THERMAL_INT,
         OS_ERR_PROTECTION,
         OS_ERR_FP_EXCEPTION,
-
         OS_ERR_MAX
     } OSErrorType;
 

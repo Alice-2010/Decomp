@@ -48,6 +48,12 @@ Revolution/OS/OSMemory.c:
 Revolution/OS/OSSync.c:
 	.text       start:0x80372C00 end:0x80372C80
 
+Revolution/OS/OSThread.c:
+	.text       start:0x80372C80 end:0x80374440
+	.bss        start:0x80585AD8 end:0x805864D0
+	.sdata      start:0x805F36D8 end:0x805F36DC
+	.sbss       start:0x805F59A8 end:0x805F59B4
+
 Revolution/OS/OSIPC.c:
 	.text       start:0x80374AC0 end:0x80374AF8
 	.sdata      start:0x805F36E0 end:0x805F36E4

@@ -44,7 +44,6 @@
         OS_INTR_29,
         OS_INTR_30,
         OS_INTR_31,
-
         OS_INTR_MAX
     } OSInterruptType;
 

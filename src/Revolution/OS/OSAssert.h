@@ -1,7 +1,7 @@
 #ifndef RVL_SDK_OS_ASSERT_H
     #define RVL_SDK_OS_ASSERT_H
 
-    #include "Revolution/OS/OSError.h"
+    #include "Revolution/OS/OSError.h" // IWYU pragma: export
 
     #ifdef __cplusplus
         extern "C" {

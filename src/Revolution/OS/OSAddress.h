@@ -1,7 +1,7 @@
 #ifndef RVL_SDK_OS_ADDRESS_H
     #define RVL_SDK_OS_ADDRESS_H
 
-    #include "types.h"
+    #include "types.h" // IWYU pragma: export
 
     #ifdef __cplusplus
         extern "C" {

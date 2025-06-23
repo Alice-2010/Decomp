@@ -2,7 +2,7 @@
     #define _REVOSDK_OSFASTCAST_H
 
     #include "types.h"
-    #include "decomp.h"
+    #include "decomp.h" // IWYU pragma: export
 
     #ifdef __cplusplus
         extern "C" {
@@ -84,6 +84,6 @@
     static inline void OSf32tos16(const float* in, s16* out) { *out = __OSf32tos16(*in); }
 
     #ifdef __cplusplus
-    };
+        };
     #endif
 #endif

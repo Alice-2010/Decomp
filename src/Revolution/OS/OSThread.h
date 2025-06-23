@@ -10,7 +10,7 @@
 
     #define OS_PRIORITY_MIN 0
     #define OS_PRIORITY_MAX 31
-
+    #define OS_THREAD_SPECIFIC_MAX 2
     #define OS_THREAD_STACK_MAGIC 0xDEADBABE
 
     typedef enum {

@@ -51,7 +51,6 @@
         OS_EXC_IABR,
         OS_EXC_SMI,
         OS_EXC_THERMAL_INT,
-
         OS_EXC_MAX
     };
 
