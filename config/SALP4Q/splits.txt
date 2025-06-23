@@ -32,6 +32,10 @@ Libraries/zlib/inftrees.c:
 Libraries/zlib/zutil.c:
 	.rodata     start:0x804E2A58 end:0x804E2B00
 
+Revolution/BASE/PPCArch.c:
+	.text       start:0x80368C60 end:0x80368E70
+	.data       start:0x805183A0 end:0x805183D8
+
 Revolution/OS/OSArena.c:
 	.text       start:0x8036B0C0 end:0x8036B1B4
 	.sdata      start:0x805F36A8 end:0x805F36B0

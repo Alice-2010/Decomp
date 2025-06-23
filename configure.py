@@ -208,7 +208,7 @@ cflags_base = [
 
     "-RTTI on",
     "-Cpp_exceptions off",
-    "-str readonly,noreuse",
+    "-str noreuse",
 
     "-i src",
     f"-i build/{config.version}/include",
@@ -255,6 +255,7 @@ config.libs = [
             "-O4,p",
             "-inline auto",
             "-func_align 4",
+            "-rostr"
         ],
         "host": False,
         "progress_category": "sdk",
@@ -281,6 +282,9 @@ config.libs = [
         "host": False,
         "progress_category": "sdk",
         "objects": [
+            # BASE
+            Object(MatchingFor("SALP4Q"), "Revolution/BASE/PPCArch.c"),
+            # OS
             Object(MatchingFor("SALP4Q"), "Revolution/OS/OSArena.c"),
             Object(MatchingFor("SALP4Q"), "Revolution/OS/OSIPC.c"),
             Object(MatchingFor("SALP4Q"), "Revolution/OS/OSLink.c"),
@@ -311,7 +315,8 @@ config.libs = [
             "-func_align 4",
             "-inline all",
             "-fp_contract on",
-            "-opt level=4,schedule,speed,peep"
+            "-opt level=4,schedule,speed,peep",
+            "-rostr"
         ],
         "host": False,
         "progress_category": "game",  # str | List[str]
