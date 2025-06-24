@@ -97,5 +97,12 @@ PowerPC_EABI_Support/Runtime/Gecko_ExceptionPPC.cpp:
 Revolution/NAND/NANDOpenClose.c:
 	.text       start:0x803B5EF0 end:0x803B63FC
 
+Revolution/NAND/NANDLogging.c:
+	.text       start:0x803B73E0 end:0x803B79C4
+	.data       start:0x8052DA80 end:0x8052DAC8
+	.bss        start:0x805A4A80 end:0x805A4D80
+	.sdata      start:0x805F38C8 end:0x805F38CC
+	.sbss       start:0x805F5F60 end:0x805F5F68
+
 PowerPC_EABI_Support/Runtime/__mem.c:
 	.init       start:0x80004364 end:0x800046E4

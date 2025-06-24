@@ -1,6 +1,6 @@
 #ifndef RVL_SDK_NAND_H
     #define RVL_SDK_NAND_H
-    #include "Revolution/FS.h"
+    #include "Revolution/FS.h" // IWYU pragma: export
     #include "types.h"
     #ifdef __cplusplus
         extern "C" {
