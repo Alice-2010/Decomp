@@ -251,8 +251,8 @@ config.libs = [
         "mw_version": config.linker_version,
         "cflags": [
             *cflags_base,
-            "-lang=c99",
             "-O4,p",
+            "-lang=c99",
             "-inline auto",
             "-func_align 4",
             "-rostr"
@@ -274,8 +274,7 @@ config.libs = [
         "mw_version": config.linker_version,
         "cflags": [
             *cflags_base,
-            "-func_align 16",
-            "-opt level=4,schedule,speed,peep",
+            "-O4,p",
             "-lang=c99",
             "-d NDEBUG"
         ],
@@ -299,6 +298,22 @@ config.libs = [
         ]
     },
     {
+        "lib": "MSL C",
+        "mw_version": config.linker_version,
+        "cflags": [
+            *cflags_base,
+            "-O4,p",
+            "-lang=c99",
+            "-use_lmw_stmw on",
+            "-func_align 4"
+        ],
+        "host": False,
+        "progress_category": "sdk",
+        "objects": [
+            Object(MatchingFor("SALP4Q"), "PowerPC_EABI_Support/MSL/MSL_C/MSL_Common/mem.c")
+        ]
+    },
+    {
         "lib": "libs/zlib",
         "mw_version": config.linker_version,
         "cflags": cflags_base,
@@ -315,10 +330,10 @@ config.libs = [
         "mw_version": config.linker_version,
         "cflags": [
             *cflags_base,
+            "-O4,p",
             "-func_align 4",
             "-inline all",
             "-fp_contract on",
-            "-opt level=4,schedule,speed,peep",
             "-rostr"
         ],
         "host": False,
