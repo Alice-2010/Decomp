@@ -310,7 +310,8 @@ config.libs = [
         "host": False,
         "progress_category": "sdk",
         "objects": [
-            Object(MatchingFor("SALP4Q"), "PowerPC_EABI_Support/MSL/MSL_C/MSL_Common/mem.c")
+            Object(MatchingFor("SALP4Q"), "PowerPC_EABI_Support/MSL/MSL_C/MSL_Common/mem.c"),
+            Object(MatchingFor("SALP4Q"), "PowerPC_EABI_Support/MSL/MSL_C/MSL_Common/secure_error.c"),
         ]
     },
     {
