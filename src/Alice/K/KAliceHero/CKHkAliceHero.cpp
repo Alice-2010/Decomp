@@ -1,4 +1,4 @@
-#include "Game/Objects/Hooks/CKHkAliceHero.h"
+#include "Alice/K/KAliceHero/CKHkAliceHero.h"
 
 extern void fn_801A56EC(void*);
 

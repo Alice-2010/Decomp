@@ -1,8 +1,8 @@
 #ifndef ENGINE_INTERFACES_IKHOOK_H
     #define ENGINE_INTERFACES_IKHOOK_H
 
-    #include "Engine/Classes/CSBaseNode.h"
-    #include "Engine/Interfaces/IKLife.h"
+    #include "K/Classes/EUL_CSBaseNode.h"
+    #include "K/KCore/Interfaces/IKLife.h"
 
     class IKHook: public IKLife, public CSBaseNode<IKHook*>
     {

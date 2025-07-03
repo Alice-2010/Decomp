@@ -1,7 +1,7 @@
 #ifndef ENGINE_INTERFACES_IKBASEGROUP_H
     #define ENGINE_INTERFACES_IKBASEGROUP_H
 
-    #include "Engine/Interfaces/IKLife.h"
+    #include "K/KCore/Interfaces/IKLife.h"
 
     class IKBaseGroup: public IKLife
     {

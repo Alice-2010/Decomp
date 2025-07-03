@@ -341,9 +341,9 @@ config.libs = [
         "progress_category": "game",  # str | List[str]
         "objects": [
             # 2- Hooks
-            Object(MatchingFor(), "Game/Objects/Hooks/CKHkAliceHero.cpp"),
+            Object(MatchingFor(), "Alice/K/KHero/CKHkAliceHero.cpp"),
             # 4 - Groups
-            Object(MatchingFor(), "Game/Objects/Groups/CKGrpAliceHero.cpp")
+            Object(MatchingFor(), "Alice/K/KHero/CKGrpAliceHero.cpp")
         ]
     }
 ]

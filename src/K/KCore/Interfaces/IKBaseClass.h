@@ -1,7 +1,7 @@
 #ifndef ENGINE_INTERFACES_IKBASECLASS_H
     #define ENGINE_INTERFACES_IKBASECLASS_H
 
-    #include "global.h"
+    #include "types.h"
 
     class IKBaseClass
     {

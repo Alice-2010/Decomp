@@ -1,7 +1,7 @@
 #ifndef ENGINE_INTERFACES_IKHKHERO_H
     #define ENGINE_INTERFACES_IKHKHERO_H
 
-    #include "Engine/Interfaces/IKHook.h"
+    #include "K/KCore/Interfaces/IKHook.h"
 
     class IKHkHero: public IKHook
     {

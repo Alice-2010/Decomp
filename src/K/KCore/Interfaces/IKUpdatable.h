@@ -1,7 +1,7 @@
 #ifndef ENGINE_INTERFACES_IKUPDATABLE_H
     #define ENGINE_INTERFACES_IKUPDATABLE_H
 
-    #include "Engine/Interfaces/IKSerializable.h"
+    #include "K/KCore/Interfaces/IKSerializable.h"
 
     class IKUpdatable: public IKSerializable
     {

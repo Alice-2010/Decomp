@@ -1,7 +1,7 @@
 #ifndef GAME_OBJECTS_GROUPS_CKGRPALICEHERO_H
     #define GAME_OBJECTS_GROUPS_CKGRPALICEHERO_H
 
-    #include "Engine/Interfaces/IKGrpHero.h"
+    #include "Commun/K/KHero/IKGrpHero.h"
 
     class CKGrpAliceHero: public IKGrpHero
     {

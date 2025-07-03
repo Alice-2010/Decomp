@@ -1,8 +1,8 @@
 #ifndef ENGINE_INTERFACES_IKLIFE_H
     #define ENGINE_INTERFACES_IKLIFE_H
 
-    #include "Engine/Classes/CSPriorityBaseNodeClassNameNextUpdatableLife.h"
-    #include "Engine/Interfaces/IKUpdatable.h"
+    #include "K/Classes/EUL_CSPriorityBaseNode.h"
+    #include "K/KCore/Interfaces/IKUpdatable.h"
 
     extern void fn_8000E7F4(s32, s32);
     extern void fn_8000F4AC(s32, s32);

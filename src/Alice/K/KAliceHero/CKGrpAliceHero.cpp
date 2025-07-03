@@ -1,4 +1,4 @@
-#include "Game/Objects/Groups/CKGrpAliceHero.h"
+#include "Alice/K/KAliceHero/CKGrpAliceHero.h"
 
 #pragma dont_inline on
 

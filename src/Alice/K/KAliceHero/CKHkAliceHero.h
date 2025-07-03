@@ -1,7 +1,7 @@
 #ifndef GAME_OBJECTS_HOOKS_CKHKALICEHERO_H
     #define GAME_OBJECTS_HOOKS_CKHKALICEHERO_H
 
-    #include "Engine/Interfaces/IKHkHero.h"
+    #include "Commun/K/KHero/IKHkHero.h"
 
     class CKHkAliceHero: public IKHkHero
     {

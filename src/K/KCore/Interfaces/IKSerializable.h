@@ -1,7 +1,7 @@
 #ifndef ENGINE_INTERFACES_IKSERIALIZABLE_H
     #define ENGINE_INTERFACES_IKSERIALIZABLE_H
 
-    #include "Engine/Interfaces/IKBaseClass.h"
+    #include "K/KCore/Interfaces/IKBaseClass.h"
 
     class IKSerializable: public IKBaseClass
     {

@@ -1,8 +1,8 @@
 #ifndef ENGINE_INTERFACES_IKGRPHERO_H
     #define ENGINE_INTERFACES_IKGRPHERO_H
 
-    #include "Engine/Interfaces/IKGroup.h"
-    #include "Engine/Interfaces/IKHook.h"
+    #include "K/KCore/Interfaces/IKGroup.h"
+    #include "K/KCore/Interfaces/IKHook.h"
 
     class IKGrpHero: public IKGroup<IKHook>
     {

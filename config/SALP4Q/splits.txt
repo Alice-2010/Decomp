@@ -13,10 +13,10 @@ Sections:
 	.sdata2     type:rodata align:16
 	.sbss2      type:bss align:32
 
-Game/Objects/Groups/CKGrpAliceHero.cpp:
+Alice/K/KAliceHero/CKGrpAliceHero.cpp:
 	.text       start:0x8000C1C0 end:0x8000CB1C
 
-Game/Objects/Hooks/CKHkAliceHero.cpp:
+Alice/K/KAliceHero/CKHkAliceHero.cpp:
 	.text       start:0x8000E2AC end:0x80018CA4
 	.rodata     start:0x804D4200 end:0x804D42A8
 	.data       start:0x804E94B0 end:0x804E9AA0
