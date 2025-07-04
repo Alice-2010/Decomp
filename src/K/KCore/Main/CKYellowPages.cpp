@@ -1,3 +1,4 @@
+#include "types.h" // IWYU pragma: export
 #include "K/KCore/Main/CKYellowPages.h"
 
 static CKYellowPages* g_pYellowPages;
@@ -55,14 +56,19 @@ CKYellowPages::CKYellowPages()
 
 CKYellowPages::~CKYellowPages() {}
 
-void CKYellowPages::SetServiceCamera(void* pServiceCamera)
-{
-    g_pYellowPages->m_pSrvCamera = pServiceCamera;
-}
-
 void CKYellowPages::SetInstance()
 {
     g_pYellowPages = this;
+}
+
+CKYellowPages* CKYellowPages::GetInstance()
+{
+    return g_pYellowPages;
+}
+
+void CKYellowPages::SetServiceCamera(void* pServiceCamera)
+{
+    g_pYellowPages->m_pSrvCamera = pServiceCamera;
 }
 
 void CKYellowPages::SetLoadingInterface(void* pLoadingInterface)
@@ -118,6 +124,11 @@ void CKYellowPages::SetLocManager(void* pLocManager)
 void CKYellowPages::SetGraphicModule(void* pGraphicModule)
 {
     g_pYellowPages->m_pGraphic = pGraphicModule;
+}
+
+void CKYellowPages::SetScreen(void* pScreen)
+{
+    g_pYellowPages->m_pScreen = pScreen;
 }
 
 void CKYellowPages::SetRendererRootNode(void* pRendererRootNode)
@@ -308,4 +319,259 @@ void CKYellowPages::SetUnk2(void* pUnk2)
 void CKYellowPages::SetUnk4(void* pUnk4)
 {
     g_pYellowPages->m_pUnk4 = pUnk4;
+}
+
+void* CKYellowPages::GetLoadingInterface()
+{
+    return g_pYellowPages->m_pLoadingInterface;
+}
+
+void* CKYellowPages::GetGraphicModule()
+{
+    return g_pYellowPages->m_pGraphic;
+}
+
+void* CKYellowPages::GetScreen()
+{
+    return g_pYellowPages->m_pScreen;
+}
+
+void* CKYellowPages::GetRendererRootNode()
+{
+    return g_pYellowPages->m_pRendererRootNode;
+}
+
+void* CKYellowPages::GetRootNode2()
+{
+    return g_pYellowPages->m_pUnkRootNode;
+}
+
+void* CKYellowPages::GetCommunSectorRootNode()
+{
+    return g_pYellowPages->m_pCommunSectorRootNode;
+}
+
+void* CKYellowPages::GetInputModule()
+{
+    return g_pYellowPages->m_pInput;
+}
+
+void* CKYellowPages::GetSoundModule()
+{
+    return g_pYellowPages->m_pSound;
+}
+
+void* CKYellowPages::GetCoreFactory()
+{
+    return g_pYellowPages->m_pCoreFactory;
+}
+
+void* CKYellowPages::GetServiceManager()
+{
+    return g_pYellowPages->m_pServiceManager;
+}
+
+void* CKYellowPages::GetServiceLife()
+{
+    return g_pYellowPages->m_pServiceLife;
+}
+
+void* CKYellowPages::GetCoreManager()
+{
+    return g_pYellowPages->m_pCoreManager;
+}
+
+void* CKYellowPages::GetFileIOManager()
+{
+    return g_pYellowPages->m_pFileIOManager;
+}
+
+void* CKYellowPages::GetGameLoop()
+{
+    return g_pYellowPages->m_pGameLoop;
+}
+
+void* CKYellowPages::GetManager2d()
+{
+    return g_pYellowPages->m_pManager2d;
+}
+
+void* CKYellowPages::GetFlashManager()
+{
+    return g_pYellowPages->m_pFlashManager;
+}
+
+void* CKYellowPages::GetTextureManager()
+{
+    return g_pYellowPages->m_pTextureManager;
+}
+
+void* CKYellowPages::GetAnimationManager()
+{
+    return g_pYellowPages->m_pAnimationManager;
+}
+
+void* CKYellowPages::GetTimeManager()
+{
+    return g_pYellowPages->m_pTimeManager;
+}
+
+void* CKYellowPages::GetLoadingManager()
+{
+    return g_pYellowPages->m_pLoadingManager;
+}
+
+void* CKYellowPages::GetSavingManager()
+{
+    return g_pYellowPages->m_pSavingManager;
+}
+
+void* CKYellowPages::GetUnk6()
+{
+    return g_pYellowPages->m_pUnk6;
+}
+
+void* CKYellowPages::GetServiceCollision()
+{
+    return g_pYellowPages->m_pSrvCollision;
+}
+
+void* CKYellowPages::GetServicePhysics()
+{
+    return g_pYellowPages->m_pSrvPhysics;
+}
+
+void* CKYellowPages::GetServiceFx()
+{
+    return g_pYellowPages->m_pSrvFx;
+}
+
+void* CKYellowPages::GetServiceBonus()
+{
+    return g_pYellowPages->m_pSrvBonus;
+}
+
+void* CKYellowPages::GetServiceProjectiles()
+{
+    return g_pYellowPages->m_pSrvProjectiles;
+}
+
+void* CKYellowPages::GetServicePathFinding()
+{
+    return g_pYellowPages->m_pSrvPathFinding;
+}
+
+void* CKYellowPages::GetServiceCamera()
+{
+    return g_pYellowPages->m_pSrvCamera;
+}
+
+void* CKYellowPages::GetServiceAvoidance()
+{
+    return g_pYellowPages->m_pSrvAvoidance;
+}
+
+void* CKYellowPages::GetServiceBeacon()
+{
+    return g_pYellowPages->m_pSrvBeacon;
+}
+
+void* CKYellowPages::GetTrcManager()
+{
+    return g_pYellowPages->m_pTrcManager;
+}
+
+void* CKYellowPages::GetServiceCinematic()
+{
+    return g_pYellowPages->m_pSrvCinematic;
+}
+
+void* CKYellowPages::GetServiceSekensor()
+{
+    return g_pYellowPages->m_pSrvSekensor;
+}
+
+void* CKYellowPages::GetServiceShadow()
+{
+    return g_pYellowPages->m_pSrvShadow;
+}
+
+void* CKYellowPages::GetKGameManager()
+{
+    return g_pYellowPages->m_pKGameManager;
+}
+
+void* CKYellowPages::GetKGameUIManager()
+{
+    return g_pYellowPages->m_pKGameUIManager;
+}
+
+void* CKYellowPages::GetCurrentLevel()
+{
+    return g_pYellowPages->m_pCurrentLevel;
+}
+
+void* CKYellowPages::GetLocManager()
+{
+    return g_pYellowPages->m_pLocManager;
+}
+
+void* CKYellowPages::GetServiceCounter()
+{
+    return g_pYellowPages->m_pSrvCounter;
+}
+
+void* CKYellowPages::GetServiceTrigger()
+{
+    return g_pYellowPages->m_pSrvTrigger;
+}
+
+void* CKYellowPages::GetServiceDetect()
+{
+    return g_pYellowPages->m_pSrvDetect;
+}
+
+void* CKYellowPages::GetServiceMusic()
+{
+    return g_pYellowPages->m_pSrvMusic;
+}
+
+void* CKYellowPages::GetServiceInput()
+{
+    return g_pYellowPages->m_pSrvInput;
+}
+
+void* CKYellowPages::GetVideoManager()
+{
+    return g_pYellowPages->m_pVideoManager;
+}
+
+void* CKYellowPages::GetUnk1()
+{
+    return g_pYellowPages->m_pUnk1;
+}
+
+void* CKYellowPages::GetUnk2()
+{
+    return g_pYellowPages->m_pUnk2;
+}
+
+void* CKYellowPages::GetUnk3()
+{
+    return g_pYellowPages->m_pUnk3;
+}
+
+void* CKYellowPages::GetServiceInputCommands()
+{
+    return g_pYellowPages->m_pSrvInputCommands;
+}
+
+void* CKYellowPages::GetUnk4()
+{
+    return g_pYellowPages->m_pUnk4;
+}
+
+void* CKYellowPages::GetUnk5()
+{
+    return g_pYellowPages->m_pUnk5;
 }

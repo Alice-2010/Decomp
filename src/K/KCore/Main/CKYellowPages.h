@@ -1,8 +1,6 @@
 #ifndef CKYELLOWPAGES_H
     #define CKYELLOWPAGES_H
 
-    #include "types.h"
-
     class CKYellowPages
     {
         public:
@@ -60,9 +58,9 @@
 
             CKYellowPages();
             ~CKYellowPages();
-            BOOL FindNonRecreableInstances();
             static void SetServiceCamera(void* pServiceCamera);
             void SetInstance();
+            CKYellowPages* GetInstance();
             static void SetLoadingInterface(void* pLoadingInterface);
             static void SetBeaconService(void* pBeaconService);
             static void SetServiceAvoidance(void* pServiceAvoidance);
@@ -74,6 +72,7 @@
             static void SetKGameUIManager(void* pKGameUIManager);
             static void SetLocManager(void* pLocManager);
             static void SetGraphicModule(void* pGraphicModule);
+            static void SetScreen(void* pScreen);
             static void SetRendererRootNode(void* pRendererRootNode);
             static void SetRootNode2(void* pRootNode2);
             static void SetCommunSectorRootNode(void* pCommunSectorRootNode);
@@ -112,6 +111,58 @@
             static void SetServiceInputCommands(void* pServiceInputCommands);
             static void SetUnk2(void* pUnk2);
             static void SetUnk4(void* pUnk4);
+
+            static inline void* GetLoadingInterface();
+            static inline void* GetGraphicModule();
+            static inline void* GetScreen();
+            static inline void* GetRendererRootNode();
+            static inline void* GetRootNode2();
+            static inline void* GetCommunSectorRootNode();
+            static inline void* GetInputModule();
+            static inline void* GetSoundModule();
+            static inline void* GetCoreFactory();
+            static inline void* GetServiceManager();
+            static inline void* GetServiceLife(); // unused + stripped?
+            static inline void* GetCoreManager();
+            static inline void* GetFileIOManager();
+            static inline void* GetGameLoop();
+            static inline void* GetManager2d();
+            static inline void* GetFlashManager();
+            static inline void* GetTextureManager();
+            static inline void* GetAnimationManager();
+            static inline void* GetTimeManager();
+            static inline void* GetLoadingManager();
+            static inline void* GetSavingManager();
+            static inline void* GetUnk6();
+            static inline void* GetServiceCollision();
+            static inline void* GetServicePhysics();
+            static inline void* GetServiceFx();
+            static inline void* GetServiceBonus();
+            static inline void* GetServiceProjectiles(); // unused + stripped?
+            static inline void* GetServicePathFinding();
+            static inline void* GetServiceCamera();
+            static inline void* GetServiceAvoidance();
+            static inline void* GetServiceBeacon();
+            static inline void* GetTrcManager();
+            static inline void* GetServiceCinematic();
+            static inline void* GetServiceSekensor();
+            static inline void* GetServiceShadow();
+            static inline void* GetKGameManager();
+            static inline void* GetKGameUIManager();
+            static inline void* GetCurrentLevel();
+            static inline void* GetLocManager();
+            static inline void* GetServiceCounter(); // unused + stripped?
+            static inline void* GetServiceTrigger();
+            static inline void* GetServiceDetect();
+            static inline void* GetServiceMusic();
+            static inline void* GetServiceInput();
+            static inline void* GetVideoManager();
+            static inline void* GetUnk1(); // unused + stripped?
+            static inline void* GetUnk2();
+            static inline void* GetUnk3(); // unused + stripped?
+            static inline void* GetServiceInputCommands();
+            static inline void* GetUnk4(); // unused + stripped?
+            static inline void* GetUnk5(); // unused + stripped?
     };
 
 #endif
