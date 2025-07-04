@@ -340,6 +340,8 @@ config.libs = [
         "host": False,
         "progress_category": "game",  # str | List[str]
         "objects": [
+            # Engine
+            Object(MatchingFor(), "K/KCore/Main/CKYellowPages.cpp"),
             # 2- Hooks
             Object(MatchingFor(), "Alice/K/KAliceHero/CKHkAliceHero.cpp"),
             # 4 - Groups
