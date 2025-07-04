@@ -8,17 +8,17 @@ void operator delete(void* ptr) { fn_801A56EC(ptr); }
 
 CKHkAliceHero::CKHkAliceHero(): IKHkHero::IKHkHero() {};
 CKHkAliceHero::~CKHkAliceHero() {};
-BOOL CKHkAliceHero::isSubclass(u32 classID)
+BOOL CKHkAliceHero::IsKindOfClass(u32 classID)
 {
     if (classID == 9666)
         return TRUE;
-    return IKHkHero::isSubclass(classID);
+    return IKHkHero::IsKindOfClass(classID);
 };
-s32 CKHkAliceHero::getClassGroup()
+s32 CKHkAliceHero::GetClassType()
 {
     return 2;
 };
-s32 CKHkAliceHero::getClassID()
+s32 CKHkAliceHero::GetClassID()
 {
     return 151;
 };

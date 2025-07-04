@@ -8,18 +8,18 @@
         public:
             IKHkHero(): IKHook::IKHook() {};
             virtual ~IKHkHero() {};
-            virtual BOOL isSubclass(u32 classID)
+            virtual BOOL IsKindOfClass(u32 classID)
             {
                 if (classID == 13890)
                     return TRUE;
-                return IKHook::isSubclass(classID);
+                return IKHook::IsKindOfClass(classID);
             };
-            // reset() func in this vtable is for IKBaseClass
-            virtual void unk() { return; };
-            virtual s32 getClassGroup() { return 2; };
-            virtual s32 getClassID() { return 217; };
-            virtual s32 sendEvent() { return 1; };
-            // unk2() func in this vtable is for IKBaseClass
+            // DestroyGame() func in this vtable is for IKBaseClass
+            virtual void Destroy() { return; };
+            virtual s32 GetClassType() { return 2; };
+            virtual s32 GetClassID() { return 217; };
+            virtual s32 MessageProc() { return 1; };
+            // FindNonRecreableInstances() func in this vtable is for IKBaseClass
     };
 
 #endif

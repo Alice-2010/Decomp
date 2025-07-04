@@ -4,17 +4,17 @@
 
 CKGrpAliceHero::CKGrpAliceHero(): IKGrpHero::IKGrpHero() {};
 CKGrpAliceHero::~CKGrpAliceHero() {};
-BOOL CKGrpAliceHero::isSubclass(u32 classID)
+BOOL CKGrpAliceHero::IsKindOfClass(u32 classID)
 {
     if (classID == 3524)
         return TRUE;
-    return IKGrpHero::isSubclass(classID);
+    return IKGrpHero::IsKindOfClass(classID);
 };
-s32 CKGrpAliceHero::getClassGroup()
+s32 CKGrpAliceHero::GetClassType()
 {
     return 4;
 };
-s32 CKGrpAliceHero::getClassID()
+s32 CKGrpAliceHero::GetClassID()
 {
     return 55;
 };

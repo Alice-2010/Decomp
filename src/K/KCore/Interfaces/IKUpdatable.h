@@ -8,22 +8,22 @@
         public:
             IKUpdatable(): IKSerializable::IKSerializable() {};
             virtual ~IKUpdatable() {};
-            virtual BOOL isSubclass(u32 classID)
+            virtual BOOL IsKindOfClass(u32 classID)
             {
                 if (classID == 1022)
                     return TRUE;
-                return IKSerializable::isSubclass(classID);
+                return IKSerializable::IsKindOfClass(classID);
             };
-            // reset() is inherited from IKBaseClass
-            // unk() is inherited from IKSerializable
-            // getClassGroup() is inherited from IKBaseClass
-            // getClassID() is inherited from IKBaseClass
-            // sendEvent() is inherited from IKBaseClass
-            // unk2() is inherited from IKBaseClass
+            // DestroyGame() is inherited from IKBaseClass
+            // Destroy() is inherited from IKSerializable
+            // GetClassType() is inherited from IKBaseClass
+            // GetClassID() is inherited from IKBaseClass
+            // MessageProc() is inherited from IKBaseClass
+            // FindNonRecreableInstances() is inherited from IKBaseClass
             // unk3() is inherited from IKSerializable
             // unk4() is inherited from IKSerializable
-            // serialize() is inherited from IKSerializable
-            // deserialize() is inherited from IKSerializable
+            // Save() is inherited from IKSerializable
+            // Load() is inherited from IKSerializable
             // unk5() is inherited from IKSerializable
             // unk6() is inherited from IKSerializable
             // unk7() is inherited from IKSerializable

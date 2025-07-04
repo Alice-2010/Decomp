@@ -8,9 +8,9 @@
         public:
             CKGrpAliceHero();
             virtual ~CKGrpAliceHero();
-            virtual BOOL isSubclass(u32);
-            virtual s32 getClassGroup();
-            virtual s32 getClassID();
+            virtual BOOL IsKindOfClass(u32);
+            virtual s32 GetClassType();
+            virtual s32 GetClassID();
     };
 
 #endif

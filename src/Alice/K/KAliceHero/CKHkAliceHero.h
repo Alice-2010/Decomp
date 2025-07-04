@@ -8,13 +8,13 @@
         public:
             CKHkAliceHero();
             virtual ~CKHkAliceHero();
-            virtual BOOL isSubclass(u32);
-            // reset() func in this vtable is for IKBaseClass
-            // unk() func in this vtable is for IKHkHero
-            virtual s32 getClassGroup();
-            virtual s32 getClassID();
-            virtual s32 sendEvent();
-            // unk2() func in this vtable is for IKBaseClass
+            virtual BOOL IsKindOfClass(u32);
+            // DestroyGame() func in this vtable is for IKBaseClass
+            // Destroy() func in this vtable is for IKHkHero
+            virtual s32 GetClassType();
+            virtual s32 GetClassID();
+            virtual s32 MessageProc();
+            // FindNonRecreableInstances() func in this vtable is for IKBaseClass
     };
 
 #endif

@@ -16,22 +16,22 @@
                 fn_8000E7F4((s32)this + 0xC, -1);
                 fn_8000F4AC((s32)this + 0x4, 0);
             };
-            virtual BOOL isSubclass(u32 classID)
+            virtual BOOL IsKindOfClass(u32 classID)
             {
                 if (classID == 766)
                     return TRUE;
-                return IKUpdatable::isSubclass(classID);
+                return IKUpdatable::IsKindOfClass(classID);
             };
-            // reset() is inherited from IKBaseClass
-            // unk() is inherited from IKSerializable
-            // getClassGroup() is inherited from IKBaseClass
-            // getClassID() is inherited from IKBaseClass
-            // sendEvent() is inherited from IKBaseClass
-            // unk2() is inherited from IKBaseClass
+            // DestroyGame() is inherited from IKBaseClass
+            // Destroy() is inherited from IKSerializable
+            // GetClassType() is inherited from IKBaseClass
+            // GetClassID() is inherited from IKBaseClass
+            // MessageProc() is inherited from IKBaseClass
+            // FindNonRecreableInstances() is inherited from IKBaseClass
             // unk3() is inherited from IKSerializable
             // unk4() is inherited from IKSerializable
-            // serialize() is inherited from IKSerializable
-            // deserialize() is inherited from IKSerializable
+            // Save() is inherited from IKSerializable
+            // Load() is inherited from IKSerializable
             // unk5() is inherited from IKSerializable
             // unk6() is inherited from IKSerializable
             // unk7() is inherited from IKSerializable

@@ -6,14 +6,14 @@
     class IKBaseClass
     {
         public:
-            IKBaseClass() {};
-            virtual ~IKBaseClass() {};
-            virtual BOOL isSubclass() { return FALSE; };
-            virtual void reset() { return; };
-            virtual void unk() { return; };
-            virtual s32 getClassGroup() = 0;
-            virtual s32 getClassID() = 0;
-            virtual s32 sendEvent() { return 1; };
-            virtual s32 unk2() { return 0; };
+            inline IKBaseClass() {};
+            virtual inline ~IKBaseClass() {};
+            virtual inline BOOL IsKindOfClass() { return FALSE; };
+            virtual inline void DestroyGame() { return; };
+            virtual inline void Destroy() { return; };
+            virtual inline s32 GetClassType() = 0;
+            virtual inline s32 GetClassID() = 0;
+            virtual inline s32 MessageProc() { return 1; };
+            virtual inline s32 FindNonRecreableInstance() { return 0; };
     };
 #endif
