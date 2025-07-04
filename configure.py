@@ -341,7 +341,9 @@ config.libs = [
         "progress_category": "game",  # str | List[str]
         "objects": [
             # Engine
-            Object(MatchingFor(), "K/KCore/Main/CKYellowPages.cpp"),
+            Object(MatchingFor(), "K/KCore/Main/CKYellowPages.cpp", extra_cflags=[
+                "-opt nopeephole",
+            ]),
             # 2- Hooks
             Object(MatchingFor(), "Alice/K/KAliceHero/CKHkAliceHero.cpp"),
             # 4 - Groups
