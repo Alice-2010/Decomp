@@ -56,6 +56,70 @@ CKYellowPages::CKYellowPages()
 
 CKYellowPages::~CKYellowPages() {}
 
+extern s32 FUN_801bb454(void* pServiceManager, u32 c);
+BOOL CKYellowPages::FindNonRecreableInstances(u32 a, u32 b, u32 c, s32* ppInstances)
+{
+    typedef BOOL (*FuncType)();
+    BOOL found;
+    s32 iVar2;
+    u32 uVar1;
+    switch(a)
+    {
+        case 0:
+            if (b == 1)
+            {
+                *ppInstances = (int)this->m_pServiceManager;
+            }
+            else if (b == 2)
+            {
+                *ppInstances = (int)this->m_pGraphic;
+            }
+            else if (b == 3)
+            {
+                *ppInstances = (int)this->m_pSound;
+            }
+            else
+            {
+                if (b != 4)
+                {
+                    typedef u32 (*FuncType2)();
+                    uVar1 = (*(FuncType2*)(*(int*)this->m_pGameLoop + 0x24))();
+                    return uVar1;
+                }
+                *ppInstances = (int)this->m_pInput;
+            }
+            found = (*ppInstances != NULL);
+            break;
+        case 1:
+            iVar2 = FUN_801bb454(this->m_pServiceManager,c);
+            *ppInstances = iVar2;
+            found = iVar2 != 0;
+            break;
+        case 2:
+        case 4:
+        case 12:
+            found = (*(FuncType*)(*(int*)this->m_pCoreManager + 0x24))();
+            break;
+        case 10:
+        case 13:
+            found = (*(FuncType*)(*(int*)this->m_pGraphic + 0x24))();
+            break;
+        case 11:
+            if (c == 6)
+            {
+                found = (*(FuncType*)(*(int*)this->m_pSrvCollision + 0x24))();
+            }
+            else
+            {
+                found = (*(FuncType*)(*(int*)this->m_pGraphic + 0x24))();
+            }
+        default:
+            found = (c == 0);
+            break;
+    }
+    return found;
+}
+
 void CKYellowPages::SetInstance()
 {
     g_pYellowPages = this;

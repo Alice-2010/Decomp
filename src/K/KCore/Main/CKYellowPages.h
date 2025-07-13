@@ -1,6 +1,9 @@
 #ifndef CKYELLOWPAGES_H
     #define CKYELLOWPAGES_H
 
+    #include "types.h"
+    // #include "K/KCore/Interfaces/IKSerializable.h"
+
     class CKYellowPages
     {
         public:
@@ -58,6 +61,7 @@
 
             CKYellowPages();
             ~CKYellowPages();
+            BOOL FindNonRecreableInstances(u32 a, u32 b, u32 c, s32* ppInstances);
             static void SetServiceCamera(void* pServiceCamera);
             void SetInstance();
             CKYellowPages* GetInstance();
