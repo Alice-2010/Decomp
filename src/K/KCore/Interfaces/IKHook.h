@@ -15,12 +15,6 @@
                     return TRUE;
                 return IKLife::IsKindOfClass(classID);
             };
-            // DestroyGame() func in this vtable is for IKBaseClass
-            // Destroy() func in this vtable is for IKSerializable
-            // GetClassType() func in this vtable is for IKBaseClass
-            // GetClassID() func in this vtable is for IKBaseClass
-            // MessageProc() func in this vtable is for IKBaseClass
-            // FindNonRecreableInstances() func in this vtable is for IKBaseClass
     };
 
 #endif

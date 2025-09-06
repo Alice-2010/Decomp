@@ -1,3 +1,4 @@
+#include "K/KCore/Serialization/CKSavingManager.h"
 #include "types.h" // IWYU pragma: export
 #include "K/KCore/Main/CKYellowPages.h"
 
@@ -275,7 +276,7 @@ void CKYellowPages::SetTrcManager(void* pTrcManager)
     g_pYellowPages->m_pTrcManager = pTrcManager;
 }
 
-void CKYellowPages::SetSavingManager(void* pSavingManager)
+void CKYellowPages::SetSavingManager(CKSavingManager* pSavingManager)
 {
     g_pYellowPages->m_pSavingManager = pSavingManager;
 }
@@ -485,7 +486,7 @@ void* CKYellowPages::GetLoadingManager()
     return g_pYellowPages->m_pLoadingManager;
 }
 
-void* CKYellowPages::GetSavingManager()
+CKSavingManager* CKYellowPages::GetSavingManager()
 {
     return g_pYellowPages->m_pSavingManager;
 }

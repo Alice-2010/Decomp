@@ -22,12 +22,19 @@ Alice/K/KAliceHero/CKHkAliceHero.cpp:
 	.data       start:0x804E94B0 end:0x804E9AA0
 	.sdata      start:0x805F1480 end:0x805F14C8
 
-Libraries/zlib/inffast.c:
-	.rodata     start:0x804E1448 end:0x804E1498
-
 K/KCore/Main/CKYellowPages.cpp:
 	.text       start:0x801BC62C end:0x801BCB14
 	.sbss       start:0x805F48D8 end:0x805F48DC
+
+K/KServices/KServiceCounter/CKTimeCounter.cpp:
+	.text       start:0x802A4508 end:0x802A4BB4
+	.ctors      start:0x804D3DA8 end:0x804D3DAC
+	.rodata     start:0x804DB930 end:0x804DB950
+	.data       start:0x8050BC00 end:0x8050BDA8
+	.sdata      start:0x805F2B78 end:0x805F2B80
+
+Libraries/zlib/inffast.c:
+	.rodata     start:0x804E1448 end:0x804E1498
 
 Libraries/zlib/inftrees.c:
 	.text       start:0x8035E6F4 end:0x8035EE70

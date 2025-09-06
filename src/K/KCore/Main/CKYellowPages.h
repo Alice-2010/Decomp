@@ -3,6 +3,7 @@
 
     #include "types.h"
     // #include "K/KCore/Interfaces/IKSerializable.h"
+    #include "K/KCore/Serialization/CKSavingManager.h"
 
     class CKYellowPages
     {
@@ -27,7 +28,7 @@
             void* m_pAnimationManager; // 0x44
             void* m_pTimeManager; // 0x48
             void* m_pLoadingManager; // 0x4C
-            void* m_pSavingManager; // 0x50
+            CKSavingManager* m_pSavingManager; // 0x50
             void* m_pUnk6; // 0x54 - CKParams??
             void* m_pSrvCollision; // 0x58
             void* m_pSrvPhysics; // 0x5C
@@ -93,7 +94,7 @@
             static void SetAnimationManager(void* pAnimationManager);
             static void SetTimeManager(void* pTimeManager);
             static void SetTrcManager(void* pTrcManager);
-            static void SetSavingManager(void* pSavingManager);
+            static void SetSavingManager(CKSavingManager* pSavingManager);
             static void SetLoadingManager(void* pLoadingManager);
             static void SetServiceCollision(void* pServiceCollision);
             static void SetServicePhysics(void* pServicePhysics);
@@ -136,7 +137,7 @@
             static inline void* GetAnimationManager();
             static inline void* GetTimeManager();
             static inline void* GetLoadingManager();
-            static inline void* GetSavingManager();
+            static CKSavingManager* GetSavingManager();
             static inline void* GetUnk6();
             static inline void* GetServiceCollision();
             static inline void* GetServicePhysics();

@@ -344,6 +344,9 @@ config.libs = [
             Object(MatchingFor(), "K/KCore/Main/CKYellowPages.cpp", extra_cflags=[
                 "-opt nopeephole",
             ]),
+            Object(MatchingFor(), "K/KServices/KServiceCounter/CKTimeCounter.cpp", extra_cflags=[
+                "-opt nopeephole",
+            ]),
             # 2- Hooks
             Object(MatchingFor(), "Alice/K/KAliceHero/CKHkAliceHero.cpp"),
             # 4 - Groups

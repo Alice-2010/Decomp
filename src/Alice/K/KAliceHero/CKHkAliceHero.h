@@ -13,7 +13,7 @@
             // Destroy() func in this vtable is for IKHkHero
             virtual s32 GetClassType();
             virtual s32 GetClassID();
-            virtual s32 MessageProc();
+            virtual KMESSAGE_RETURN MessageProc();
             // FindNonRecreableInstances() func in this vtable is for IKBaseClass
     };
 

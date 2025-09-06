@@ -2,18 +2,20 @@
     #define ENGINE_INTERFACES_IKBASECLASS_H
 
     #include "types.h"
+    #include "K/KTypes.h"
 
     class IKBaseClass
     {
         public:
             inline IKBaseClass() {};
-            virtual inline ~IKBaseClass() {};
-            virtual inline BOOL IsKindOfClass() { return FALSE; };
-            virtual inline void DestroyGame() { return; };
-            virtual inline void Destroy() { return; };
-            virtual inline s32 GetClassType() = 0;
-            virtual inline s32 GetClassID() = 0;
-            virtual inline s32 MessageProc() { return 1; };
-            virtual inline s32 FindNonRecreableInstance() { return 0; };
+            virtual ~IKBaseClass() {};
+            virtual BOOL IsKindOfClass() { return FALSE; };
+            virtual void DestroyGame() { return; };
+            virtual void Destroy() { return; };
+            virtual s32 GetClassType() = 0;
+            virtual s32 GetClassID() = 0;
+            virtual KMESSAGE_RETURN MessageProc() { return KMSG_RETURN_NOT_PROCESSED; };
+            virtual s32 FindNonRecreableInstance() { return 0; };
     };
+
 #endif

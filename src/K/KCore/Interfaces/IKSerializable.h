@@ -1,34 +1,29 @@
 #ifndef ENGINE_INTERFACES_IKSERIALIZABLE_H
     #define ENGINE_INTERFACES_IKSERIALIZABLE_H
 
+    #include "K/KTypes.h"
     #include "K/KCore/Interfaces/IKBaseClass.h"
 
     class IKSerializable: public IKBaseClass
     {
         public:
+            void* m_pDbgObjectInfos; // 0x4
+
             IKSerializable(): IKBaseClass::IKBaseClass() {};
             virtual ~IKSerializable() {};
-            virtual BOOL IsKindOfClass(u32 classID)
-            {
-                if (classID == 12)
-                    return TRUE;
-                return IKBaseClass::IsKindOfClass();
-            };
-            // DestroyGame() is inherited from IKBaseClass
+            virtual BOOL IsKindOfClass(KClassIdentifier);
             virtual void Destroy() { return; };
-            // GetClassType() is inherited from IKBaseClass
-            // GetClassID() is inherited from IKBaseClass
-            // MessageProc() is inherited from IKBaseClass
-            // FindNonRecreableInstances() is inherited from IKBaseClass
-            virtual s32 unk3() { return 1; };
-            virtual void unk4() { return; };
-            virtual s32 Save() { return 1; };
-            virtual s32 Load() { return 1; };
-            virtual s32 unk5() { return 1; };
-            virtual s32 unk6() { return 1; };
-            virtual void unk7() { return; };
-            virtual s32 unk8() { return 1; };
-            virtual s32 unk9() { return 1; };
+            virtual KError RecursiveRegistration(ESerializationType) { return 1; };
+            virtual void unk4() { return; }; // NOTE: This function doesn't seem to be called in game
+            virtual KError Save() { return 1; };
+            virtual KError Load() { return 1; };
+            virtual KError PostLoad() { return 1; };
+            BOOL IsRecreable();
+            BOOL IsMergable();
+            virtual u8 GetSerializationFlags() const { return 1; };
+            virtual void SetDefaultState() { return; };
+            virtual KError SetGameState() { return 1; };
+            virtual EInfoReturnType GetInfo() { return KINFO_RETURN_NOT_PROCESSED; };
             virtual s32 unk10() { return 0; };
             virtual void unk11() { return; };
             virtual void unk12() { return; };

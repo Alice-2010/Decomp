@@ -14,24 +14,6 @@
                     return TRUE;
                 return IKSerializable::IsKindOfClass(classID);
             };
-            // DestroyGame() is inherited from IKBaseClass
-            // Destroy() is inherited from IKSerializable
-            // GetClassType() is inherited from IKBaseClass
-            // GetClassID() is inherited from IKBaseClass
-            // MessageProc() is inherited from IKBaseClass
-            // FindNonRecreableInstances() is inherited from IKBaseClass
-            // unk3() is inherited from IKSerializable
-            // unk4() is inherited from IKSerializable
-            // Save() is inherited from IKSerializable
-            // Load() is inherited from IKSerializable
-            // unk5() is inherited from IKSerializable
-            // unk6() is inherited from IKSerializable
-            // unk7() is inherited from IKSerializable
-            // unk8() is inherited from IKSerializable
-            // unk9() is inherited from IKSerializable
-            // unk10() is inherited from IKSerializable
-            // unk11() is inherited from IKSerializable
-            // unk12() is inherited from IKSerializable
             virtual void unk13() = 0;
             virtual void unk14() { return; };
             virtual s32 unk15() { return 1; };
