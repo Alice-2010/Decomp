@@ -1,6 +1,6 @@
-#include "K/KCore/Serialization/CKSavingManager.h"
-#include "types.h" // IWYU pragma: export
 #include "K/KCore/Main/CKYellowPages.h"
+#include "K/KCore/Interfaces/IKBaseClass.h"
+#include "K/KCore/Interfaces/IKSerializable.h"
 
 static CKYellowPages* g_pYellowPages;
 
@@ -57,63 +57,60 @@ CKYellowPages::CKYellowPages()
 
 CKYellowPages::~CKYellowPages() {}
 
-extern s32 FUN_801bb454(void* pServiceManager, u32 c);
-BOOL CKYellowPages::FindNonRecreableInstances(u32 a, u32 b, u32 c, s32* ppInstances)
+extern IKBaseClass** FUN_801bb454(IKBaseClass* pServiceManager, u32 b);
+BOOL CKYellowPages::FindNonRecreableInstances(u32 a, u32 b, u32 c, IKBaseClass*** ppInstances)
 {
-    typedef BOOL (*FuncType)();
     BOOL found;
-    s32 iVar2;
-    u32 uVar1;
+    IKBaseClass** iVar2;
     switch(a)
     {
         case 0:
-            if (b == 1)
+            switch(b)
             {
-                *ppInstances = (int)this->m_pServiceManager;
-            }
-            else if (b == 2)
-            {
-                *ppInstances = (int)this->m_pGraphic;
-            }
-            else if (b == 3)
-            {
-                *ppInstances = (int)this->m_pSound;
-            }
-            else
-            {
-                if (b != 4)
-                {
-                    typedef u32 (*FuncType2)();
-                    uVar1 = (*(FuncType2*)(*(int*)this->m_pGameLoop + 0x24))();
-                    return uVar1;
-                }
-                *ppInstances = (int)this->m_pInput;
+                case 1:
+                    *ppInstances = (IKBaseClass**)this->m_pServiceManager;
+                    break;
+                case 2:
+                    *ppInstances = (IKBaseClass**)this->m_pGraphic;
+                    break;
+                case 3:
+                    *ppInstances = (IKBaseClass**)this->m_pSound;
+                    break;
+                case 4:
+                    *ppInstances = (IKBaseClass**)this->m_pInput;
+                    break;
+                default:
+                    if (b != 4)
+                    {
+                        BOOL uVar1 = this->m_pGameLoop->FindNonRecreableInstances(a, b, c, ppInstances);
+                        return uVar1;
+                    }
+                    break;
             }
             found = (*ppInstances != NULL);
             break;
         case 1:
-            iVar2 = FUN_801bb454(this->m_pServiceManager,c);
+            iVar2 = FUN_801bb454(this->m_pServiceManager, b);
             *ppInstances = iVar2;
             found = iVar2 != 0;
+            break;
+        case 10:
+        case 13:
+            if (b == 6)
+            {
+                found = this->m_pSrvCollision->FindNonRecreableInstances(a, b, c, ppInstances);
+                break;
+            }
+            found = this->m_pGraphic->FindNonRecreableInstances(a, b, c, ppInstances);
+            break;
+        case 11:
+            found = this->m_pGraphic->FindNonRecreableInstances(a, b, c, ppInstances);
             break;
         case 2:
         case 4:
         case 12:
-            found = (*(FuncType*)(*(int*)this->m_pCoreManager + 0x24))();
+            found = this->m_pCoreManager->FindNonRecreableInstances(a, b, c, ppInstances);
             break;
-        case 10:
-        case 13:
-            found = (*(FuncType*)(*(int*)this->m_pGraphic + 0x24))();
-            break;
-        case 11:
-            if (c == 6)
-            {
-                found = (*(FuncType*)(*(int*)this->m_pSrvCollision + 0x24))();
-            }
-            else
-            {
-                found = (*(FuncType*)(*(int*)this->m_pGraphic + 0x24))();
-            }
         default:
             found = (c == 0);
             break;
@@ -186,7 +183,7 @@ void CKYellowPages::SetLocManager(void* pLocManager)
     g_pYellowPages->m_pLocManager = pLocManager;
 }
 
-void CKYellowPages::SetGraphicModule(void* pGraphicModule)
+void CKYellowPages::SetGraphicModule(IKSerializable* pGraphicModule)
 {
     g_pYellowPages->m_pGraphic = pGraphicModule;
 }
@@ -226,7 +223,7 @@ void CKYellowPages::SetCoreFactory(void* pCoreFactory)
     g_pYellowPages->m_pCoreFactory = pCoreFactory;
 }
 
-void CKYellowPages::SetServiceManager(void* pServiceManager)
+void CKYellowPages::SetServiceManager(IKSerializable* pServiceManager)
 {
     g_pYellowPages->m_pServiceManager = pServiceManager;
 }
@@ -236,7 +233,7 @@ void CKYellowPages::SetServiceLife(void* pServiceLife)
     g_pYellowPages->m_pServiceLife = pServiceLife;
 }
 
-void CKYellowPages::SetCoreManager(void* pCoreManager)
+void CKYellowPages::SetCoreManager(IKSerializable* pCoreManager)
 {
     g_pYellowPages->m_pCoreManager = pCoreManager;
 }
@@ -246,7 +243,7 @@ void CKYellowPages::SetFileIOManager(void* pFileIOManager)
     g_pYellowPages->m_pFileIOManager = pFileIOManager;
 }
 
-void CKYellowPages::SetGameLoop(void* pGameLoop)
+void CKYellowPages::SetGameLoop(IKSerializable* pGameLoop)
 {
     g_pYellowPages->m_pGameLoop = pGameLoop;
 }
@@ -286,7 +283,7 @@ void CKYellowPages::SetLoadingManager(void* pLoadingManager)
     g_pYellowPages->m_pLoadingManager = pLoadingManager;
 }
 
-void CKYellowPages::SetServiceCollision(void* pServiceCollision)
+void CKYellowPages::SetServiceCollision(IKSerializable* pServiceCollision)
 {
     g_pYellowPages->m_pSrvCollision = pServiceCollision;
 }
@@ -391,7 +388,7 @@ void* CKYellowPages::GetLoadingInterface()
     return g_pYellowPages->m_pLoadingInterface;
 }
 
-void* CKYellowPages::GetGraphicModule()
+IKSerializable* CKYellowPages::GetGraphicModule()
 {
     return g_pYellowPages->m_pGraphic;
 }
@@ -431,7 +428,7 @@ void* CKYellowPages::GetCoreFactory()
     return g_pYellowPages->m_pCoreFactory;
 }
 
-void* CKYellowPages::GetServiceManager()
+IKSerializable* CKYellowPages::GetServiceManager()
 {
     return g_pYellowPages->m_pServiceManager;
 }
@@ -441,7 +438,7 @@ void* CKYellowPages::GetServiceLife()
     return g_pYellowPages->m_pServiceLife;
 }
 
-void* CKYellowPages::GetCoreManager()
+IKSerializable* CKYellowPages::GetCoreManager()
 {
     return g_pYellowPages->m_pCoreManager;
 }
@@ -451,7 +448,7 @@ void* CKYellowPages::GetFileIOManager()
     return g_pYellowPages->m_pFileIOManager;
 }
 
-void* CKYellowPages::GetGameLoop()
+IKSerializable* CKYellowPages::GetGameLoop()
 {
     return g_pYellowPages->m_pGameLoop;
 }
@@ -496,7 +493,7 @@ void* CKYellowPages::GetUnk6()
     return g_pYellowPages->m_pUnk6;
 }
 
-void* CKYellowPages::GetServiceCollision()
+IKSerializable* CKYellowPages::GetServiceCollision()
 {
     return g_pYellowPages->m_pSrvCollision;
 }

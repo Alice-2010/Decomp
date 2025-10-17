@@ -1,15 +1,16 @@
 #ifndef CKYELLOWPAGES_H
     #define CKYELLOWPAGES_H
 
-    #include "types.h"
-    // #include "K/KCore/Interfaces/IKSerializable.h"
+    #include "K/KCore/Interfaces/IKBaseClass.h"
+#include "types.h"
+    #include "K/KCore/Interfaces/IKSerializable.h"
     #include "K/KCore/Serialization/CKSavingManager.h"
 
     class CKYellowPages
     {
         public:
             void* m_pLoadingInterface; // 0x00
-            void* m_pGraphic; // 0x04
+            IKSerializable* m_pGraphic; // 0x04
             void* m_pScreen; // 0x08
             void* m_pRendererRootNode; // 0x0C
             void* m_pUnkRootNode; // 0x10
@@ -17,11 +18,11 @@
             void* m_pInput; // 0x18
             void* m_pSound; // 0x1C
             void* m_pCoreFactory; // 0x20
-            void* m_pServiceManager; // 0x24
+            IKSerializable* m_pServiceManager; // 0x24
             void* m_pServiceLife; // 0x28
-            void* m_pCoreManager; // 0x2C
+            IKSerializable* m_pCoreManager; // 0x2C
             void* m_pFileIOManager; // 0x30
-            void* m_pGameLoop; // 0x34
+            IKSerializable* m_pGameLoop; // 0x34
             void* m_pManager2d; // 0x38
             void* m_pFlashManager; // 0x3C
             void* m_pTextureManager; // 0x40
@@ -30,7 +31,7 @@
             void* m_pLoadingManager; // 0x4C
             CKSavingManager* m_pSavingManager; // 0x50
             void* m_pUnk6; // 0x54 - CKParams??
-            void* m_pSrvCollision; // 0x58
+            IKSerializable* m_pSrvCollision; // 0x58
             void* m_pSrvPhysics; // 0x5C
             void* m_pSrvFx; // 0x60
             void* m_pSrvBonus; // 0x64
@@ -62,7 +63,7 @@
 
             CKYellowPages();
             ~CKYellowPages();
-            BOOL FindNonRecreableInstances(u32 a, u32 b, u32 c, s32* ppInstances);
+            BOOL FindNonRecreableInstances(u32 a, u32 b, u32 c, IKBaseClass*** ppInstances);
             static void SetServiceCamera(void* pServiceCamera);
             void SetInstance();
             CKYellowPages* GetInstance();
@@ -76,7 +77,7 @@
             static void SetKGameManager(void* pKGameManager);
             static void SetKGameUIManager(void* pKGameUIManager);
             static void SetLocManager(void* pLocManager);
-            static void SetGraphicModule(void* pGraphicModule);
+            static void SetGraphicModule(IKSerializable* pGraphicModule);
             static void SetScreen(void* pScreen);
             static void SetRendererRootNode(void* pRendererRootNode);
             static void SetRootNode2(void* pRootNode2);
@@ -84,11 +85,11 @@
             static void SetInputModule(void* pInputModule);
             static void SetSoundModule(void* pSoundModule);
             static void SetCoreFactory(void* pCoreFactory);
-            static void SetServiceManager(void* pServiceManager);
+            static void SetServiceManager(IKSerializable* pServiceManager);
             static void SetServiceLife(void* pServiceLife);
-            static void SetCoreManager(void* pCoreManager);
+            static void SetCoreManager(IKSerializable* pCoreManager);
             static void SetFileIOManager(void* pFileIOManager);
-            static void SetGameLoop(void* pGameLoop);
+            static void SetGameLoop(IKSerializable* pGameLoop);
             static void SetManager2d(void* pManager2d);
             static void SetTextureManager(void* pTextureManager);
             static void SetAnimationManager(void* pAnimationManager);
@@ -96,7 +97,7 @@
             static void SetTrcManager(void* pTrcManager);
             static void SetSavingManager(CKSavingManager* pSavingManager);
             static void SetLoadingManager(void* pLoadingManager);
-            static void SetServiceCollision(void* pServiceCollision);
+            static void SetServiceCollision(IKSerializable* pServiceCollision);
             static void SetServicePhysics(void* pServicePhysics);
             static void SetServicePathFinding(void* pServicePathFinding);
             static void SetServiceProjectiles(void* pServiceProjectiles);
@@ -118,7 +119,7 @@
             static void SetUnk4(void* pUnk4);
 
             static inline void* GetLoadingInterface();
-            static inline void* GetGraphicModule();
+            static inline IKSerializable* GetGraphicModule();
             static inline void* GetScreen();
             static inline void* GetRendererRootNode();
             static inline void* GetRootNode2();
@@ -126,11 +127,11 @@
             static inline void* GetInputModule();
             static inline void* GetSoundModule();
             static inline void* GetCoreFactory();
-            static inline void* GetServiceManager();
+            static inline IKSerializable* GetServiceManager();
             static inline void* GetServiceLife(); // unused + stripped?
-            static inline void* GetCoreManager();
+            static inline IKSerializable* GetCoreManager();
             static inline void* GetFileIOManager();
-            static inline void* GetGameLoop();
+            static inline IKSerializable* GetGameLoop();
             static inline void* GetManager2d();
             static inline void* GetFlashManager();
             static inline void* GetTextureManager();
@@ -139,7 +140,7 @@
             static inline void* GetLoadingManager();
             static CKSavingManager* GetSavingManager();
             static inline void* GetUnk6();
-            static inline void* GetServiceCollision();
+            static inline IKSerializable* GetServiceCollision();
             static inline void* GetServicePhysics();
             static inline void* GetServiceFx();
             static inline void* GetServiceBonus();
