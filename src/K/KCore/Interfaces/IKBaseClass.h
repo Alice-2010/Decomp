@@ -15,7 +15,7 @@
             virtual s32 GetClassType() = 0;
             virtual s32 GetClassID() = 0;
             virtual KMESSAGE_RETURN MessageProc() { return KMSG_RETURN_NOT_PROCESSED; };
-            virtual s32 FindNonRecreableInstance() { return 0; };
+            virtual BOOL FindNonRecreableInstances(u32 a, u32 b, u32 c, IKBaseClass*** ppInstances) { return FALSE; };
     };
 
 #endif
