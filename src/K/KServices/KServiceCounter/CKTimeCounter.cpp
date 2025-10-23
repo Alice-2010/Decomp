@@ -1,7 +1,6 @@
-#include "K/KCore/Serialization/CKSavingManager.h"
 #include "K/KTypes.h"
+#include "K/KCore/Serialization/CKSavingManager.h"
 #include "K/KServices/KServiceCounter/CKTimeCounter.h"
-#include "K/Classes/EUL_CBitArray.h"
 #include "K/KBasic/FileIO/IKFile.h"
 #include "K/KCore/Interfaces/IKBaseClass.h"
 #include "K/KCore/Interfaces/IKInfo.h"
@@ -17,9 +16,7 @@ CKTimeCounter::~CKTimeCounter() {}
 BOOL CKTimeCounter::IsKindOfClass(KClassIdentifier a_iClassIdentifier)
 {
     if (a_iClassIdentifier == K_FULL_ID(CLASS_TYPE, CLASS_ID))
-    {
         return TRUE;
-    }
     return IKCounter::IsKindOfClass(a_iClassIdentifier);
 }
 
@@ -33,7 +30,6 @@ s32 CKTimeCounter::GetClassID()
     return CLASS_ID;
 }
 
-extern void fn_8000E024(IKFile*, CBitArray*, ESerializationType); // IKFile::ReadCBitArray ?
 KError CKTimeCounter::Load(IKFile* a_pFile, ESerializationType a_eSerializationType)
 {
     IKCounter::Load();
@@ -41,7 +37,7 @@ KError CKTimeCounter::Load(IKFile* a_pFile, ESerializationType a_eSerializationT
     {
         a_pFile->ReadFloat32(&this->m_fCurrentValue, K_GAME_PLATEFORMS);
         a_pFile->ReadFloat32(&this->m_fMaxValue, K_GAME_PLATEFORMS);
-        fn_8000E024(a_pFile, &this->m_baFlags, K_GAME_PLATEFORMS);
+        a_pFile->ReadUInt32(&this->m_ui32MaxLoop, K_GAME_PLATEFORMS);
         this->m_tsMaxValueReached.Load(a_pFile, a_eSerializationType);
         this->m_tsMaxLoopReached.Load(a_pFile, a_eSerializationType);
     }
@@ -158,18 +154,18 @@ KMESSAGE_RETURN CKTimeCounter::MessageProc(u16 a_mMessage, void* a_pParam)
     return KMSG_RETURN_NOT_PROCESSED;
 }
 
-extern void fn_802A4CA0(CTriggerStarter*); // CTriggerStarter::RecursiveRegistration
 s32 CKTimeCounter::RecursiveRegistration(ESerializationType a_eSerializationType)
 {
     s32 val = IKCounter::RecursiveRegistration(a_eSerializationType);
-    fn_802A4CA0(&this->m_tsMaxValueReached);
-    fn_802A4CA0(&this->m_tsMaxLoopReached);
+    this->m_tsMaxLoopReached.RecursiveRegistration();
+    this->m_tsMaxValueReached.RecursiveRegistration();
     if (a_eSerializationType == K_LEVEL_PLATEFORMS)
     {
         CKSavingManager* pSavingManager = CKYellowPages::GetSavingManager();
-        typedef void (*SavingManagerFunc)(void*, CKTimeCounter*, int);
-        SavingManagerFunc func = *(SavingManagerFunc*)((char*)pSavingManager + 0x28);
-        func(pSavingManager, this, 0);
+        pSavingManager->RegisterSerializableObject(this, 0);
+        // typedef void (*SavingManagerFunc)(CKSavingManager*, CKTimeCounter*, int);
+        // SavingManagerFunc func = *(SavingManagerFunc*)((char*)pSavingManager + 0x28);
+        // func(pSavingManager, this, 0);
     }
     return val;
 }

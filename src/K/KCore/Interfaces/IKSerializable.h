@@ -3,6 +3,7 @@
 
     #include "K/KTypes.h"
     #include "K/KCore/Interfaces/IKBaseClass.h"
+#include "compiler_macros.h"
 
     class IKSerializable: public IKBaseClass
     {
@@ -13,11 +14,11 @@
             virtual ~IKSerializable() {};
             virtual BOOL IsKindOfClass(KClassIdentifier);
             virtual void Destroy() { return; };
-            virtual KError RecursiveRegistration(ESerializationType) { return 1; };
+            virtual DONT_INLINE_CLASS KError RecursiveRegistration(ESerializationType) { return 1; };
             virtual void unk4() { return; }; // NOTE: This function doesn't seem to be called in game
             virtual KError Save() { return 1; };
             virtual KError Load() { return 1; };
-            virtual KError PostLoad() { return 1; };
+            virtual DONT_INLINE_CLASS KError PostLoad() { return 1; };
             BOOL IsRecreable();
             BOOL IsMergable();
             virtual u8 GetSerializationFlags() const { return 1; };

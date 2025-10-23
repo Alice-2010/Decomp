@@ -2,7 +2,6 @@
     #define CKYELLOWPAGES_H
 
     #include "K/KCore/Interfaces/IKBaseClass.h"
-#include "types.h"
     #include "K/KCore/Interfaces/IKSerializable.h"
     #include "K/KCore/Serialization/CKSavingManager.h"
 

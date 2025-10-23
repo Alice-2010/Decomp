@@ -65,34 +65,28 @@ BOOL CKYellowPages::FindNonRecreableInstances(u32 a, u32 b, u32 c, IKBaseClass**
     switch(a)
     {
         case 0:
-            switch(b)
+            if (1 == b)
+                *ppInstances = (IKBaseClass**)this->m_pServiceManager;
+            else if (2 == b)
+                *ppInstances = (IKBaseClass**)this->m_pGraphic;
+            else if (3 == b)
+                *ppInstances = (IKBaseClass**)this->m_pSound;
+            else if (4 == b)
+                *ppInstances = (IKBaseClass**)this->m_pInput;
+            else
             {
-                case 1:
-                    *ppInstances = (IKBaseClass**)this->m_pServiceManager;
-                    break;
-                case 2:
-                    *ppInstances = (IKBaseClass**)this->m_pGraphic;
-                    break;
-                case 3:
-                    *ppInstances = (IKBaseClass**)this->m_pSound;
-                    break;
-                case 4:
-                    *ppInstances = (IKBaseClass**)this->m_pInput;
-                    break;
-                default:
-                    if (b != 4)
-                    {
-                        BOOL uVar1 = this->m_pGameLoop->FindNonRecreableInstances(a, b, c, ppInstances);
-                        return uVar1;
-                    }
-                    break;
+                if (b != 4)
+                {
+                    BOOL uVar1 = this->m_pGameLoop->FindNonRecreableInstances(a, b, c, ppInstances);
+                    return uVar1;
+                }
             }
             found = (*ppInstances != NULL);
             break;
         case 1:
             iVar2 = FUN_801bb454(this->m_pServiceManager, b);
             *ppInstances = iVar2;
-            found = iVar2 != 0;
+            found = (iVar2 != NULL);
             break;
         case 10:
         case 13:

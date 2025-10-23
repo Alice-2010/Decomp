@@ -21,10 +21,10 @@
         protected:
             f32 m_fCurrentValue; // 0x8
             f32 m_fMaxValue; // 0xC
-            u32 m_ui32CurrentLoop; // 0x10
-            u32 m_ui32MaxLoop; // 0x14
-            CBitArray m_baFlags; // 0x18
-            void* unk_1C; // 0x1C
+            f32 m_fUnk10; // 0x10
+            u32 m_ui32CurrentLoop; // 0x14
+            u32 m_ui32MaxLoop; // 0x18
+            CBitArray m_baFlags; // 0x1C
             CTriggerStarter m_tsMaxValueReached; // 0x20
             CTriggerStarter m_tsMaxLoopReached; // 0x28
 

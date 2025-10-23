@@ -76,7 +76,7 @@
             void WriteUInt16(u16 value);
             s32 ReadInt32();
             void WriteInt32(s32 value);
-            u32 ReadUInt32();
+            u32 ReadUInt32(u32*, ESerializationType);
             void WriteUInt32(u32 value);
             u64 ReadUInt64();
             void WriteUInt64(u64 value);
