@@ -1,9 +1,9 @@
 #ifndef CKYELLOWPAGES_H
     #define CKYELLOWPAGES_H
 
-    #include "K/KCore/Interfaces/IKBaseClass.h"
     #include "K/KCore/Interfaces/IKSerializable.h"
     #include "K/KCore/Serialization/CKSavingManager.h"
+    #include "K/KCore/Main/CKParams.h"
 
     class CKYellowPages
     {
@@ -29,7 +29,7 @@
             void* m_pTimeManager; // 0x48
             void* m_pLoadingManager; // 0x4C
             CKSavingManager* m_pSavingManager; // 0x50
-            void* m_pUnk6; // 0x54 - CKParams??
+            CKParams* m_pKParams; // 0x54
             IKSerializable* m_pSrvCollision; // 0x58
             void* m_pSrvPhysics; // 0x5C
             void* m_pSrvFx; // 0x60
@@ -53,121 +53,121 @@
             void* m_pSrvMusic; // 0xA8
             void* m_pSrvInput; // 0xAC
             void* m_pVideoManager; // 0xB0
-            void* m_pUnk1; // 0xB4
+            void* m_pSrvNetwork; // 0xB4
             void* m_pUnk2; // 0xB8
-            void* m_pUnk3; // 0xBC
+            void* m_pSrvDynamic; // 0xBC
             void* m_pSrvInputCommands; // 0xC0
-            void* m_pUnk4; // 0xC4
-            void* m_pUnk5; // 0xC8
+            void* m_pVirtualKeyboardManager; // 0xC4
+            void* m_pErrorManager; // 0xC8
 
             CKYellowPages();
             ~CKYellowPages();
-            BOOL FindNonRecreableInstances(u32 a, u32 b, u32 c, IKBaseClass*** ppInstances);
-            static void SetServiceCamera(void* pServiceCamera);
+            BOOL FindNonRecreableInstances(u32, u32, u32, IKBaseClass***);
+            static void SetServiceCamera(void*);
             void SetInstance();
             CKYellowPages* GetInstance();
-            static void SetLoadingInterface(void* pLoadingInterface);
-            static void SetBeaconService(void* pBeaconService);
-            static void SetServiceAvoidance(void* pServiceAvoidance);
-            static void SetServiceCinematic(void* pServiceCinematic);
-            static void SetServiceSekensor(void* pServiceSekensor);
-            static void SetServiceShadow(void* pServiceShadow);
-            static void SetCurrentLevel(void* pCurrentLevel);
-            static void SetKGameManager(void* pKGameManager);
-            static void SetKGameUIManager(void* pKGameUIManager);
-            static void SetLocManager(void* pLocManager);
-            static void SetGraphicModule(IKSerializable* pGraphicModule);
-            static void SetScreen(void* pScreen);
-            static void SetRendererRootNode(void* pRendererRootNode);
-            static void SetRootNode2(void* pRootNode2);
-            static void SetCommunSectorRootNode(void* pCommunSectorRootNode);
-            static void SetInputModule(void* pInputModule);
-            static void SetSoundModule(void* pSoundModule);
-            static void SetCoreFactory(void* pCoreFactory);
-            static void SetServiceManager(IKSerializable* pServiceManager);
-            static void SetServiceLife(void* pServiceLife);
-            static void SetCoreManager(IKSerializable* pCoreManager);
-            static void SetFileIOManager(void* pFileIOManager);
-            static void SetGameLoop(IKSerializable* pGameLoop);
-            static void SetManager2d(void* pManager2d);
-            static void SetTextureManager(void* pTextureManager);
-            static void SetAnimationManager(void* pAnimationManager);
-            static void SetTimeManager(void* pTimeManager);
-            static void SetTrcManager(void* pTrcManager);
-            static void SetSavingManager(CKSavingManager* pSavingManager);
-            static void SetLoadingManager(void* pLoadingManager);
-            static void SetServiceCollision(IKSerializable* pServiceCollision);
-            static void SetServicePhysics(void* pServicePhysics);
-            static void SetServicePathFinding(void* pServicePathFinding);
-            static void SetServiceProjectiles(void* pServiceProjectiles);
-            static void SetServiceFx(void* pServiceFx);
-            static void SetServiceBonus(void* pServiceBonus);
-            static void SetServiceCounter(void* pServiceCounter);
-            static void SetServiceTrigger(void* pServiceTrigger);
-            static void SetServiceDetect(void* pServiceDetect);
-            static void SetFlashManager(void* pFlashManager);
-            static void SetServiceMusic(void* pServiceMusic);
-            static void SetServiceInput(void* pServiceInput);
-            static void SetVideoManager(void* pVideoManager);
-            static void SetUnk6(void* pUnk6);
-            static void SetUnk5(void* pUnk5);
-            static void SetUnk1(void* pUnk1);
-            static void SetUnk3(void* pUnk3);
-            static void SetServiceInputCommands(void* pServiceInputCommands);
-            static void SetUnk2(void* pUnk2);
-            static void SetUnk4(void* pUnk4);
+            static void SetLoadingInterface(void*);
+            static void SetBeaconService(void*);
+            static void SetServiceAvoidance(void*);
+            static void SetServiceCinematic(void*);
+            static void SetServiceSekensor(void*);
+            static void SetServiceShadow(void*);
+            static void SetCurrentLevel(void*);
+            static void SetKGameManager(void*);
+            static void SetKGameUIManager(void*);
+            static void SetLocManager(void*);
+            static void SetGraphicModule(IKSerializable*);
+            static void SetScreen(void*);
+            static void SetRendererRootNode(void*);
+            static void SetRootNode2(void*);
+            static void SetCommunSectorRootNode(void*);
+            static void SetInputModule(void*);
+            static void SetSoundModule(void*);
+            static void SetCoreFactory(void*);
+            static void SetServiceManager(IKSerializable*);
+            static void SetServiceLife(void*);
+            static void SetCoreManager(IKSerializable*);
+            static void SetFileIOManager(void*);
+            static void SetGameLoop(IKSerializable*);
+            static void SetManager2d(void*);
+            static void SetTextureManager(void*);
+            static void SetAnimationManager(void*);
+            static void SetTimeManager(void*);
+            static void SetTrcManager(void*);
+            static void SetSavingManager(CKSavingManager*);
+            static void SetLoadingManager(void*);
+            static void SetServiceCollision(IKSerializable*);
+            static void SetServicePhysics(void*);
+            static void SetServicePathFinding(void*);
+            static void SetServiceProjectiles(void*);
+            static void SetServiceFx(void*);
+            static void SetServiceBonus(void*);
+            static void SetServiceCounter(void*);
+            static void SetServiceTrigger(void*);
+            static void SetServiceDetect(void*);
+            static void SetFlashManager(void*);
+            static void SetServiceMusic(void*);
+            static void SetServiceInput(void*);
+            static void SetVideoManager(void*);
+            static void SetKParams(CKParams*);
+            static void SetErrorManager(void*);
+            static void SetSrvNetwork(void*);
+            static void SetSrvDynamic(void*);
+            static void SetServiceInputCommands(void*);
+            static void SetUnk2(void*);
+            static void SetVirtualKeyboardManager(void*);
 
-            static inline void* GetLoadingInterface();
-            static inline IKSerializable* GetGraphicModule();
-            static inline void* GetScreen();
-            static inline void* GetRendererRootNode();
-            static inline void* GetRootNode2();
-            static inline void* GetCommunSectorRootNode();
-            static inline void* GetInputModule();
-            static inline void* GetSoundModule();
-            static inline void* GetCoreFactory();
-            static inline IKSerializable* GetServiceManager();
-            static inline void* GetServiceLife(); // unused + stripped?
-            static inline IKSerializable* GetCoreManager();
-            static inline void* GetFileIOManager();
-            static inline IKSerializable* GetGameLoop();
-            static inline void* GetManager2d();
-            static inline void* GetFlashManager();
-            static inline void* GetTextureManager();
-            static inline void* GetAnimationManager();
-            static inline void* GetTimeManager();
-            static inline void* GetLoadingManager();
+            static void* GetLoadingInterface();
+            static IKSerializable* GetGraphicModule();
+            static void* GetScreen();
+            static void* GetRendererRootNode();
+            static void* GetRootNode2();
+            static void* GetCommunSectorRootNode();
+            static void* GetInputModule();
+            static void* GetSoundModule();
+            static void* GetCoreFactory();
+            static IKSerializable* GetServiceManager();
+            static void* GetServiceLife(); // unused + stripped?
+            static IKSerializable* GetCoreManager();
+            static void* GetFileIOManager();
+            static IKSerializable* GetGameLoop();
+            static void* GetManager2d();
+            static void* GetFlashManager();
+            static void* GetTextureManager();
+            static void* GetAnimationManager();
+            static void* GetTimeManager();
+            static void* GetLoadingManager();
             static CKSavingManager* GetSavingManager();
-            static inline void* GetUnk6();
-            static inline IKSerializable* GetServiceCollision();
-            static inline void* GetServicePhysics();
-            static inline void* GetServiceFx();
-            static inline void* GetServiceBonus();
-            static inline void* GetServiceProjectiles(); // unused + stripped?
-            static inline void* GetServicePathFinding();
-            static inline void* GetServiceCamera();
-            static inline void* GetServiceAvoidance();
-            static inline void* GetServiceBeacon();
-            static inline void* GetTrcManager();
-            static inline void* GetServiceCinematic();
-            static inline void* GetServiceSekensor();
-            static inline void* GetServiceShadow();
-            static inline void* GetKGameManager();
-            static inline void* GetKGameUIManager();
-            static inline void* GetCurrentLevel();
-            static inline void* GetLocManager();
-            static inline void* GetServiceCounter(); // unused + stripped?
-            static inline void* GetServiceTrigger();
-            static inline void* GetServiceDetect();
-            static inline void* GetServiceMusic();
-            static inline void* GetServiceInput();
-            static inline void* GetVideoManager();
-            static inline void* GetUnk1(); // unused + stripped?
-            static inline void* GetUnk2();
-            static inline void* GetUnk3(); // unused + stripped?
-            static inline void* GetServiceInputCommands();
-            static inline void* GetUnk4(); // unused + stripped?
-            static inline void* GetUnk5(); // unused + stripped?
+            static CKParams* GetKParams();
+            static IKSerializable* GetServiceCollision();
+            static void* GetServicePhysics();
+            static void* GetServiceFx();
+            static void* GetServiceBonus();
+            static void* GetServiceProjectiles(); // unused + stripped?
+            static void* GetServicePathFinding();
+            static void* GetServiceCamera();
+            static void* GetServiceAvoidance();
+            static void* GetServiceBeacon();
+            static void* GetTrcManager();
+            static void* GetServiceCinematic();
+            static void* GetServiceSekensor();
+            static void* GetServiceShadow();
+            static void* GetKGameManager();
+            static void* GetKGameUIManager();
+            static void* GetCurrentLevel();
+            static void* GetLocManager();
+            static void* GetServiceCounter(); // unused + stripped?
+            static void* GetServiceTrigger();
+            static void* GetServiceDetect();
+            static void* GetServiceMusic();
+            static void* GetServiceInput();
+            static void* GetVideoManager();
+            static void* GetSrvNetwork(); // unused + stripped?
+            static void* GetUnk2();
+            static void* GetSrvDynamic(); // unused + stripped?
+            static void* GetServiceInputCommands();
+            static void* GetVirtualKeyboardManager(); // unused + stripped?
+            static void* GetErrorManager(); // unused + stripped?
     };
 
 #endif

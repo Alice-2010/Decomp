@@ -1,4 +1,5 @@
 #include "K/KCore/Main/CKYellowPages.h"
+#include "CKParams.h"
 #include "K/KCore/Interfaces/IKBaseClass.h"
 #include "K/KCore/Interfaces/IKSerializable.h"
 
@@ -42,7 +43,7 @@ CKYellowPages::CKYellowPages()
     this->m_pFlashManager = NULL;
     this->m_pSrvMusic = NULL;
     this->m_pSrvBonus = NULL;
-    this->m_pUnk1 = NULL;
+    this->m_pSrvNetwork = NULL;
     this->m_pUnkRootNode = NULL;
     this->m_pSrvDetect = NULL;
     this->m_pSrvCounter = NULL;
@@ -50,7 +51,7 @@ CKYellowPages::CKYellowPages()
     this->m_pSrvPhysics = NULL;
     this->m_pSrvInput = NULL;
     this->m_pVideoManager = NULL;
-    this->m_pUnk5 = NULL;
+    this->m_pErrorManager = NULL;
     this->m_pSavingManager = NULL;
     this->SetInstance();
 }
@@ -342,24 +343,24 @@ void CKYellowPages::SetVideoManager(void* pVideoManager)
     g_pYellowPages->m_pVideoManager = pVideoManager;
 }
 
-void CKYellowPages::SetUnk6(void* pUnk6)
+void CKYellowPages::SetKParams(CKParams* pKParams)
 {
-    g_pYellowPages->m_pUnk6 = pUnk6;
+    g_pYellowPages->m_pKParams = pKParams;
 }
 
-void CKYellowPages::SetUnk5(void* pUnk5)
+void CKYellowPages::SetErrorManager(void* pErrorManager)
 {
-    g_pYellowPages->m_pUnk5 = pUnk5;
+    g_pYellowPages->m_pErrorManager = pErrorManager;
 }
 
-void CKYellowPages::SetUnk1(void* pUnk1)
+void CKYellowPages::SetSrvNetwork(void* pSrvNetwork)
 {
-    g_pYellowPages->m_pUnk1 = pUnk1;
+    g_pYellowPages->m_pSrvNetwork = pSrvNetwork;
 }
 
-void CKYellowPages::SetUnk3(void *pUnk3)
+void CKYellowPages::SetSrvDynamic(void* pSrvDynamic)
 {
-    g_pYellowPages->m_pUnk3 = pUnk3;
+    g_pYellowPages->m_pSrvDynamic = pSrvDynamic;
 }
 
 void CKYellowPages::SetServiceInputCommands(void *pServiceInputCommands)
@@ -372,9 +373,9 @@ void CKYellowPages::SetUnk2(void* pUnk2)
     g_pYellowPages->m_pUnk2 = pUnk2;
 }
 
-void CKYellowPages::SetUnk4(void* pUnk4)
+void CKYellowPages::SetVirtualKeyboardManager(void* pVirtualKeyboardManager)
 {
-    g_pYellowPages->m_pUnk4 = pUnk4;
+    g_pYellowPages->m_pVirtualKeyboardManager = pVirtualKeyboardManager;
 }
 
 void* CKYellowPages::GetLoadingInterface()
@@ -482,9 +483,9 @@ CKSavingManager* CKYellowPages::GetSavingManager()
     return g_pYellowPages->m_pSavingManager;
 }
 
-void* CKYellowPages::GetUnk6()
+CKParams* CKYellowPages::GetKParams()
 {
-    return g_pYellowPages->m_pUnk6;
+    return g_pYellowPages->m_pKParams;
 }
 
 IKSerializable* CKYellowPages::GetServiceCollision()
@@ -602,9 +603,9 @@ void* CKYellowPages::GetVideoManager()
     return g_pYellowPages->m_pVideoManager;
 }
 
-void* CKYellowPages::GetUnk1()
+void* CKYellowPages::GetSrvNetwork()
 {
-    return g_pYellowPages->m_pUnk1;
+    return g_pYellowPages->m_pSrvNetwork;
 }
 
 void* CKYellowPages::GetUnk2()
@@ -612,9 +613,9 @@ void* CKYellowPages::GetUnk2()
     return g_pYellowPages->m_pUnk2;
 }
 
-void* CKYellowPages::GetUnk3()
+void* CKYellowPages::GetSrvDynamic()
 {
-    return g_pYellowPages->m_pUnk3;
+    return g_pYellowPages->m_pSrvDynamic;
 }
 
 void* CKYellowPages::GetServiceInputCommands()
@@ -622,12 +623,12 @@ void* CKYellowPages::GetServiceInputCommands()
     return g_pYellowPages->m_pSrvInputCommands;
 }
 
-void* CKYellowPages::GetUnk4()
+void* CKYellowPages::GetVirtualKeyboardManager()
 {
-    return g_pYellowPages->m_pUnk4;
+    return g_pYellowPages->m_pVirtualKeyboardManager;
 }
 
-void* CKYellowPages::GetUnk5()
+void* CKYellowPages::GetErrorManager()
 {
-    return g_pYellowPages->m_pUnk5;
+    return g_pYellowPages->m_pErrorManager;
 }
