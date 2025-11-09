@@ -1,7 +1,7 @@
 #ifndef _MSL_PRINTF_H
     #define _MSL_PRINTF_H
 
-    #include "PowerPC_EABI_Support/MSL/MSL_C/MSL_Common/file_def.h"
+    #include "PowerPC_EABI_Support/MSL/MSL_C/MSL_Common/file_def.h" // IWYU pragma: export
     #include "PowerPC_EABI_Support/MSL/MSL_C/MSL_Common/restrict_def.h"
     #include "PowerPC_EABI_Support/MSL/MSL_C/MSL_Common/va_list_def.h"
 

@@ -335,12 +335,14 @@ config.libs = [
             "-func_align 4",
             "-inline all",
             "-fp_contract on",
-            "-rostr"
+            "-rostr",
+            "-str reuse"
         ],
         "host": False,
         "progress_category": "game",  # str | List[str]
         "objects": [
             # Engine
+            Object(MatchingFor(), "K/KCore/Main/CKCoreFactory.cpp"),
             Object(MatchingFor(), "K/KCore/Main/CKYellowPages.cpp", extra_cflags=[
                 "-opt nopeephole",
             ]),

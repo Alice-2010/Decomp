@@ -2,9 +2,7 @@
     #define _STRING_H
 
     #include "PowerPC_EABI_Support/MSL/MSL_C/MSL_Common/restrict_def.h"
-    #include "PowerPC_EABI_Support/Runtime/__mem.h"
-    #include "PowerPC_EABI_Support/MSL/MSL_C/MSL_Common/string_api.h"
-    #include "PowerPC_EABI_Support/MSL/MSL_C/MSL_Common/extras.h"
+    #include "PowerPC_EABI_Support/MSL/MSL_C/MSL_Common/size_def.h" // IWYU pragma: export
 
     #ifdef __cplusplus
         extern "C" {

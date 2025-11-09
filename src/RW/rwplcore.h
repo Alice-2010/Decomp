@@ -31,8 +31,8 @@
 
     union RwStreamFile
     {
-        const void* fpFile; // 0x0
-        const void* constfpFile; // 0x0
+        const void* fpFile;
+        const void* constfpFile;
     };
 
     struct RwStreamCustom
@@ -46,9 +46,9 @@
 
     union RwStreamUnion
     {
-        struct RwStreamMemory memory; // 0x0
-        union RwStreamFile file; // 0x0
-        struct RwStreamCustom custom; // 0x0
+        struct RwStreamMemory memory;
+        union RwStreamFile file;
+        struct RwStreamCustom custom;
     };
 
     struct RwStream
