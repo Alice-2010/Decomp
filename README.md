@@ -78,8 +78,8 @@ Linux
 ------
 
 - Install [ninja](https://github.com/ninja-build/ninja/wiki/Pre-built-Ninja-packages).
-- For non-x86(_64) platforms: Install wine from your package manager.
-  - For x86(_64), [wibo](https://github.com/decompals/wibo), a minimal 32-bit Windows binary wrapper, will be automatically downloaded and used.
+
+[wibo](https://github.com/decompals/wibo), a minimal 32-bit Windows binary wrapper, will be automatically downloaded and used.
 
 Building
 ========
@@ -118,6 +118,6 @@ Select an object from the left sidebar to begin diffing. Changes to the project 
 
 ## References
 - [Decomp Toolkit](https://github.com/encounter/dtk-template) (repo template)
-    - [Latest commit used in this Decomp](https://github.com/encounter/dtk-template/commit/dbad3087b601d609d2dbff30c14a1fdb6a27a1ce)
+    - [Latest commit used in this Decomp](https://github.com/encounter/dtk-template/commit/b0eff0abd44be06aa857e62368fc9986bcb3a86d)
 - [Dolphin 2001 SDK](https://github.com/doldecomp/dolsdk2001)
     - Alice uses Revolution SDK of a currently unknown version or release, however, dolsdk can be used as a basis

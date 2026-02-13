@@ -104,6 +104,12 @@ parser.add_argument(
     help="path to sjiswrap.exe (optional)",
 )
 parser.add_argument(
+    "--ninja",
+    metavar="BINARY",
+    type=Path,
+    help="path to ninja binary (optional)",
+)
+parser.add_argument(
     "--verbose",
     action="store_true",
     help="print verbose output",
@@ -142,6 +148,7 @@ config.compilers_path = args.compilers
 config.generate_map = args.map
 config.non_matching = args.non_matching
 config.sjiswrap_path = args.sjiswrap
+config.ninja_path = args.ninja
 config.progress = args.progress
 if not is_windows():
     config.wrapper = args.wrapper
@@ -151,11 +158,11 @@ if not config.non_matching:
 
 # Tool versions
 config.binutils_tag = "2.42-1"
-config.compilers_tag = "20250520"
-config.dtk_tag = "v1.6.0"
-config.objdiff_tag = "v3.0.0-beta.8"
-config.sjiswrap_tag = "v1.2.1"
-config.wibo_tag = "0.6.16"
+config.compilers_tag = "20251118"
+config.dtk_tag = "v1.8.0"
+config.objdiff_tag = "v3.5.1"
+config.sjiswrap_tag = "v1.2.2"
+config.wibo_tag = "1.0.0"
 
 
 # Project
@@ -368,6 +375,8 @@ def link_order_callback(module_id: int, objects: List[str]) -> List[str]:
     if module_id == 0:  # DOL
         return objects + ["dummy.c"]
     return objects
+
+
 # Uncomment to enable the link order callback.
 # config.link_order_callback = link_order_callback
 
