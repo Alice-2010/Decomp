@@ -160,7 +160,7 @@ if not config.non_matching:
 config.binutils_tag = "2.42-1"
 config.compilers_tag = "20251118"
 config.dtk_tag = "v1.8.0"
-config.objdiff_tag = "v3.5.1"
+config.objdiff_tag = "v3.7.0"
 config.sjiswrap_tag = "v1.2.2"
 config.wibo_tag = "1.0.0"
 
@@ -334,7 +334,7 @@ config.libs = [
         ]
     },
     {
-        "lib": "Alice",
+        "lib": "Engine",
         "mw_version": config.linker_version,
         "cflags": [
             *cflags_base,
@@ -342,16 +342,32 @@ config.libs = [
             "-func_align 4",
             "-inline all",
             "-fp_contract on",
-            "-rostr"
+            "-rostr",
+            "-opt nopeephole",
+        ],
+        "host": False,
+        "progress_category": "engine",  # str | List[str]
+        "objects": [
+            Object(MatchingFor(), "K/KCore/Main/CKYellowPages.cpp"),
+            Object(MatchingFor(), "K/KServices/KServiceCounter/CKTimeCounter.cpp"),
+        ]
+    },
+    {
+        "lib": "Game",
+        "mw_version": config.linker_version,
+        "cflags": [
+            *cflags_base,
+            "-O4,p",
+            "-func_align 4",
+            "-inline all",
+            "-fp_contract on",
+            "-rostr",
         ],
         "host": False,
         "progress_category": "game",  # str | List[str]
         "objects": [
-            # Engine
-            Object(MatchingFor(), "K/KCore/Main/CKYellowPages.cpp", extra_cflags=[
-                "-opt nopeephole",
-            ]),
-            Object(MatchingFor(), "K/KServices/KServiceCounter/CKTimeCounter.cpp", extra_cflags=[
+            # Main
+            Object(MatchingFor("SALP4Q"), "main.cpp", extra_cflags=[
                 "-opt nopeephole",
             ]),
             # 2- Hooks
@@ -385,6 +401,7 @@ def link_order_callback(module_id: int, objects: List[str]) -> List[str]:
 # Adjust as desired for your project
 config.progress_categories = [
     ProgressCategory("game", "Game Code"),
+    ProgressCategory("engine", "K Engine Code"),
     ProgressCategory("sdk", "SDK Code"),
     ProgressCategory("lib", "Libraries")
 ]
