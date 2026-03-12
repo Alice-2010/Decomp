@@ -2,6 +2,15 @@
 ## Ghidra
 - Server connection details can be found at [ghidra.decomp.dev](https://ghidra.decomp.dev)
 
+### Ghidra MCP
+- Install Ghidra Extension [GhidraMCP by LaurieWired](github.com/LaurieWired/GhidraMCP), enable it and restart Ghidra
+- Install VSCode Extension [konekotech.ghidramcp](https://marketplace.visualstudio.com/items?itemName=konekotech.ghidramcp)
+- Configure VSCode Extension (`.vscode/settings.json`)
+    - Set bridge script path, e.g: `"ghidramcp.bridgeScriptPath": "/path/to/Alice-Decomp/tools/ghidra_scripts/bridge_mcp_ghidra.py"`
+    - Optionally set a virtual env path e.g: `"ghidramcp.venvPath": "/path/to/Alice-Decomp/.venv"`
+- In VSCode Command Palette, run `Start Ghidra Server`
+- Connect VSCode integrated agent (e.g: Github Copilot) to the MCP server `http://127.0.0.1:8081/sse`
+
 ## Decompiling
 - Configure and build the project using the following commands
     - `python3 configure.py -v [GAME ID]`
