@@ -283,13 +283,16 @@ config.libs = [
             *cflags_base,
             "-O4,p",
             "-lang=c99",
-            "-d NDEBUG"
+            "-d NDEBUG",
+            "-str reuse",
         ],
         "host": False,
         "progress_category": "sdk",
         "objects": [
             # BASE
             Object(MatchingFor("SALP4Q"), "Revolution/BASE/PPCArch.c"),
+            # FS
+            Object(MatchingFor("SALP4Q"), "Revolution/FS/fs.c"),
             # GX
             Object(MatchingFor("SALP4Q"), "Revolution/GX/GXBump.c"),
             # NAND
