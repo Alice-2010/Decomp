@@ -290,6 +290,8 @@ config.libs = [
         "objects": [
             # BASE
             Object(MatchingFor("SALP4Q"), "Revolution/BASE/PPCArch.c"),
+            # GX
+            Object(MatchingFor("SALP4Q"), "Revolution/GX/GXBump.c"),
             # NAND
             Object(MatchingFor("SALP4Q"), "Revolution/NAND/NANDLogging.c"),
             Object(MatchingFor("SALP4Q"), "Revolution/NAND/NANDOpenClose.c"),

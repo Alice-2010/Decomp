@@ -14,3 +14,4 @@ orig/*/**/*.dol
 ctx.c
 !requirements*.txt
 *.class
+.github/agents/
