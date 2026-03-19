@@ -85,6 +85,10 @@ Revolution/OS/__ppc_eabi_init.c:
 	.init       start:0x80004300 end:0x80004364
 	.text       start:0x80376CF0 end:0x80376DAC
 
+Revolution/GX/GXBump.c:
+	.text       start:0x80392090 end:0x803924E4
+	.sdata2     start:0x805FA4B0 end:0x805FA4B4
+
 PowerPC_EABI_Support/Runtime/__va_arg.c:
 	.text       start:0x80393FFC end:0x803940C4
 
