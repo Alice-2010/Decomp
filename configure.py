@@ -291,6 +291,8 @@ config.libs = [
         "objects": [
             # BASE
             Object(MatchingFor("SALP4Q"), "Revolution/BASE/PPCArch.c"),
+            # DSP
+            Object(MatchingFor("SALP4Q"), "Revolution/DSP/dsp.c"),
             # FS
             Object(MatchingFor("SALP4Q"), "Revolution/FS/fs.c"),
             # GX
