@@ -85,6 +85,12 @@ Revolution/OS/__ppc_eabi_init.c:
 	.init       start:0x80004300 end:0x80004364
 	.text       start:0x80376CF0 end:0x80376DAC
 
+Revolution/DSP/dsp.c:
+	.text       start:0x8038BB10 end:0x8038BDAC
+	.data       start:0x8052BE10 end:0x8052BE90
+	.sdata      start:0x805F37A8 end:0x805F37AC
+	.sbss       start:0x805F5D98 end:0x805F5D9C
+
 Revolution/GX/GXBump.c:
 	.text       start:0x80392090 end:0x803924E4
 	.sdata2     start:0x805FA4B0 end:0x805FA4B4
