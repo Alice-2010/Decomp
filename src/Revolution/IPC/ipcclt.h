@@ -48,7 +48,7 @@
         IPC_REQ_WRITE,
         IPC_REQ_SEEK,
         IPC_REQ_IOCTL,
-        IPC_REQ_IOCTLV
+        IPC_REQ_IOCTLV,
     } IPCRequestType;
 
     typedef enum {
