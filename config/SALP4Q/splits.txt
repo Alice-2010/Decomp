@@ -133,6 +133,16 @@ Revolution/FS/fs.c:
 	.sdata      start:0x805F3878 end:0x805F3888
 	.sbss       start:0x805F5F10 end:0x805F5F28
 
+Revolution/IPC/ipcMain.c:
+	.text       start:0x803B2C50 end:0x803B2D38
+	.sbss       start:0x805F5F28 end:0x805F5F3C
+
+Revolution/IPC/ipcclt.c:
+	.text       start:0x803B2D40 end:0x803B472C
+	.bss        start:0x805A4800 end:0x805A48C0
+	.sdata      start:0x805F3888 end:0x805F3890
+	.sbss       start:0x805F5F40 end:0x805F5F50
+
 Revolution/NAND/NANDOpenClose.c:
 	.text       start:0x803B5EF0 end:0x803B63FC
 

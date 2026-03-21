@@ -210,17 +210,18 @@ cflags_base = [
     '-pragma "cats off"',
     '-pragma "warning off (10184)"',
     '-pragma "warn_notinlined off"',
-    '-pragma "warn_filenamecaps on"',
-    '-pragma "warn_filenamecaps_system on"',
 
     "-RTTI on",
     "-Cpp_exceptions off",
-    "-str noreuse",
+    "-str noreuse,noreadonly",
 
     "-i src",
     f"-i build/{config.version}/include",
     f"-DBUILD_VERSION={version_num}",
-    f"-DVERSION_{config.version}"
+    f"-DVERSION_{config.version}",
+
+    "-O4,p",
+    "-inline auto",
 ]
 
 # Debug flags
@@ -258,9 +259,7 @@ config.libs = [
         "mw_version": config.linker_version,
         "cflags": [
             *cflags_base,
-            "-O4,p",
             "-lang=c99",
-            "-inline auto",
             "-func_align 4",
             "-rostr"
         ],
@@ -281,9 +280,7 @@ config.libs = [
         "mw_version": config.linker_version,
         "cflags": [
             *cflags_base,
-            "-O4,p",
             "-lang=c99",
-            "-d NDEBUG",
             "-str reuse",
         ],
         "host": False,
@@ -297,6 +294,9 @@ config.libs = [
             Object(MatchingFor("SALP4Q"), "Revolution/FS/fs.c"),
             # GX
             Object(MatchingFor("SALP4Q"), "Revolution/GX/GXBump.c"),
+            # IPC
+            Object(MatchingFor("SALP4Q"), "Revolution/IPC/ipcMain.c"),
+            Object(MatchingFor(), "Revolution/IPC/ipcclt.c"),
             # NAND
             Object(MatchingFor("SALP4Q"), "Revolution/NAND/NANDLogging.c"),
             Object(MatchingFor("SALP4Q"), "Revolution/NAND/NANDOpenClose.c"),
@@ -316,7 +316,6 @@ config.libs = [
         "mw_version": config.linker_version,
         "cflags": [
             *cflags_base,
-            "-O4,p",
             "-lang=c99",
             "-use_lmw_stmw on",
             "-func_align 4"
@@ -345,7 +344,6 @@ config.libs = [
         "mw_version": config.linker_version,
         "cflags": [
             *cflags_base,
-            "-O4,p",
             "-func_align 4",
             "-inline all",
             "-fp_contract on",
@@ -364,7 +362,6 @@ config.libs = [
         "mw_version": config.linker_version,
         "cflags": [
             *cflags_base,
-            "-O4,p",
             "-func_align 4",
             "-inline all",
             "-fp_contract on",
