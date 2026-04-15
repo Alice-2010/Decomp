@@ -2,7 +2,7 @@
  * Copyright (C) 1995-2005 Mark Adler
  * For conditions of distribution and use, see copyright notice in zlib.h
  */
-#include "Libraries/zlib/zutil.h"
+#include "Libraries/zlib/zutil.h" // IWYU pragma: keep
 #include "Libraries/zlib/inftrees.h"
 #define MAXBITS 15
 const char inflate_copyright[] =
