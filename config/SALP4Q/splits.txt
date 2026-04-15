@@ -34,18 +34,23 @@ K/KServices/KServiceCounter/CKTimeCounter.cpp:
 	.data       start:0x8050BC00 end:0x8050BDA8
 	.sdata      start:0x805F2B78 end:0x805F2B80
 
-Libraries/zlib/inffast.c:
-	.rodata     start:0x804E1448 end:0x804E1498
-
 main.cpp:
 	.text       start:0x802AE234 end:0x802AE3AC
 	.bss        start:0x805567B8 end:0x805567D8
+
+Libraries/zlib/inffast.c:
+	.text       start:0x8035C560 end:0x8035CAF0
+	.rodata     start:0x804E1448 end:0x804E1498
+
+Libraries/zlib/inflate.c:
+	.text       start:0x8035CAF0 end:0x8035E6F4
 
 Libraries/zlib/inftrees.c:
 	.text       start:0x8035E6F4 end:0x8035EE70
 	.rodata     start:0x804E1EF0 end:0x804E2020
 
 Libraries/zlib/zutil.c:
+	.text       start:0x8036129C end:0x803612F4
 	.rodata     start:0x804E2A58 end:0x804E2B00
 
 Revolution/BASE/PPCArch.c:

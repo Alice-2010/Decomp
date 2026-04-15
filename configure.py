@@ -328,13 +328,21 @@ config.libs = [
         ]
     },
     {
-        "lib": "libs/zlib",
+        "lib": "zlib",
         "mw_version": config.linker_version,
-        "cflags": cflags_base,
+        "cflags": [
+            *cflags_base,
+            "-lang=c99",
+            "-func_align 4",
+            "-use_lmw_stmw on",
+            "-opt nopeephole",
+            "-rostr",
+        ],
         "host": False,
         "progress_category": "lib",
         "objects": [
-            Object(MatchingFor(), "Libraries/zlib/inffast.c"),
+            Object(MatchingFor("SALP4Q"), "Libraries/zlib/inffast.c"),
+            Object(MatchingFor(), "Libraries/zlib/inflate.c"),
             Object(MatchingFor(), "Libraries/zlib/inftrees.c"),
             Object(MatchingFor(), "Libraries/zlib/zutil.c"),
         ]
