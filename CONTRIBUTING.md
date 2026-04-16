@@ -17,7 +17,7 @@
     - `ninja`
 - Write C++ code that creates matching assembly code
     - Use the following string as the build flags
-    - Compiler `4.3 build 188 (Wii MW 1.5)`
+    - Compiler `Wii MW 1.0RC1`
     - `-O4,s -lang=c++ -RTTI off -enum int -fp hard -enc SJIS -fp_contract on -str reuse -inline auto -use_lmw_stmw on`
 - While decompiling, please try to self document functions or variables, including information like
     - Game ID
