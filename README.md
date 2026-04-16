@@ -17,6 +17,8 @@ https://decomp.dev/Alice-2010/Decomp.svg?mode=shield&measure=code&label=SALE4Q%2
 [SALE4Q_C]: https://decomp.dev/Alice-2010/Decomp/SALE4Q.svg?mode=shield&measure=code&label=SALE4Q%20Code
 [SALP4Q_D]: https://decomp.dev/Alice-2010/Decomp/SALP4Q.svg?mode=shield&measure=data&label=SALP4Q%20Data
 [SALE4Q_D]: https://decomp.dev/Alice-2010/Decomp/SALE4Q.svg?mode=shield&measure=data&label=SALE4Q%20Data
+
+[DEFAULT_PROG]: https://decomp.dev/Alice-2010/Decomp.svg?mode=overview
 <!--
 Replace with your Discord server's ID and invite URL.
 -->
@@ -27,6 +29,8 @@ Replace with your Discord server's ID and invite URL.
 decomp.dev progress badges
 See https://decomp.dev/api for an API overview.
 -->
+
+![DEFAULT_PROG]
 
 A work-in-progress decompilation of Alice in Wonderland (2010 Wii).
 

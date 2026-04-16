@@ -238,7 +238,8 @@ elif args.warn == "off":
 elif args.warn == "error":
     cflags_base.append("-W error")
 
-config.linker_version = "Wii/1.0"
+# NOTE Alice likely uses either 1.0a or 1.0RC1
+config.linker_version = "Wii/1.0RC1"
 
 
 Matching = True                   # Object matches and should be linked
@@ -336,14 +337,14 @@ config.libs = [
             "-func_align 4",
             "-use_lmw_stmw on",
             "-opt nopeephole",
-            "-rostr",
+            "-str reuse,readonly",
         ],
         "host": False,
         "progress_category": "lib",
         "objects": [
             Object(MatchingFor("SALP4Q"), "Libraries/zlib/inffast.c"),
             Object(MatchingFor(), "Libraries/zlib/inflate.c"),
-            Object(MatchingFor(), "Libraries/zlib/inftrees.c"),
+            Object(MatchingFor("SALP4Q"), "Libraries/zlib/inftrees.c"),
             Object(MatchingFor(), "Libraries/zlib/zutil.c"),
         ]
     },
