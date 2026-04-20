@@ -329,6 +329,21 @@ config.libs = [
         ]
     },
     {
+        "lib": "MetroTRK",
+        "mw_version": config.linker_version,
+        "cflags": [
+            *cflags_base,
+            "-lang=c99",
+            "-use_lmw_stmw on",
+            "-func_align 4",
+        ],
+        "host": False,
+        "progress_category": "sdk",
+        "objects": [
+            Object(MatchingFor("SALP4Q"), "PowerPC_EABI_Support/MetroTRK/main_TRK.c"),
+        ]
+    },
+    {
         "lib": "zlib",
         "mw_version": config.linker_version,
         "cflags": [
