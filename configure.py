@@ -319,11 +319,12 @@ config.libs = [
             *cflags_base,
             "-lang=c99",
             "-use_lmw_stmw on",
-            "-func_align 4"
+            "-func_align 4",
         ],
         "host": False,
         "progress_category": "sdk",
         "objects": [
+            Object(MatchingFor(), "PowerPC_EABI_Support/MSL/MSL_C/MSL_Common/alloc.c"),
             Object(MatchingFor("SALP4Q"), "PowerPC_EABI_Support/MSL/MSL_C/MSL_Common/mem.c"),
             Object(MatchingFor("SALP4Q"), "PowerPC_EABI_Support/MSL/MSL_C/MSL_Common/secure_error.c"),
         ]
@@ -338,6 +339,7 @@ config.libs = [
             "-use_lmw_stmw on",
             "-opt nopeephole",
             "-str reuse,readonly",
+            "-inline auto",
         ],
         "host": False,
         "progress_category": "lib",

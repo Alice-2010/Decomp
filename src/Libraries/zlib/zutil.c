@@ -7,7 +7,6 @@
 #ifndef NO_DUMMY_DECL
 struct internal_state      {int dummy;}; /* for buggy compilers */
 #endif
-#pragma readonly_strings on
 const char * const z_errmsg[10] = {
 "need dictionary",     /* Z_NEED_DICT       2  */
 "stream end",          /* Z_STREAM_END      1  */
@@ -19,7 +18,6 @@ const char * const z_errmsg[10] = {
 "buffer error",        /* Z_BUF_ERROR     (-5) */
 "incompatible version",/* Z_VERSION_ERROR (-6) */
 ""};
-#pragma readonly_strings off
 const char * ZEXPORT zlibVersion()
 {
     return ZLIB_VERSION;
