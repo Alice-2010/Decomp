@@ -88,7 +88,7 @@
 
     // Nub event information (size 0xC).
     typedef struct TRKEvent {
-        u8 eventType;         // _00
+        s32 eventType;         // _00
         NubEventID eventID;   // _04
         TRKBufferID msgBufID; // _08
     } TRKEvent;

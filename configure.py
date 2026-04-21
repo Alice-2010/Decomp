@@ -341,6 +341,7 @@ config.libs = [
         "progress_category": "sdk",
         "objects": [
             Object(MatchingFor("SALP4Q"), "PowerPC_EABI_Support/MetroTRK/main_TRK.c"),
+            Object(MatchingFor("SALP4Q"), "PowerPC_EABI_Support/MetroTRK/mainloop.c"),
         ]
     },
     {
