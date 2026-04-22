@@ -149,6 +149,9 @@ PowerPC_EABI_Support/MetroTRK/dolphin_trk.c:
 	.data       start:0x8052D5E0 end:0x8052D61C
 	.sbss       start:0x805F5EA0 end:0x805F5EA8
 
+PowerPC_EABI_Support/MetroTRK/mpc_7xx_603e.c:
+	.text       start:0x803AC484 end:0x803AC7AC
+
 PowerPC_EABI_Support/MetroTRK/targimpl.c:
 	.text       start:0x803AE3B8 end:0x803AEBE4
 	.rodata     start:0x804E40D8 end:0x804E40E8
