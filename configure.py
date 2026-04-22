@@ -340,6 +340,7 @@ config.libs = [
         "host": False,
         "progress_category": "sdk",
         "objects": [
+            Object(MatchingFor(), "PowerPC_EABI_Support/MetroTRK/dolphin_trk.c"),
             Object(MatchingFor("SALP4Q"), "PowerPC_EABI_Support/MetroTRK/main_TRK.c"),
             Object(MatchingFor("SALP4Q"), "PowerPC_EABI_Support/MetroTRK/mainloop.c"),
         ]

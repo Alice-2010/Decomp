@@ -141,6 +141,11 @@ PowerPC_EABI_Support/MetroTRK/main_TRK.c:
 PowerPC_EABI_Support/MetroTRK/mainloop.c:
 	.text       start:0x803AAE1C end:0x803AAF08
 
+PowerPC_EABI_Support/MetroTRK/dolphin_trk.c:
+	.text       start:0x803AB28C end:0x803AB5A0
+	.data       start:0x8052D5E0 end:0x8052D61C
+	.sbss       start:0x805F5EA0 end:0x805F5EA8
+
 Revolution/FS/fs.c:
 	.text       start:0x803B17D0 end:0x803B2BB4
 	.data       start:0x8052D858 end:0x8052D87C
