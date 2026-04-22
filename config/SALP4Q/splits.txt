@@ -134,6 +134,9 @@ PowerPC_EABI_Support/MSL/MSL_C/MSL_Common/secure_error.c:
 	.text       start:0x803A34AC end:0x803A34C4
 	.sbss       start:0x805F5E48 end:0x805F5E4C
 
+PowerPC_EABI_Support/MetroTRK/flush_cache.c:
+	.text       start:0x803AADA8 end:0x803AADE0
+
 PowerPC_EABI_Support/MetroTRK/main_TRK.c:
 	.text       start:0x803AADE0 end:0x803AAE1C
 	.sbss       start:0x805F5E98 end:0x805F5E9C
