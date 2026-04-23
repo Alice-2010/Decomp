@@ -348,6 +348,7 @@ config.libs = [
             Object(MatchingFor(), "PowerPC_EABI_Support/MetroTRK/nubevent.c"),
             Object(MatchingFor(), "PowerPC_EABI_Support/MetroTRK/nubinit.c"),
             Object(MatchingFor(), "PowerPC_EABI_Support/MetroTRK/serpoll.c"),
+            Object(MatchingFor("SALP4Q"), "PowerPC_EABI_Support/MetroTRK/targcont.c"),
             Object(MatchingFor(), "PowerPC_EABI_Support/MetroTRK/targimpl.c"),
         ]
     },
