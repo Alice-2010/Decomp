@@ -153,6 +153,11 @@ PowerPC_EABI_Support/MetroTRK/nubevent.c:
 	.text       start:0x803AB9DC end:0x803ABB78
 	.bss        start:0x805A2848 end:0x805A2870
 
+PowerPC_EABI_Support/MetroTRK/nubinit.c:
+	.text       start:0x803ABB78 end:0x803ABCC8
+	.data       start:0x8052D728 end:0x8052D748
+	.sbss       start:0x805F5EB0 end:0x805F5EB4
+
 PowerPC_EABI_Support/MetroTRK/mpc_7xx_603e.c:
 	.text       start:0x803AC484 end:0x803AC7AC
 
