@@ -202,3 +202,6 @@ Revolution/NAND/NANDLogging.c:
 
 PowerPC_EABI_Support/Runtime/__mem.c:
 	.init       start:0x80004364 end:0x800046E4
+
+PowerPC_EABI_Support/MetroTRK/__exception.s: comment:0
+	.init       start:0x800046E4 end:0x80006618
