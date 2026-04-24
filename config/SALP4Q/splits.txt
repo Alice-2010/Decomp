@@ -178,6 +178,10 @@ PowerPC_EABI_Support/MetroTRK/targcont.c:
 PowerPC_EABI_Support/MetroTRK/mpc_7xx_603e.c:
 	.text       start:0x803AC484 end:0x803AC7AC
 
+PowerPC_EABI_Support/MetroTRK/msgbuf.c:
+	.text       start:0x803AC7AC end:0x803AD01C
+	.bss        start:0x805A2870 end:0x805A4218
+
 PowerPC_EABI_Support/MetroTRK/targimpl.c:
 	.text       start:0x803AE3B8 end:0x803AEBE4
 	.rodata     start:0x804E40D8 end:0x804E40E8
