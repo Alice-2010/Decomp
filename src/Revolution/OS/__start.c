@@ -379,54 +379,54 @@ DECL_SECTION(".init") static asm void __init_registers(void) {
 DECL_SECTION(".init") static asm void __init_data(void) {
     // clang-format off
     #ifdef __MWERKS__
-    stwu    r1,-0x20(r1)
-    mflr    r0
-    stw     r0,0x24(r1)
-    stw     r31,0x1c(r1)
-    stw     r30,0x18(r1)
-    stw     r29,0x14(r1)
-    lis     r29,_rom_copy_info@ha
-    addi    r29,r29,_rom_copy_info@l
-_rom_loop:
-    lwz     r30,8(r29)
-    cmpwi   r30,0
-    beq     _assign_bss
-    lwz     r4,0(r29)
-    lwz     r31,4(r29)
-    beq     _rom_increment
-    cmplw   r31,r4
-    beq     _rom_increment
-    mr      r3,r31
-    mr      r5,r30
-    bl      memcpy
-    mr      r3,r31
-    mr      r4,r30
-    bl      __flush_cache
-_rom_increment:
-    addi    r29,r29,0xc
-    b       _rom_loop
-_assign_bss:
-    lis     r29,_bss_init_info@ha
-    addi    r29,r29,_bss_init_info@l
-_bss_loop:
-    lwz     r5,4(r29)
-    cmpwi   r5,0
-    beq     _cleanup
-    lwz     r3,0(r29)
-    beq     _bss_increment
-    li      r4,0
-    bl      memset
-_bss_increment:
-    addi    r29,r29,8
-    b       _bss_loop
-_cleanup:
-    lwz     r0,0x24(r1)
-    lwz     r31,0x1c(r1)
-    lwz     r30,0x18(r1)
-    lwz     r29,0x14(r1)
-    mtlr    r0
-    addi    r1,r1,0x20
-    blr
+        stwu    r1,-0x20(r1)
+        mflr    r0
+        stw     r0,0x24(r1)
+        stw     r31,0x1c(r1)
+        stw     r30,0x18(r1)
+        stw     r29,0x14(r1)
+        lis     r29,_rom_copy_info@ha
+        addi    r29,r29,_rom_copy_info@l
+    _rom_loop:
+        lwz     r30,8(r29)
+        cmpwi   r30,0
+        beq     _assign_bss
+        lwz     r4,0(r29)
+        lwz     r31,4(r29)
+        beq     _rom_increment
+        cmplw   r31,r4
+        beq     _rom_increment
+        mr      r3,r31
+        mr      r5,r30
+        bl      memcpy
+        mr      r3,r31
+        mr      r4,r30
+        bl      __flush_cache
+    _rom_increment:
+        addi    r29,r29,0xc
+        b       _rom_loop
+    _assign_bss:
+        lis     r29,_bss_init_info@ha
+        addi    r29,r29,_bss_init_info@l
+    _bss_loop:
+        lwz     r5,4(r29)
+        cmpwi   r5,0
+        beq     _cleanup
+        lwz     r3,0(r29)
+        beq     _bss_increment
+        li      r4,0
+        bl      memset
+    _bss_increment:
+        addi    r29,r29,8
+        b       _bss_loop
+    _cleanup:
+        lwz     r0,0x24(r1)
+        lwz     r31,0x1c(r1)
+        lwz     r30,0x18(r1)
+        lwz     r29,0x14(r1)
+        mtlr    r0
+        addi    r1,r1,0x20
+        blr
     #endif
     // clang-format on
 }

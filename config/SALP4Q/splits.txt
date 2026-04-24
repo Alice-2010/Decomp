@@ -134,6 +134,61 @@ PowerPC_EABI_Support/MSL/MSL_C/MSL_Common/secure_error.c:
 	.text       start:0x803A34AC end:0x803A34C4
 	.sbss       start:0x805F5E48 end:0x805F5E4C
 
+PowerPC_EABI_Support/MetroTRK/flush_cache.c:
+	.text       start:0x803AADA8 end:0x803AADE0
+
+PowerPC_EABI_Support/MetroTRK/main_TRK.c:
+	.text       start:0x803AADE0 end:0x803AAE1C
+	.sbss       start:0x805F5E98 end:0x805F5E9C
+
+PowerPC_EABI_Support/MetroTRK/mainloop.c:
+	.text       start:0x803AAE1C end:0x803AAF08
+
+PowerPC_EABI_Support/MetroTRK/mem_TRK.c:
+	.text       start:0x803AAF08 end:0x803AB16C
+
+PowerPC_EABI_Support/MetroTRK/dispatch.c:
+	.text       start:0x803AB16C end:0x803AB28C
+	.data       start:0x8052D570 end:0x8052D5DC
+
+PowerPC_EABI_Support/MetroTRK/dolphin_trk.c:
+	.text       start:0x803AB28C end:0x803AB5A0
+	.data       start:0x8052D5E0 end:0x8052D61C
+	.sbss       start:0x805F5EA0 end:0x805F5EA8
+
+PowerPC_EABI_Support/MetroTRK/dolphin_trk_glue.c:
+	.text       start:0x803AB5B0 end:0x803AB8F8
+	.bss        start:0x805A2820 end:0x805A2848
+
+PowerPC_EABI_Support/MetroTRK/nubevent.c:
+	.text       start:0x803AB9DC end:0x803ABB78
+	.bss        start:0x805A2848 end:0x805A2870
+
+PowerPC_EABI_Support/MetroTRK/nubinit.c:
+	.text       start:0x803ABB78 end:0x803ABCC8
+	.data       start:0x8052D728 end:0x8052D748
+	.sbss       start:0x805F5EB0 end:0x805F5EB4
+
+PowerPC_EABI_Support/MetroTRK/serpoll.c:
+	.text       start:0x803ABCC8 end:0x803ABE10
+
+PowerPC_EABI_Support/MetroTRK/targcont.c:
+	.text       start:0x803AC450 end:0x803AC484
+
+PowerPC_EABI_Support/MetroTRK/mpc_7xx_603e.c:
+	.text       start:0x803AC484 end:0x803AC7AC
+
+PowerPC_EABI_Support/MetroTRK/msgbuf.c:
+	.text       start:0x803AC7AC end:0x803AD01C
+	.bss        start:0x805A2870 end:0x805A4218
+
+PowerPC_EABI_Support/MetroTRK/targimpl.c:
+	.text       start:0x803AE3B8 end:0x803AEBE4
+	.rodata     start:0x804E40D8 end:0x804E40E8
+	.data       start:0x8052D848 end:0x8052D858
+	.bss        start:0x805A4218 end:0x805A47C0
+	.sbss       start:0x805F5ED0 end:0x805F5ED4
+
 Revolution/FS/fs.c:
 	.text       start:0x803B17D0 end:0x803B2BB4
 	.data       start:0x8052D858 end:0x8052D87C
@@ -162,3 +217,6 @@ Revolution/NAND/NANDLogging.c:
 
 PowerPC_EABI_Support/Runtime/__mem.c:
 	.init       start:0x80004364 end:0x800046E4
+
+PowerPC_EABI_Support/MetroTRK/__exception.s: comment:0
+	.init       start:0x800046E4 end:0x80006618
