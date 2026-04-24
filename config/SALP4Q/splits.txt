@@ -144,6 +144,9 @@ PowerPC_EABI_Support/MetroTRK/main_TRK.c:
 PowerPC_EABI_Support/MetroTRK/mainloop.c:
 	.text       start:0x803AAE1C end:0x803AAF08
 
+PowerPC_EABI_Support/MetroTRK/mem_TRK.c:
+	.text       start:0x803AAF08 end:0x803AB16C
+
 PowerPC_EABI_Support/MetroTRK/dispatch.c:
 	.text       start:0x803AB16C end:0x803AB28C
 	.data       start:0x8052D570 end:0x8052D5DC
