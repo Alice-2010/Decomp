@@ -153,6 +153,10 @@ PowerPC_EABI_Support/MetroTRK/dolphin_trk.c:
 	.data       start:0x8052D5E0 end:0x8052D61C
 	.sbss       start:0x805F5EA0 end:0x805F5EA8
 
+PowerPC_EABI_Support/MetroTRK/dolphin_trk_glue.c:
+	.text       start:0x803AB5B0 end:0x803AB8F8
+	.bss        start:0x805A2820 end:0x805A2848
+
 PowerPC_EABI_Support/MetroTRK/nubevent.c:
 	.text       start:0x803AB9DC end:0x803ABB78
 	.bss        start:0x805A2848 end:0x805A2870

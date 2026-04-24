@@ -4,7 +4,7 @@
         extern "C" {
     #endif
 
-    #include "Revolution/DB/db.h"
+    #include "Revolution/DB/db.h" // IWYU pragma: export
 
     #ifdef __cplusplus
         }
