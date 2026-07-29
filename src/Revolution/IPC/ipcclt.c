@@ -120,17 +120,7 @@ static void IpcReplyHandler(s32 intr, OSContext* ctx) {
         ACRWriteReg(0x30, 0x40000000);
         DCInvalidateRange(&req->base, sizeof(IPCRequest));
 
-        // Not type??
         switch (req->base.fd) {
-        case IPC_REQ_IOCTL:
-            req->base.ioctl.out =
-                (req->base.ioctl.out != NULL)
-                    ? OSPhysicalToCached((u32)req->base.ioctl.out)
-                    : NULL;
-
-            DCInvalidateRange(req->base.ioctl.in, req->base.ioctl.inSize);
-            DCInvalidateRange(req->base.ioctl.out, req->base.ioctl.outSize);
-            break;
         case IPC_REQ_READ:
             req->base.rw.data = (req->base.rw.data != NULL)
                                     ? OSPhysicalToCached((u32)req->base.rw.data)
@@ -139,6 +129,15 @@ static void IpcReplyHandler(s32 intr, OSContext* ctx) {
             if (req->base.ret > 0) {
                 DCInvalidateRange(req->base.rw.data, req->base.ret);
             }
+            break;
+        case IPC_REQ_IOCTL:
+            req->base.ioctl.out =
+                (req->base.ioctl.out != NULL)
+                    ? OSPhysicalToCached((u32)req->base.ioctl.out)
+                    : NULL;
+
+            DCInvalidateRange(req->base.ioctl.in, req->base.ioctl.inSize);
+            DCInvalidateRange(req->base.ioctl.out, req->base.ioctl.outSize);
             break;
         case IPC_REQ_IOCTLV:
             args = &req->base.ioctlv;

@@ -15,3 +15,5 @@ ctx.c
 !requirements*.txt
 *.class
 .github/agents/
+.codex/
+AGENTS.md
