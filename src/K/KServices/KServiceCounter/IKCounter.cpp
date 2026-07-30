@@ -11,3 +11,8 @@ BOOL IKCounter::IsKindOfClass(KClassIdentifier a_iClassIdentifier)
     }
     return IKSerializable::IsKindOfClass(a_iClassIdentifier);
 }
+
+void IKCounter::Destroy()
+{
+    IKSerializable::Destroy();
+}

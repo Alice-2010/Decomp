@@ -17,6 +17,7 @@
             IKCounter();
             virtual ~IKCounter();
             virtual BOOL IsKindOfClass(KClassIdentifier);
+            virtual void Destroy();
             virtual KError Load();
             virtual KError Save();
     };

@@ -23,6 +23,11 @@ BOOL CKTimeCounter::IsKindOfClass(KClassIdentifier a_iClassIdentifier)
     return IKCounter::IsKindOfClass(a_iClassIdentifier);
 }
 
+void CKTimeCounter::Destroy()
+{
+    IKCounter::Destroy();
+}
+
 s32 CKTimeCounter::GetClassType()
 {
     return CLASS_TYPE;
@@ -50,8 +55,7 @@ KError CKTimeCounter::Load(IKFile* a_pFile, ESerializationType a_eSerializationT
 
 KError CKTimeCounter::PostLoad()
 {
-    IKSerializable::PostLoad();
-    return 1;
+    return IKSerializable::PostLoad();
 }
 
 extern s32 fn_8001D0E0(IKInfo*);
