@@ -4,6 +4,7 @@
  */
 /* @(#) $Id: zutil.c,v 1.5 2005/08/27 17:22:42 drolon Exp $ */
 #include "Libraries/zlib/zutil.h"
+#include "compiler_macros.h"
 #ifndef NO_DUMMY_DECL
 struct internal_state      {int dummy;}; /* for buggy compilers */
 #endif
@@ -20,10 +21,10 @@ const char * const z_errmsg[10] = {
 "incompatible version",/* Z_VERSION_ERROR (-6) */
 ""};
 #pragma readonly_strings off
-const char * ZEXPORT zlibVersion()
-{
-    return ZLIB_VERSION;
-}
+// const char * ZEXPORT zlibVersion()
+// {
+//     return ZLIB_VERSION;
+// }
 uLong ZEXPORT zlibCompileFlags()
 {
     uLong flags;
@@ -133,35 +134,38 @@ const char * ZEXPORT zError(err)
     int errno = 0;
 #endif
 #ifndef HAVE_MEMCPY
-void zmemcpy(dest, source, len)
-    Bytef* dest;
-    const Bytef* source;
+DONT_INLINE void zmemcpy(dest, source, len)
+    void* dest;
+    const void* source;
     uInt  len;
 {
-    if (len == 0) return;
-    do {
-        *dest++ = *source++; /* ??? to be unrolled */
-    } while (--len != 0);
+    // if (len == 0) return;
+    // do {
+    //     *dest++ = *source++; /* ??? to be unrolled */
+    // } while (--len != 0);
+    memcpy(dest, source, len);
 }
-int zmemcmp(s1, s2, len)
+DONT_INLINE int zmemcmp(s1, s2, len)
     const Bytef* s1;
     const Bytef* s2;
     uInt  len;
 {
-    uInt j;
-    for (j = 0; j < len; j++) {
-        if (s1[j] != s2[j]) return 2*(s1[j] > s2[j])-1;
-    }
-    return 0;
+    // uInt j;
+    // for (j = 0; j < len; j++) {
+    //     if (s1[j] != s2[j]) return 2*(s1[j] > s2[j])-1;
+    // }
+    // return 0;
+    return memcmp(s1, s2, len);
 }
-void zmemzero(dest, len)
+DONT_INLINE void zmemzero(dest, len)
     Bytef* dest;
     uInt  len;
 {
-    if (len == 0) return;
-    do {
-        *dest++ = 0;  /* ??? to be unrolled */
-    } while (--len != 0);
+    // if (len == 0) return;
+    // do {
+    //     *dest++ = 0;  /* ??? to be unrolled */
+    // } while (--len != 0);
+    memset(dest, 0, len);
 }
 #endif
 #ifdef SYS16BIT

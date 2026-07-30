@@ -52,7 +52,7 @@ Libraries/zlib/inftrees.c:
 	.rodata     start:0x804E1EF0 end:0x804E2020
 
 Libraries/zlib/zutil.c:
-	.text       start:0x8036129C end:0x803612F4
+	.text       start:0x8036128C end:0x803612F4
 	.rodata     start:0x804E2A58 end:0x804E2B00
 
 Revolution/BASE/PPCArch.c:

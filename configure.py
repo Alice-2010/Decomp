@@ -367,6 +367,7 @@ config.libs = [
             "-use_lmw_stmw on",
             "-opt nopeephole",
             "-str reuse,readonly",
+            "-DNO_MEMCPY",
         ],
         "host": False,
         "progress_category": "lib",
