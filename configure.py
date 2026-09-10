@@ -394,6 +394,7 @@ config.libs = [
         "objects": [
             Object(MatchingFor(), "K/KCore/Main/CKYellowPages.cpp"),
             Object(MatchingFor(), "K/KServices/KServiceCounter/CKTimeCounter.cpp"),
+            Object(MatchingFor(), "K/KServices/KServiceCounter/CKIntegerCounter.cpp"),
         ]
     },
     {

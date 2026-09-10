@@ -27,6 +27,13 @@ K/KCore/Main/CKYellowPages.cpp:
 	.data       start:0x805011B0 end:0x805011E8
 	.sbss       start:0x805F48D8 end:0x805F48DC
 
+K/KServices/KServiceCounter/CKIntegerCounter.cpp:
+	.text       start:0x802A32D8 end:0x802A3750
+	.ctors      start:0x804D3DA0 end:0x804D3DA4
+	.rodata     start:0x804DB8D8 end:0x804DB90C
+	.data       start:0x8050B938 end:0x8050BB20
+	.sdata      start:0x805F2B60 end:0x805F2B70
+
 K/KServices/KServiceCounter/CKTimeCounter.cpp:
 	.text       start:0x802A4508 end:0x802A4BB4
 	.ctors      start:0x804D3DA8 end:0x804D3DAC

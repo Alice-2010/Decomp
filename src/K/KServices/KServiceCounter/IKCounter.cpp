@@ -3,6 +3,8 @@
 
 IKCounter::IKCounter(): IKSerializable::IKSerializable() {}
 
+IKCounter::~IKCounter() {}
+
 BOOL IKCounter::IsKindOfClass(KClassIdentifier a_iClassIdentifier)
 {
     if (a_iClassIdentifier == K_FULL_ID(CLASS_TYPE, CLASS_ID))
