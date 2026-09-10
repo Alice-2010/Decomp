@@ -1,0 +1,22 @@
+[mcp_servers.ghidra]
+command = "py"
+args = ["./tools/ghidra_scripts/bridge_mcp_ghidra.py"]
+required = true
+
+[mcp_servers.ghidra.tools.decompile_function]
+approval_mode = "approve"
+
+[mcp_servers.ghidra.tools.decompile_function_by_address]
+approval_mode = "approve"
+
+[mcp_servers.ghidra.tools.get_current_address]
+approval_mode = "approve"
+
+[mcp_servers.ghidra.tools.get_current_function]
+approval_mode = "approve"
+
+[mcp_servers.ghidra.tools.search_functions_by_name]
+approval_mode = "approve"
+
+[mcp_servers.ghidra.tools.disassemble_function]
+approval_mode = "approve"
