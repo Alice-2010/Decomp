@@ -1,0 +1,13 @@
+[project]
+name = "alice-decomp"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "argparse>=1.4.0",
+    "fastmcp>=4.1.2",
+    "ninja>=1.13.2",
+    "pyghidra>=3.1.0",
+    "requests>=2.34.2",
+]

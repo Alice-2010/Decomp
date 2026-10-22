@@ -18,22 +18,22 @@
             
             enum ESeekPosition
             {
-                BEGIN,
-                CURRENT,
-                END
+                BEGIN = 0,
+                CURRENT = 1,
+                END = 2,
             };
 
             enum EOpenFlags
             {
-                MODE_READ,
-                MODE_WRITE,
-                MODE_READ_WRITE,
-                MODE_APPEND,
-                MODE_READ_TXT,
-                MODE_WRITE_TXT,
-                MODE_READ_WRITE_TXT,
-                MODE_APPEND_TXT,
-                MODE_MAX
+                MODE_READ = 0,
+                MODE_WRITE = 1,
+                MODE_READ_WRITE = 2,
+                MODE_APPEND = 3,
+                MODE_READ_TXT = 4,
+                MODE_WRITE_TXT = 5,
+                MODE_READ_WRITE_TXT = 6,
+                MODE_APPEND_TXT = 7,
+                MODE_MAX = 8,
             };
 
             RwStream* m_pRwStream; // 0x4
@@ -82,6 +82,7 @@
             void WriteUInt64(u64 value);
             f32 ReadFloat32(f32*, ESerializationType);
             void WriteFloat32(f32 value);
+            u32 ReadString(char* pString, u32 length);
     };
 
 #endif // K_KBASIC_FILEIO_IKFILE_H

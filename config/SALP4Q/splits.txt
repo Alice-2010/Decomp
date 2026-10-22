@@ -27,6 +27,11 @@ K/KCore/Main/CKYellowPages.cpp:
 	.data       start:0x805011B0 end:0x805011E8
 	.sbss       start:0x805F48D8 end:0x805F48DC
 
+K/KCore/Serialization/CKLoadingManager.cpp:
+	.text       start:0x801BE7A8 end:0x801C09B0
+	.ctors      start:0x804D3A6C end:0x804D3A70
+	.data       start:0x805012DC end:0x80501390
+
 K/KServices/KServiceCounter/CKIntegerCounter.cpp:
 	.text       start:0x802A32D8 end:0x802A3750
 	.ctors      start:0x804D3DA0 end:0x804D3DA4

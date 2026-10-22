@@ -20,3 +20,6 @@ approval_mode = "approve"
 
 [mcp_servers.ghidra.tools.disassemble_function]
 approval_mode = "approve"
+
+[mcp_servers.ghidra.tools.get_function_by_address]
+approval_mode = "approve"

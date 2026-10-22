@@ -384,7 +384,7 @@ config.libs = [
         "cflags": [
             *cflags_base,
             "-func_align 4",
-            "-inline all",
+            "-inline off",
             "-fp_contract on",
             "-rostr",
             "-opt nopeephole",
@@ -393,6 +393,7 @@ config.libs = [
         "progress_category": "engine",  # str | List[str]
         "objects": [
             Object(MatchingFor(), "K/KCore/Main/CKYellowPages.cpp"),
+            Object(MatchingFor(), "K/KCore/Serialization/CKLoadingManager.cpp"),
             Object(MatchingFor(), "K/KServices/KServiceCounter/CKTimeCounter.cpp"),
             Object(MatchingFor(), "K/KServices/KServiceCounter/CKIntegerCounter.cpp"),
         ]
